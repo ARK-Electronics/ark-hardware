@@ -1,0 +1,98 @@
+# source_repo	source_path	dest_path
+ARK_12S_PAB_Power_Module	ARK_12S_PAB_Power_Module_Rev_3.0.step	ARK_12S_PAB_Power_Module/model/ARK_12S_PAB_Power_Module_Rev_3.0.step
+ARK_12S_PAYLOAD_POWER_MODULE	ARK_12S_Payload_Power_Module_Rev_1.0.step	ARK_12S_Payload_Power_Module/model/ARK_12S_Payload_Power_Module_Rev_1.0.step
+ARK_4IN1_ESC	ARK_4IN1_ESC/ARK_4_IN_1_ESC_Rev_3.1.step	ARK_4IN1_ESC/model/ARK_4_IN_1_ESC_Rev_3.1.step
+ARK_4IN1_ESC	ARK_4IN1_ESC_CONNECTORIZED/ARK_4_IN_1_ESC_CON_Rev_4_0.step	ARK_4IN1_ESC/model/ARK_4_IN_1_ESC_CON_Rev_4_0.step
+ARK_ADIS16507	ARK_ADIS16507_REV_1_3D_Model.step	ARK_ADIS16507/model/ARK_ADIS16507_REV_1_3D_Model.step
+ARK_ADIS16507	Bottom Case.stl	ARK_ADIS16507/case/Bottom_Case.stl
+ARK_ADIS16507	Top Case.stl	ARK_ADIS16507/case/Top_Case.stl
+ARK_CANNODE	Case/Bottom Case 0.1.stl	ARK_CANnode/case/Bottom_Case_0.1.stl
+ARK_CANNODE	Case/Top Case 0.2.stl	ARK_CANnode/case/Top_Case_0.2.stl
+ARK_CANNODE	Hardware/Rev 1/ARK CANNODE Rev 1 3D Model.step	ARK_CANnode/model/ARK_CANNODE_Rev_1_3D_Model.step
+ARK_DAN_GPS	ARK_DAN_GPS_PCB_Rev_1.0.step	ARK_DAN_GPS/model/ARK_DAN_GPS_PCB_Rev_1.0.step
+ARK_DIST	3D Model/ARK_DIST_Rev_1_0.step	ARK_DIST/model/ARK_DIST_Rev_1_0.step
+ARK_DIST	Case/ARK DIST Bottom Case.stl	ARK_DIST/case/ARK_DIST_Bottom_Case.stl
+ARK_DIST	Case/ARK DIST Top Case.stl	ARK_DIST/case/ARK_DIST_Top_Case.stl
+ARK_Flow	Case/Bottom Case Rev 1.stl	ARK_Flow/case/Bottom_Case_Rev_1.stl
+ARK_Flow	Case/Top Case Rev 1.stl	ARK_Flow/case/Top_Case_Rev_1.stl
+ARK_Flow	Hardware/Rev 2/ARK Flow Rev 2 3D Model.step	ARK_Flow/model/ARK_Flow_Rev_2_3D_Model.step
+ARK_Flow	Hardware/Rev 2/ARK Flow Rev 2 3D Model With FOV.step	ARK_Flow/model/ARK_Flow_Rev_2_3D_Model_With_FOV.step
+ARK_Flow_MR	ARK Flow MR Rev 1.0.step	ARK_Flow_MR/model/ARK_Flow_MR_Rev_1.0.step
+ARK_Flow_MR	Case/Bottom Case Rev 1.stl	ARK_Flow_MR/case/Bottom_Case_Rev_1.stl
+ARK_Flow_MR	Case/Top Case Rev 1.stl	ARK_Flow_MR/case/Top_Case_Rev_1.stl
+ARK_FPV	ARK_FPV_Rev_1.0.step	ARK_FPV/model/ARK_FPV_Rev_1.0.step
+ARK_FPV	case/Bottom ARK FPV Case rev1.stl	ARK_FPV/case/Bottom_ARK_FPV_Case_rev1.stl
+ARK_FPV	case/Top ARK FPV Case rev1.stl	ARK_FPV/case/Top_ARK_FPV_Case_rev1.stl
+ARK_G5_RTK_GPS	3D Model/ARK_G5_RTK_GPS_Rev_1.0.step	ARK_G5_RTK_GPS/model/ARK_G5_RTK_GPS_Rev_1.0.step
+ARK_G5_RTK_GPS	3D Printed Case/ARK_G5_RTK_GPS_Bottom_Case.stl	ARK_G5_RTK_GPS/case/ARK_G5_RTK_GPS_Bottom_Case.stl
+ARK_G5_RTK_GPS	3D Printed Case/ARK_G5_RTK_GPS_Top_Case.stl	ARK_G5_RTK_GPS/case/ARK_G5_RTK_GPS_Top_Case.stl
+ARK_G5_RTK_GPS	Antenna/BT-T076.stl	ARK_G5_RTK_GPS/antenna/BT-T076.stl
+ARK_GPS	Case/Bottom Case Rev 1.1.stl	ARK_GPS/case/Bottom_Case_Rev_1.1.stl
+ARK_GPS	Case/Top Case Rev 1.stl	ARK_GPS/case/Top_Case_Rev_1.stl
+ARK_GPS	Hardware/Rev 3/ARK GPS Rev 3 3D Model.step	ARK_GPS/model/ARK_GPS_Rev_3_3D_Model.step
+ark_jetson_hardware	3D Model/ARK_PAB_Jetson_Carrier_Rev_3.step	ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Rev_3.step
+ark_jetson_hardware	Case/Jetson Carrier Bottom.stl	ARK_Jetson_PAB_Carrier/case/Jetson_Carrier_Bottom.stl
+ark_jetson_hardware	Case/Jetson Carrier Top.stl	ARK_Jetson_PAB_Carrier/case/Jetson_Carrier_Top.stl
+ark_jetson_hardware	Case/Jetson Cover.stl	ARK_Jetson_PAB_Carrier/case/Jetson_Cover.stl
+ARK_Jetson_PAB_V3	ARK_PAB_Jetson_Carrier_V3.step	ARK_Jetson_PAB_V3/model/ARK_PAB_Jetson_Carrier_V3.step
+ARK_M.2_LTE	ARK_M.2_LTE_REV_1.0.step	ARK_M.2_LTE/model/ARK_M.2_LTE_REV_1.0.step
+ARK_MAG	ARK_MAG_Rev_1_0.step	ARK_MAG/model/ARK_MAG_Rev_1_0.step
+ARK_MAG	Bottom Case.stl	ARK_MAG/case/Bottom_Case.stl
+ARK_MAG	Top Case.stl	ARK_MAG/case/Top_Case.stl
+ARK_Microhard_DDL_Carrier	ARK Microhard DDL Carrier Rev 2.0.step	ARK_Microhard_DDL_Carrier/model/ARK_Microhard_DDL_Carrier_Rev_2.0.step
+ARK_Microhard_DDL_Carrier	Bottom Case.stl	ARK_Microhard_DDL_Carrier/case/Bottom_Case.stl
+ARK_Microhard_DDL_Carrier	Microhard Case.step	ARK_Microhard_DDL_Carrier/case/Microhard_Case.step
+ARK_Microhard_DDL_Carrier	Top Case.stl	ARK_Microhard_DDL_Carrier/case/Top_Case.stl
+ARK_MOSAIC-X5_GPS	Antenna/BT-T076.stl	ARK_MOSAIC-X5_RTK_GPS/antenna/BT-T076.stl
+ARK_MOSAIC-X5_GPS	ARK_MOSAIC-X5_REV_2.step	ARK_MOSAIC-X5_RTK_GPS/model/ARK_MOSAIC-X5_REV_2.step
+ARK_MOSAIC-X5_GPS	Case/ARK_MOSAIC-X5_Bottom_Case_REV_1.stl	ARK_MOSAIC-X5_RTK_GPS/case/ARK_MOSAIC-X5_Bottom_Case_REV_1.stl
+ARK_MOSAIC-X5_GPS	Case/ARK_MOSAIC-X5_Top_Case_REV_2.stl	ARK_MOSAIC-X5_RTK_GPS/case/ARK_MOSAIC-X5_Top_Case_REV_2.stl
+ARK_PAB_Carrier	ARK_PAB_Carrier_3D_Model.step	ARK_PAB_Carrier/model/ARK_PAB_Carrier_3D_Model.step
+ARK_PAB_Carrier	Case/Bottom Case.stl	ARK_PAB_Carrier/case/Bottom_Case.stl
+ARK_PAB_Carrier	Case/Som Case.stl	ARK_PAB_Carrier/case/Som_Case.stl
+ARK_PAB_Carrier	Case/Top Case.stl	ARK_PAB_Carrier/case/Top_Case.stl
+ARK_PAB_Power_Module	ARK PAB Power Module Rev 3.step	ARK_PAB_Power_Module/model/ARK_PAB_Power_Module_Rev_3.step
+ARK_PAB_Power_Module	ARK PAB Power Module Rev 3 without XT60.step	ARK_PAB_Power_Module/model/ARK_PAB_Power_Module_Rev_3_without_XT60.step
+ARK_PAB_Power_Module	case/Bottom power module case.stl	ARK_PAB_Power_Module/case/Bottom_Power_Module_Case.stl
+ARK_PAB_Power_Module	case/Top power module case.stl	ARK_PAB_Power_Module/case/Top_Power_Module_Case.stl
+ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-2.0.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-2.0.step
+ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-2.0-with-Sensor-FOV.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-2.0-with-Sensor-FOV.step
+ARK-Primary-Avionics-Adapter	Primary Avionics Breakout.step	ARK_Primary_Avionics_Breakout/model/Primary_Avionics_Breakout.step
+ARK_RIG5	Printed_Parts/ARK RIG5 landing gear.step	ARK_RIG5/printed_parts/ARK_RIG5_Landing_Gear.step
+ARK_RIG5	Printed_Parts/ARK RIG5 prop guard.step	ARK_RIG5/printed_parts/ARK_RIG5_Prop_Guard.step
+ARK_RIG5	Printed_Parts/Flow spacer.step	ARK_RIG5/printed_parts/Flow_Spacer.step
+ARK_RIG5	Printed_Parts/motor spacer.step	ARK_RIG5/printed_parts/Motor_Spacer.step
+ARK_RIG7	rig7_printed_parts/7 in landing gear.stl	ARK_RIG7/printed_parts/7in_Landing_Gear.stl
+ARK_RIG7	rig7_printed_parts/7in prop guard.stl	ARK_RIG7/printed_parts/7in_Prop_Guard.stl
+ARK_RTK_Base	Hardware/Rev 1/ARK RTK Base Rev 1 3D Model.step	ARK_RTK_Base/model/ARK_RTK_Base_Rev_1_3D_Model.step
+ARK_RTK_GPS	Case/Bottom Case 0.5.stl	ARK_RTK_GPS/case/Bottom_Case_0.5.stl
+ARK_RTK_GPS	Case/Top Case 0.5.stl	ARK_RTK_GPS/case/Top_Case_0.5.stl
+ARK_RTK_GPS	Hardware/Rev 3/ARK RTK GPS Rev 3 3D Model.step	ARK_RTK_GPS/model/ARK_RTK_GPS_Rev_3_3D_Model.step
+ARK_SAM_GPS	ARK SAM GPS Rev 1.0.step	ARK_SAM_GPS/model/ARK_SAM_GPS_Rev_1.0.step
+ARK_SAM_GPS_MINI	ARK_SAM_GPS_PCB_MINI_Rev_1.0.step	ARK_SAM_GPS_MINI/model/ARK_SAM_GPS_PCB_MINI_Rev_1.0.step
+ARK_SCH16T	ARK_SCH16T_Rev_01.step	ARK_SCH16T/model/ARK_SCH16T_Rev_01.step
+ARK-Secondary-Avionics-Adapter	Secondary Avionics Breakout.step	ARK_Secondary_Avionics_Breakout/model/Secondary_Avionics_Breakout.step
+ARK_SERVO_EXPANDER	Servo_Expander.step	ARK_Servo_Expander/model/Servo_Expander.step
+ARK_TESEO_GPS	ARK_TESEO_GPS_Rev_2_0.step	ARK_TESEO_GPS/model/ARK_TESEO_GPS_Rev_2_0.step
+ARK_TESEO_GPS	Teseo bottom case.stl	ARK_TESEO_GPS/case/Teseo_Bottom_Case.stl
+ARK_TESEO_GPS	Teseo Top Case.stl	ARK_TESEO_GPS/case/Teseo_Top_Case.stl
+ARK_USB_Adapter	ARK_USB_Adapter.step	ARK_USB_Adapter/model/ARK_USB_Adapter.step
+ARKV6S	ARKV6S(Production).step	ARKV6S/model/ARKV6S.step
+ARKV6X_Flight_Controller	ARKV6X 3D Model.step	ARKV6X/model/ARKV6X_3D_Model.step
+ARK_X20_GPS	3D Model/ARK_X20_GPS_Rev_2.1.step	ARK_X20_RTK_GPS/model/ARK_X20_GPS_Rev_2.1.step
+ARK_X20_GPS	3D Printed Case/Bottom Case.stl	ARK_X20_RTK_GPS/case/Bottom_Case.stl
+ARK_X20_GPS	3D Printed Case/Top Case.stl	ARK_X20_RTK_GPS/case/Top_Case.stl
+ARK_X20_GPS	Antenna/BT-T076.stl	ARK_X20_RTK_GPS/antenna/BT-T076.stl
+Ethernet_Adapter	Ethernet_Adapter_Case.step	Ethernet_Adapter/case/Ethernet_Adapter_Case.step
+Ethernet_Adapter	Ethernet_Adapter.step	Ethernet_Adapter/model/Ethernet_Adapter.step
+just_a_jetson	3D_Models/ARK_Just_a_Jetson_Rev_1.0.step	ARK_Just_A_Jetson/model/ARK_Just_a_Jetson_Rev_1.0.step
+just_a_jetson	Case/Just a Jetson Bottom Case.stl	ARK_Just_A_Jetson/case/Just_a_Jetson_Bottom_Case.stl
+just_a_jetson	Case/Just a Jetson Top Case.stl	ARK_Just_A_Jetson/case/Just_a_Jetson_Top_Case.stl
+just_a_pi	ARK Just a Pi.step	ARK_Just_A_Pi/model/ARK_Just_a_Pi.step
+Servo_Adapter	case/Bottom Servo Adapter Case.step	Servo_Adapter/case/Bottom_Servo_Adapter_Case.step
+Servo_Adapter	case/Bottom Servo Adapter Case.stl	Servo_Adapter/case/Bottom_Servo_Adapter_Case.stl
+Servo_Adapter	case/Top Servo Adapter Case.step	Servo_Adapter/case/Top_Servo_Adapter_Case.step
+Servo_Adapter	case/Top Servo Adapter Case.stl	Servo_Adapter/case/Top_Servo_Adapter_Case.stl
+Servo_Adapter	Servo_Adapter.step	Servo_Adapter/model/Servo_Adapter.step
+USB3_Divorcer	USB3 Divorcer.step	USB3_Divorcer/model/USB3_Divorcer.step
+VOXL2_RTK_PAB_Carrier	VOXL2_RTK_PAB_CARRIER_Rev_2.step	ARK_VOXL2_RTK_PAB_Carrier/model/VOXL2_RTK_PAB_CARRIER_Rev_2.step

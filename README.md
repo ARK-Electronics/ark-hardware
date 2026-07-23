@@ -76,4 +76,4 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 
 - Product variants that share a PCB use the same model files: ARK RTK GPS L1 L5, ARK G5 RTK HEADING GPS, ARK DIST MR/SR, ARK SCH16T-K10, ARK Pi6X / Pi6X Flow, ARKV6X Extended Range, and ARK PAB Power Module No Connector are covered by their base product's directory, and the ARK 4IN1 ESC CONS model sits alongside the standard ESC model in `ARK_4IN1_ESC/model/`.
 - `BT-T076.stl` under the RTK GPS products' `antenna/` directories is the reference model of the helical GNSS antenna used with those modules.
-- The telemetry radios, ARK Pixhawk Debug Adapter, LiPow, and BQ25703A have no published STEP/STL files, so they are not included.
+- Products with no published CAD (telemetry radios, debug adapter, etc.) are tracked in [MISSING.md](MISSING.md).

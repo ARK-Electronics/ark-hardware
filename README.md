@@ -66,6 +66,7 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 | [ARK_Secondary_Avionics_Breakout](ARK_Secondary_Avionics_Breakout) | [ARK Secondary Avionics Breakout](https://arkelectron.com/product/ark-secondary-avionics-breakout/) | [docs](https://docs.arkelectron.com/products/accessories/ark-secondary-avionics-adapter) | [ARK-Secondary-Avionics-Adapter](https://github.com/ARK-Electronics/ARK-Secondary-Avionics-Adapter) |
 | [ARK_Servo_Expander](ARK_Servo_Expander) | [ARK Servo Expander](https://arkelectron.com/product/ark-servo-expander/) | [docs](https://docs.arkelectron.com/products/accessories/ark-servo-expander) | [ARK_SERVO_EXPANDER](https://github.com/ARK-Electronics/ARK_SERVO_EXPANDER) |
 | [ARK_USB_Adapter](ARK_USB_Adapter) | [ARK USB Adapter](https://arkelectron.com/product/ark-usb-adapter/) | — | [ARK_USB_Adapter](https://github.com/ARK-Electronics/ARK_USB_Adapter) |
+| [ARK_Pixhawk_Debug_Adapter](ARK_Pixhawk_Debug_Adapter) | [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/) | — | — |
 | [Servo_Adapter](Servo_Adapter) | [Servo Adapter](https://arkelectron.com/product/servo-adapter/) | — | [Servo_Adapter](https://github.com/ARK-Electronics/Servo_Adapter) |
 | [Ethernet_Adapter](Ethernet_Adapter) | [Ethernet Adapter](https://arkelectron.com/product/ethernet-adapter/) | — | [Ethernet_Adapter](https://github.com/ARK-Electronics/Ethernet_Adapter) |
 | [USB3_Divorcer](USB3_Divorcer) | [USB3 Divorcer](https://arkelectron.com/product/usb3-divorcer/) | — | [USB3_Divorcer](https://github.com/ARK-Electronics/USB3_Divorcer) |
@@ -76,4 +77,5 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 
 - Product variants that share a PCB use the same model files: ARK RTK GPS L1 L5, ARK G5 RTK HEADING GPS, ARK DIST MR/SR, ARK SCH16T-K10, ARK Pi6X / Pi6X Flow, ARKV6X Extended Range, and ARK PAB Power Module No Connector are covered by their base product's directory, and the ARK 4IN1 ESC CONS model sits alongside the standard ESC model in `ARK_4IN1_ESC/model/`.
 - `BT-T076.stl` under the RTK GPS products' `antenna/` directories is the reference model of the helical GNSS antenna used with those modules.
-- Products with no published CAD (telemetry radios, debug adapter, etc.) are tracked in [MISSING.md](MISSING.md).
+- `ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl` is a printable holder that sandwiches an STLink V3 Mini between the case and the ARK Pixhawk Debug Adapter. No PCBA model is available yet (see [MISSING.md](MISSING.md)).
+- Products with no published CAD (telemetry radios, etc.) are tracked in [MISSING.md](MISSING.md).

@@ -55,6 +55,7 @@ ARK_PAB_Power_Module	ARK PAB Power Module Rev 3.step	ARK_PAB_Power_Module/model/
 ARK_PAB_Power_Module	ARK PAB Power Module Rev 3 without XT60.step	ARK_PAB_Power_Module/model/ARK_PAB_Power_Module_Rev_3_without_XT60.step
 ARK_PAB_Power_Module	case/Bottom power module case.stl	ARK_PAB_Power_Module/case/Bottom_Power_Module_Case.stl
 ARK_PAB_Power_Module	case/Top power module case.stl	ARK_PAB_Power_Module/case/Top_Power_Module_Case.stl
+ark-hardware	ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl	ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl
 ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-2.0.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-2.0.step
 ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-2.0-with-Sensor-FOV.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-2.0-with-Sensor-FOV.step
 ARK-Primary-Avionics-Adapter	Primary Avionics Breakout.step	ARK_Primary_Avionics_Breakout/model/Primary_Avionics_Breakout.step

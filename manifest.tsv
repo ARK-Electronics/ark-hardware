@@ -1,4 +1,8 @@
 # source_repo	source_path	dest_path
+# Antennas (shared reference models; products symlink into these paths)
+ARK_G5_RTK_GPS	Antenna/BT-T076.stl	Antennas/beitian/BT-T076.stl
+ark-hardware	Antennas/beitian/BT-560.stl	Antennas/beitian/BT-560.stl
+ark-hardware	Antennas/maxtena/M7CHT-A-SMA.stl	Antennas/maxtena/M7CHT-A-SMA.stl
 ARK_12S_PAB_Power_Module	ARK_12S_PAB_Power_Module_Rev_3.0.step	ARK_12S_PAB_Power_Module/model/ARK_12S_PAB_Power_Module_Rev_3.0.step
 ARK_12S_PAYLOAD_POWER_MODULE	ARK_12S_Payload_Power_Module_Rev_1.0.step	ARK_12S_Payload_Power_Module/model/ARK_12S_Payload_Power_Module_Rev_1.0.step
 ARK_4IN1_ESC	ARK_4IN1_ESC/ARK_4_IN_1_ESC_Rev_3.1.step	ARK_4IN1_ESC/model/ARK_4_IN_1_ESC_Rev_3.1.step
@@ -26,7 +30,6 @@ ARK_FPV	case/Top ARK FPV Case rev1.stl	ARK_FPV/case/Top_ARK_FPV_Case_rev1.stl
 ARK_G5_RTK_GPS	3D Model/ARK_G5_RTK_GPS_Rev_1.0.step	ARK_G5_RTK_GPS/model/ARK_G5_RTK_GPS_Rev_1.0.step
 ARK_G5_RTK_GPS	3D Printed Case/ARK_G5_RTK_GPS_Bottom_Case.stl	ARK_G5_RTK_GPS/case/ARK_G5_RTK_GPS_Bottom_Case.stl
 ARK_G5_RTK_GPS	3D Printed Case/ARK_G5_RTK_GPS_Top_Case.stl	ARK_G5_RTK_GPS/case/ARK_G5_RTK_GPS_Top_Case.stl
-ARK_G5_RTK_GPS	Antenna/BT-T076.stl	ARK_G5_RTK_GPS/antenna/BT-T076.stl
 ARK_GPS	Case/Bottom Case Rev 1.1.stl	ARK_GPS/case/Bottom_Case_Rev_1.1.stl
 ARK_GPS	Case/Top Case Rev 1.stl	ARK_GPS/case/Top_Case_Rev_1.stl
 ARK_GPS	Hardware/Rev 3/ARK GPS Rev 3 3D Model.step	ARK_GPS/model/ARK_GPS_Rev_3_3D_Model.step
@@ -43,7 +46,6 @@ ARK_Microhard_DDL_Carrier	ARK Microhard DDL Carrier Rev 2.0.step	ARK_Microhard_D
 ARK_Microhard_DDL_Carrier	Bottom Case.stl	ARK_Microhard_DDL_Carrier/case/Bottom_Case.stl
 ARK_Microhard_DDL_Carrier	Microhard Case.step	ARK_Microhard_DDL_Carrier/case/Microhard_Case.step
 ARK_Microhard_DDL_Carrier	Top Case.stl	ARK_Microhard_DDL_Carrier/case/Top_Case.stl
-ARK_MOSAIC-X5_GPS	Antenna/BT-T076.stl	ARK_MOSAIC-X5_RTK_GPS/antenna/BT-T076.stl
 ARK_MOSAIC-X5_GPS	ARK_MOSAIC-X5_REV_2.step	ARK_MOSAIC-X5_RTK_GPS/model/ARK_MOSAIC-X5_REV_2.step
 ARK_MOSAIC-X5_GPS	Case/ARK_MOSAIC-X5_Bottom_Case_REV_1.stl	ARK_MOSAIC-X5_RTK_GPS/case/ARK_MOSAIC-X5_Bottom_Case_REV_1.stl
 ARK_MOSAIC-X5_GPS	Case/ARK_MOSAIC-X5_Top_Case_REV_2.stl	ARK_MOSAIC-X5_RTK_GPS/case/ARK_MOSAIC-X5_Top_Case_REV_2.stl
@@ -83,7 +85,6 @@ ARKV6X_Flight_Controller	ARKV6X 3D Model.step	ARKV6X/model/ARKV6X_3D_Model.step
 ARK_X20_GPS	3D Model/ARK_X20_GPS_Rev_2.1.step	ARK_X20_RTK_GPS/model/ARK_X20_GPS_Rev_2.1.step
 ARK_X20_GPS	3D Printed Case/Bottom Case.stl	ARK_X20_RTK_GPS/case/Bottom_Case.stl
 ARK_X20_GPS	3D Printed Case/Top Case.stl	ARK_X20_RTK_GPS/case/Top_Case.stl
-ARK_X20_GPS	Antenna/BT-T076.stl	ARK_X20_RTK_GPS/antenna/BT-T076.stl
 Ethernet_Adapter	Ethernet_Adapter_Case.step	Ethernet_Adapter/case/Ethernet_Adapter_Case.step
 Ethernet_Adapter	Ethernet_Adapter.step	Ethernet_Adapter/model/Ethernet_Adapter.step
 just_a_jetson	3D_Models/ARK_Just_a_Jetson_Rev_1.0.step	ARK_Just_A_Jetson/model/ARK_Just_a_Jetson_Rev_1.0.step

@@ -5,10 +5,13 @@ STEP and STL files for [ARK Electronics](https://arkelectron.com) products and t
 ## Layout
 
 ```
+Antennas/
+└── <brand>/        # shared reference antenna STLs (beitian, maxtena, …)
+
 <Product>/
 ├── model/          # STEP model of the PCBA
 ├── case/           # STEP/STL files of the case (if the product has one)
-├── antenna/        # reference antenna model (RTK GPS modules only)
+├── antenna/        # symlinks into Antennas/ for antennas used by this product
 └── printed_parts/  # printable parts (ARK RIG5 / RIG7 only)
 ```
 
@@ -73,9 +76,18 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 | [ARK_RIG5](ARK_RIG5) | — | — | [ARK_RIG5](https://github.com/ARK-Electronics/ARK_RIG5) |
 | [ARK_RIG7](ARK_RIG7) | — | — | [ARK_RIG7](https://github.com/ARK-Electronics/ARK_RIG7) |
 
+## Antennas
+
+Shared reference models live under `Antennas/<brand>/`. Products that ship with or pair with a given antenna symlink to it from their own `antenna/` directory (e.g. `ARK_G5_RTK_GPS/antenna/BT-T076.stl` → `Antennas/beitian/BT-T076.stl`).
+
+| Path | Antenna | Bands |
+|---|---|---|
+| [Antennas/beitian/BT-T076.stl](Antennas/beitian/BT-T076.stl) | Beitian BT-T076 helical (used by G5 / MOSAIC-X5 / X20 RTK GPS) | Full multi-band: GPS L1/L2/L5, GLONASS L1/L2, Galileo E1/E5a/E5b, BDS B1/B2/B3, QZSS L1/L2/L5/L6, IRNSS L5, SBAS L1/L5, L-band |
+| [Antennas/beitian/BT-560.stl](Antennas/beitian/BT-560.stl) | Beitian BT-560 helical | GPS L1/L2, GLONASS L1/L2, BDS B1/B2/B3, Galileo E1/E5b |
+| [Antennas/maxtena/M7CHT-A-SMA.stl](Antennas/maxtena/M7CHT-A-SMA.stl) | Maxtena M7HCT-A-SMA helical | L1/L2: GPS L1/L2C, GLONASS L1/L3OC, Galileo E1/E5b, BeiDou B1/B2 |
+
 ## Notes
 
 - Product variants that share a PCB use the same model files: ARK RTK GPS L1 L5, ARK G5 RTK HEADING GPS, ARK DIST MR/SR, ARK SCH16T-K10, ARK Pi6X / Pi6X Flow, ARKV6X Extended Range, and ARK PAB Power Module No Connector are covered by their base product's directory, and the ARK 4IN1 ESC CONS model sits alongside the standard ESC model in `ARK_4IN1_ESC/model/`.
-- `BT-T076.stl` under the RTK GPS products' `antenna/` directories is the reference model of the helical GNSS antenna used with those modules.
 - `ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl` is a printable holder that sandwiches an STLink V3 Mini between the case and the ARK Pixhawk Debug Adapter. No PCBA model is available yet (see [MISSING.md](MISSING.md)).
 - Products with no published CAD (telemetry radios, etc.) are tracked in [MISSING.md](MISSING.md).

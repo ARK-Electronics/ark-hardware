@@ -6,7 +6,7 @@ ark-hardware	Antennas/maxtena/M7CHT-A-SMA.stl	Antennas/maxtena/M7CHT-A-SMA.stl
 ARK_12S_PAB_Power_Module	ARK_12S_PAB_Power_Module_Rev_3.0.step	ARK_12S_PAB_Power_Module/model/ARK_12S_PAB_Power_Module_Rev_3.0.step
 ARK_12S_PAYLOAD_POWER_MODULE	ARK_12S_Payload_Power_Module_Rev_1.0.step	ARK_12S_Payload_Power_Module/model/ARK_12S_Payload_Power_Module_Rev_1.0.step
 ARK_4IN1_ESC	ARK_4IN1_ESC/ARK_4_IN_1_ESC_Rev_3.1.step	ARK_4IN1_ESC/model/ARK_4_IN_1_ESC_Rev_3.1.step
-ARK_4IN1_ESC	ARK_4IN1_ESC_CONNECTORIZED/ARK_4_IN_1_ESC_CON_Rev_4_0.step	ARK_4IN1_ESC/model/ARK_4_IN_1_ESC_CON_Rev_4_0.step
+ARK_4IN1_ESC	ARK_4IN1_ESC_CONNECTORIZED/ARK_4_IN_1_ESC_CON_Rev_4_0.step	ARK_4IN1_ESC/model/ARK_4_IN_1_ESC_CON_Rev_4.1.step
 ARK_ADIS16507	ARK_ADIS16507_REV_1_3D_Model.step	ARK_ADIS16507/model/ARK_ADIS16507_REV_1_3D_Model.step
 ARK_ADIS16507	Bottom Case.stl	ARK_ADIS16507/case/Bottom_Case.stl
 ARK_ADIS16507	Top Case.stl	ARK_ADIS16507/case/Top_Case.stl

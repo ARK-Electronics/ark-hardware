@@ -90,4 +90,5 @@ Shared reference models live under `Antennas/<brand>/`. Products that ship with 
 
 - Product variants that share a PCB use the same model files: ARK RTK GPS L1 L5, ARK G5 RTK HEADING GPS, ARK DIST MR/SR, ARK SCH16T-K10, ARK Pi6X / Pi6X Flow, ARKV6X Extended Range, and ARK PAB Power Module No Connector are covered by their base product's directory, and the ARK 4IN1 ESC CONS model sits alongside the standard ESC model in `ARK_4IN1_ESC/model/`.
 - `ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl` is a printable holder that sandwiches an STLink V3 Mini between the case and the ARK Pixhawk Debug Adapter. No PCBA model is available yet (see [MISSING.md](MISSING.md)).
+- The ARK Flow case is available as Rev 2 (`ARK_Flow/case/*_Rev_2.step` + `.stl`), which opens the board slot from 1.5218 mm to 1.7000 mm so it clears real PCB thickness tolerance. Rev 1 STLs are kept until Rev 2 is validated on a test print. Both revisions are modelled in the same coordinate frame as `ARK_Flow/model/`, so the case and the PCBA open already assembled.
 - Products with no published CAD (telemetry radios, etc.) are tracked in [MISSING.md](MISSING.md).

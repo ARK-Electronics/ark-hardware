@@ -19,6 +19,10 @@ ARK_DIST	Case/ARK DIST Bottom Case.stl	ARK_DIST/case/ARK_DIST_Bottom_Case.stl
 ARK_DIST	Case/ARK DIST Top Case.stl	ARK_DIST/case/ARK_DIST_Top_Case.stl
 ARK_Flow	Case/Bottom Case Rev 1.stl	ARK_Flow/case/Bottom_Case_Rev_1.stl
 ARK_Flow	Case/Top Case Rev 1.stl	ARK_Flow/case/Top_Case_Rev_1.stl
+ark-hardware	ARK_Flow/case/Bottom_Case_Rev_2.step	ARK_Flow/case/Bottom_Case_Rev_2.step
+ark-hardware	ARK_Flow/case/Bottom_Case_Rev_2.stl	ARK_Flow/case/Bottom_Case_Rev_2.stl
+ark-hardware	ARK_Flow/case/Top_Case_Rev_2.step	ARK_Flow/case/Top_Case_Rev_2.step
+ark-hardware	ARK_Flow/case/Top_Case_Rev_2.stl	ARK_Flow/case/Top_Case_Rev_2.stl
 ARK_Flow	Hardware/Rev 2/ARK Flow Rev 2 3D Model.step	ARK_Flow/model/ARK_Flow_Rev_2_3D_Model.step
 ARK_Flow	Hardware/Rev 2/ARK Flow Rev 2 3D Model With FOV.step	ARK_Flow/model/ARK_Flow_Rev_2_3D_Model_With_FOV.step
 ARK_Flow_MR	ARK Flow MR Rev 1.0.step	ARK_Flow_MR/model/ARK_Flow_MR_Rev_1.0.step

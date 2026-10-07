@@ -12,7 +12,7 @@ Products sold on [arkelectron.com](https://arkelectron.com/shop/) that have no S
 | LiPow The USB C Lipo Battery Charger | [store](https://arkelectron.com/product/lipow-the-usb-c-lipo-battery-charger/) | Hardware lives in a personal repo ([AlexKlimaj/LiPow-Hardware](https://github.com/AlexKlimaj/LiPow-Hardware), schematic/BOM only); the case CAD is on [Onshape](https://cad.onshape.com/documents/ed31be3eeac76455b0277835/w/c7a7c12a1270b22173eee4b2/e/8ebc8b884a3338f02ab4af95). No STEP/STL in the ARK-Electronics org. |
 | BQ25703A Programmable Regulator Module | [store](https://arkelectron.com/product/bq25703a-programmable-regulator-module/) | Hardware docs live in a personal repo ([AlexKlimaj/BQ25703A_Module](https://github.com/AlexKlimaj/BQ25703A_Module)); no 3D model published. |
 
-Bundles (ARKV6X bundles, Jetson PAB / PAB V3 Orin bundles, Just A Jetson bundles) are not listed — they are combinations of products already in this repository. A combined carrier-stack assembly (`ARK_PAB_Jetson_Carrier_Bundle.step`) exists in [ark_jetson_hardware](https://github.com/ARK-Electronics/ark_jetson_hardware) if that is ever wanted here.
+Bundles (ARKV6X bundles, Jetson PAB / PAB V3 Orin bundles, Just A Jetson bundles) are not listed — they are combinations of products already in this repository. The Jetson PAB carrier stack assembly is at [ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Bundle.step](ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Bundle.step).
 
 ## Known gaps in included products
 

@@ -51,7 +51,7 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 | [ARK_GPS](ARK_GPS) | [ARK GPS](https://arkelectron.com/product/ark-gps/) | [docs](https://docs.arkelectron.com/products/gps/ark-gps) |
 | [ARK_RTK_GPS](ARK_RTK_GPS) | [ARK RTK GPS](https://arkelectron.com/product/ark-rtk-gps/), [L1 L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/) | [docs](https://docs.arkelectron.com/products/gps/ark-rtk-gps) |
 | [ARK_RTK_Base](ARK_RTK_Base) | [ARK RTK Base](https://arkelectron.com/product/ark-rtk-base/) | [docs](https://docs.arkelectron.com/products/gps/ark-rtk-base) |
-| [ARK_G5_RTK_GPS](ARK_G5_RTK_GPS) | [ARK G5 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/), [HEADING](https://arkelectron.com/product/ark-g5-rtk-heading-gps/) | [docs](https://docs.arkelectron.com/products/gps/ark-g5-rtk-gps) |
+| [ARK_G5_RTK_GPS](ARK_G5_RTK_GPS) | [ARK G5 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/), [P6](https://arkelectron.com/product/ark-g5-p6-rtk-gps/), [P8](https://arkelectron.com/product/ark-g5-p8-rtk-gps/), [HEADING](https://arkelectron.com/product/ark-g5-rtk-heading-gps/) | [docs](https://docs.arkelectron.com/products/gps/ark-g5-rtk-gps), [HEADING docs](https://docs.arkelectron.com/products/gps/ark-g5-rtk-heading-gps) |
 | [ARK_MOSAIC-X5_RTK_GPS](ARK_MOSAIC-X5_RTK_GPS) | [ARK MOSAIC-X5 RTK GPS](https://arkelectron.com/product/ark-mosaic-x5-gps/) | [docs](https://docs.arkelectron.com/products/gps/ark-mosaic-x5-rtk-gps) |
 | [ARK_X20_RTK_GPS](ARK_X20_RTK_GPS) | [ARK X20 RTK GPS](https://arkelectron.com/product/ark-x20-rtk-gps/) | [docs](https://docs.arkelectron.com/products/gps/ark-x20-rtk-gps) |
 | [ARK_SAM_GPS](ARK_SAM_GPS) | [ARK SAM GPS](https://arkelectron.com/product/ark-sam-gps/) | [docs](https://docs.arkelectron.com/products/gps/ark-sam-gps) |
@@ -95,6 +95,6 @@ Shared reference models live under `Antennas/<brand>/`. Products that ship with 
 
 ## Notes
 
-- Product variants that share a PCB use the same model files: ARK RTK GPS L1 L5, ARK G5 RTK HEADING GPS, ARK DIST MR/SR, ARK SCH16T-K10, ARK Pi6X / Pi6X Flow, ARKV6X Extended Range, and ARK PAB Power Module No Connector are covered by their base product's directory, and the ARK 4IN1 ESC CONS model sits alongside the standard ESC model in `ARK_4IN1_ESC/model/`.
+- Product variants that share a PCB use the same model files: ARK RTK GPS L1 L5, ARK G5 P6 / P8 RTK GPS, ARK G5 RTK HEADING GPS, ARK DIST MR/SR, ARK SCH16T-K10, ARK Pi6X / Pi6X Flow, ARKV6X Extended Range, and ARK PAB Power Module No Connector are covered by their base product's directory, and the ARK 4IN1 ESC CONS model sits alongside the standard ESC model in `ARK_4IN1_ESC/model/`.
 - `ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl` is a printable holder that sandwiches an STLink V3 Mini between the case and the ARK Pixhawk Debug Adapter. No PCBA model is available yet (see [MISSING.md](MISSING.md)).
 - Products with no published CAD (telemetry radios, etc.) are tracked in [MISSING.md](MISSING.md).

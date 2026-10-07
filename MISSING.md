@@ -11,8 +11,9 @@ Products sold on [arkelectron.com](https://arkelectron.com/shop/) that have no S
 | L1/L5 GNSS Antenna | [store](https://arkelectron.com/product/l1-l5-gnss-antenna/) | No official CAD or documentation published for this product. Of the reference STLs under [Antennas/](Antennas/), only the Beitian BT-T076 covers L5 (full multi-band including GPS L1/L2/L5); BT-560 and Maxtena M7HCT-A-SMA are L1/L2-class. ARK's pages don't confirm which (if any) is this exact SKU. |
 | LiPow The USB C Lipo Battery Charger | [store](https://arkelectron.com/product/lipow-the-usb-c-lipo-battery-charger/) | Hardware lives in a personal repo ([AlexKlimaj/LiPow-Hardware](https://github.com/AlexKlimaj/LiPow-Hardware), schematic/BOM only); the case CAD is on [Onshape](https://cad.onshape.com/documents/ed31be3eeac76455b0277835/w/c7a7c12a1270b22173eee4b2/e/8ebc8b884a3338f02ab4af95). No STEP/STL in the ARK-Electronics org. |
 | BQ25703A Programmable Regulator Module | [store](https://arkelectron.com/product/bq25703a-programmable-regulator-module/) | Hardware docs live in a personal repo ([AlexKlimaj/BQ25703A_Module](https://github.com/AlexKlimaj/BQ25703A_Module)); no 3D model published. |
+| ARKV6X-RT Flight Controller | [store](https://arkelectron.com/product/arkv6xrt/) | No published CAD. Listed on the store but not yet purchasable. |
 
-Bundles (ARKV6X bundles, Jetson PAB / PAB V3 Orin bundles, Just A Jetson bundles) are not listed — they are combinations of products already in this repository. The Jetson PAB carrier stack assembly is at [ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Bundle.step](ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Bundle.step).
+Bundles (ARKV6X bundles, Jetson PAB / PAB V3 Orin and Modalix bundles, Just A Jetson bundles) are not listed — they are combinations of products already in this repository. The Jetson PAB carrier stack assembly is at [ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Bundle.step](ARK_Jetson_PAB_Carrier/model/ARK_PAB_Jetson_Carrier_Bundle.step).
 
 ## Known gaps in included products
 

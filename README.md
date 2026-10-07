@@ -80,8 +80,8 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 | [Ethernet_Adapter](Ethernet_Adapter) | [Ethernet Adapter](https://arkelectron.com/product/ethernet-adapter/) | — |
 | [Gigabit_Ethernet_Adapter](Gigabit_Ethernet_Adapter) | [Gigabit Ethernet Adapter](https://arkelectron.com/product/gigabit-ethernet-adapter/) | — |
 | [USB3_Divorcer](USB3_Divorcer) | [USB3 Divorcer](https://arkelectron.com/product/usb3-divorcer/) | — |
-| [ARK_RIG5](ARK_RIG5) | — | — |
-| [ARK_RIG7](ARK_RIG7) | — | — |
+| [ARK_RIG5](ARK_RIG5) | — | [docs](https://docs.arkelectron.com/products/airframes/ark-rig5) |
+| [ARK_RIG7](ARK_RIG7) | — | [docs](https://docs.arkelectron.com/products/airframes/ark-rig7) |
 
 ## Antennas
 

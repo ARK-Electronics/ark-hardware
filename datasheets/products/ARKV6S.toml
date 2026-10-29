@@ -5,7 +5,7 @@ rev = "1.0"
 kicker = "FLIGHT CONTROLLER"
 subtitle = "Single-IMU FMUv6X autopilot module on the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARKV6S"
-sources = "Compiled from the ARKV6S Production schematic Rev 1.0 (29 Jan 2026), the ARKV6S Production bill of materials, the ARKV6S production STEP model, and ARK Electronics published documentation."
+sources = "Compiled from the ARKV6S Production schematic Rev 1.0 (29 Jan 2026), the ARKV6S Production bill of materials, the ARKV6S production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets; the RTC backup supercapacitor sets both limits."
 photo = "arkv6s.jpg"
 photo_frame = true
 intro = [
@@ -15,7 +15,7 @@ intro = [
 features = [
   "Single industrial IMU with independent power domain",
   "– 1 × TDK InvenSense IIM-42653 (SPI1)",
-  "Bosch BMP390 barometer and ST IIS2MDC magnetometer on internal I2C",
+  "Bosch BMP390 barometer and ST IIS2MDC magnetometer on internal I2C4",
   "Cypress FM25V02A 256 kbit FRAM for non-volatile parameter storage",
   "1 W resistive sensor heater under closed-loop MCU control",
   "Supercapacitor-backed real-time clock",
@@ -31,7 +31,7 @@ glance = [
   ["Interface", "100 + 50 pin PAB"],
   ["Dimensions", "36 × 29 × 5 mm"],
   ["Weight", "5.0 g"],
-  ["Operating temp", "−40 to +85 °C"],
+  ["Operating temp", "−10 to +60 °C"],
   ["Hardware rev", "Rev 1.0"],
 ]
 compliance = [
@@ -63,7 +63,7 @@ rows = [
   ["Supply current", "500 mA max"],
   ["— main system", "300 mA"],
   ["— sensor heater", "200 mA"],
-  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Operating temperature", "−10 °C to +60 °C"],
 ]
 
 [[specs]]
@@ -89,8 +89,8 @@ title = "SENSOR BUS MAP"
 head = ["DEVICE", "INTERFACE", "ADDRESS / SELECT", "FUNCTION"]
 rows = [
   ["IIM-42653 (U9)", "SPI1", "nCS1", "Industrial 6-axis accel / gyro"],
-  ["BMP390 (U11)", "I2C", "0x76", "Barometric pressure"],
-  ["IIS2MDC (U5)", "I2C", "0x1E", "3-axis magnetometer"],
+  ["BMP390 (U11)", "I2C4", "0x76", "Barometric pressure"],
+  ["IIS2MDC (U5)", "I2C4", "0x1E", "3-axis magnetometer"],
 ]
 
 [[sections]]

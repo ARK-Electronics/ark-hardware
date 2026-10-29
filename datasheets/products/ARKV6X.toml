@@ -1,11 +1,11 @@
 title = "ARKV6X"
 version = "1.0"
 date = "2026-10-29"
-rev = "4.1"
+rev = "4.1 / 5.1"
 kicker = "FLIGHT CONTROLLER"
 subtitle = "Triple-IMU FMUv6X autopilot module on the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARKV6X"
-sources = "Compiled from the ARKV6X Production schematic Rev 4.1 (13 Dec 2023), the ARKV6X Production bill of materials, the ARKV6X production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets; the RTC backup supercapacitor sets both limits."
+sources = "Compiled from the ARKV6X Production schematics Rev 4.1 (13 Dec 2023) and Rev 5.1 Extended Range (19 Jul 2024), the ARKV6X Production bill of materials, the ARKV6X production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets; the RTC backup supercapacitor sets both limits."
 photo = "arkv6x.jpg"
 photo_frame = true
 intro = [
@@ -14,8 +14,8 @@ intro = [
 ]
 features = [
   "Three synchronised IMUs, each independently powered",
-  "– 2 × TDK InvenSense ICM-42688-P (SPI2, SPI3)",
-  "– 1 × TDK InvenSense IIM-42652 industrial IMU (SPI1)",
+  "– Standard: 2 × TDK InvenSense ICM-42688-P (SPI2, SPI3) and 1 × IIM-42652 industrial IMU (SPI1)",
+  "– Extended Range: 3 × TDK InvenSense IIM-42653 industrial IMU (SPI1–3), ±32 g and ±4000 °/s",
   "Bosch BMP390 barometer and BMM150 magnetometer on internal I2C4",
   "Four independently switched 3.3 V sensor rails — one per sensor domain",
   "Cypress FM25V02A 256 kbit FRAM for non-volatile parameter storage",
@@ -26,14 +26,14 @@ features = [
 glance = [
   ["Standard", "FMUv6X / PAB"],
   ["MCU", "STM32H743IIK6"],
-  ["IMUs", "3 (2 + 1 industrial)"],
+  ["IMUs", "3, synchronised"],
   ["Baro / Mag", "BMP390 / BMM150"],
   ["Supply", "4.5–5.5 V, 500 mA"],
   ["Operating temp", "−10 to +60 °C"],
   ["Interface", "100 + 50 pin PAB"],
   ["Dimensions", "36 × 29 × 5 mm"],
   ["Weight", "5.0 g"],
-  ["Hardware rev", "Rev 4.1"],
+  ["Hardware rev", "Rev 4.1 / 5.1"],
 ]
 compliance = [
   "Designed and manufactured in the USA",
@@ -44,6 +44,7 @@ compliance = [
 ]
 resources = [
   ["STORE", "arkelectron.com/product/arkv6x/"],
+  ["", "arkelectron.com/product/arkv6x-iim-42653/"],
   ["DOCS", "docs.arkelectron.com/products/flight-controller/arkv6x"],
   ["CAD", "github.com/ARK-Electronics/ark-hardware"],
   ["BUNDLE", "ARKV6X Bundle — with ARK PAB Carrier"],
@@ -77,6 +78,20 @@ rows = [
 ]
 
 [[sections]]
+kind = "compare"
+title = "VARIANTS"
+cols = ["ARKV6X", "ARKV6X EXTENDED RANGE"]
+rows = [
+  ["IMU on SPI1", "TDK InvenSense IIM-42652", "TDK InvenSense IIM-42653"],
+  ["IMUs on SPI2, SPI3", "TDK InvenSense ICM-42688-P", "TDK InvenSense IIM-42653"],
+  ["Accel full scale", "±16 g", "±32 g"],
+  ["Gyro full scale", "±2000 °/s", "±4000 °/s"],
+  ["Hardware revision ID", "ARKV6X000", "ARKV6X001"],
+  ["Schematic", "Rev 4.1", "Rev 5.1"],
+]
+note = "Same board, connectors and pinout."
+
+[[sections]]
 kind = "table"
 title = "PIXHAWK AUTOPILOT BUS INTERFACE"
 head = ["PAB CONNECTOR", "HIROSE PART", "SIGNALS CARRIED"]
@@ -90,12 +105,13 @@ kind = "table"
 title = "SENSOR BUS MAP"
 head = ["DEVICE", "INTERFACE", "ADDRESS / SELECT", "FUNCTION"]
 rows = [
-  ["ICM-42688-P (U12)", "SPI2", "nCS1", "6-axis accelerometer / gyroscope"],
-  ["ICM-42688-P (U13)", "SPI3", "nCS1", "6-axis accelerometer / gyroscope"],
-  ["IIM-42652 (U9)", "SPI1", "nCS1", "Industrial 6-axis accel / gyro"],
+  ["IIM-42652 or IIM-42653 (U9)", "SPI1", "nCS1", "Industrial 6-axis accel / gyro"],
+  ["ICM-42688-P or IIM-42653 (U12)", "SPI2", "nCS1", "6-axis accelerometer / gyroscope"],
+  ["ICM-42688-P or IIM-42653 (U13)", "SPI3", "nCS1", "6-axis accelerometer / gyroscope"],
   ["BMP390 (U11)", "I2C4", "0x76", "Barometric pressure"],
   ["BMM150 (U10)", "I2C4", "0x10", "3-axis magnetometer"],
 ]
+note = "Where two IMUs are named, the first is on the ARKV6X and the second on the Extended Range."
 
 [[sections]]
 kind = "table"
@@ -113,7 +129,6 @@ kind = "table"
 title = "ALTERNATIVES IN THE ARK AUTOPILOT LINE"
 head = ["AUTOPILOT", "INERTIAL SENSING", "POWER INPUT", "WHEN TO CHOOSE IT"]
 rows = [
-  ["ARKV6X Extended Range", "3 IMUs, voting", "5 V via carrier", "Higher angular-rate range (IIM-42653)"],
   ["ARKV6S", "1 industrial IMU", "5 V via carrier", "Cost-optimised, no IMU redundancy"],
   ["ARK FPV", "1 industrial IMU", "3–12S direct", "Standalone 30.5 mm build, 12 V payload rail"],
 ]

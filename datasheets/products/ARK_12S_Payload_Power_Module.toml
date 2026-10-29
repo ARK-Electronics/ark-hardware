@@ -1,11 +1,11 @@
 title = "ARK 12S Payload Power Module"
 version = "1.0"
 date = "2026-10-29"
-rev = "1.1"
+rev = "1.2"
 kicker = "POWER MODULE"
 subtitle = "Dual 5.2 V / 6 A + 12 V / 6 A regulated supply and digital power monitor for the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARK-12S-Payload-Power-Module"
-sources = "Compiled from the ARK 12S Payload Power Module Production schematic Rev 1.1 (24 Apr 2026), the Production bill of materials, the manufacturing documentation, and ARK Electronics published documentation."
+sources = "Compiled from the ARK 12S Payload Power Module Production schematic Rev 1.2 (25 Aug 2026), the Production bill of materials, the manufacturing documentation, and ARK Electronics published documentation."
 photo = "ark_12s_payload_power_module.jpg"
 photo_frame = true
 intro = [
@@ -29,7 +29,7 @@ glance = [
   ["Monitor", "INA238 0.1 mΩ"],
   ["Dimensions", "37 × 35 × 13 mm"],
   ["Weight", "20.5 g"],
-  ["Hardware rev", "Rev 1.1"],
+  ["Hardware rev", "Rev 1.2"],
 ]
 compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
 resources = [

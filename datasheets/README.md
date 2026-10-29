@@ -30,7 +30,7 @@ No KEY builds every product. `--out DIR --flat` writes review copies to DIR inst
 - **Sizes:** intro 2–3 sentences. Key features: 8 one-line bullets at most. Specifications: about 12–16 rows in 2–3 groups. At a glance: 10 rows at most.
 - **Variants:** SKUs that share a board share a datasheet. A `compare` section lists what differs between them.
 - **Temperature:** give operating and storage ranges. If they come from component data sheets rather than a test, say so in `sources`.
-- **Compliance:** only claims we can back: made in the USA, NDAA compliant, Blue UAS Framework listed (when listed). No FCC claim.
+- **Compliance:** only claims we can back: made in the USA, NDAA compliant, Blue UAS Framework listed (when listed), and open standards the product implements (e.g. Pixhawk Autopilot Bus). No FCC claim.
 - **Unmeasured values:** start them with `TBD`; they render marked.
 - **Notation:**
   - Units take a space: `5 V`, `±32 g`, `7.5 g`.

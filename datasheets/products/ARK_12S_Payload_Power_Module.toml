@@ -5,7 +5,7 @@ rev = "1.1"
 kicker = "POWER MODULE"
 subtitle = "Dual 5.2 V / 6 A + 12 V / 6 A regulated supply and digital power monitor for the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARK-12S-Payload-Power-Module"
-sources = "Compiled from the ARK 12S Payload Power Module Production schematic Rev 1.1 (24 Apr 2026), the Production bill of materials, the manufacturing documentation, and ARK Electronics published documentation. ARK Electronics products are designed and manufactured in the USA."
+sources = "Compiled from the ARK 12S Payload Power Module Production schematic Rev 1.1 (24 Apr 2026), the Production bill of materials, the manufacturing documentation, and ARK Electronics published documentation."
 photo = "ark_12s_payload_power_module.jpg"
 photo_frame = true
 intro = [
@@ -16,13 +16,13 @@ features = [
   "100 A continuous battery current path (parallel for higher)",
   "Dual TI LM70880 bucks — 5.2 V / 6 A + 12 V / 6 A",
   "TI INA238 digital power monitor with 0.1 mΩ shunt (I²C)",
-  "10 V – 75 V input (15 V min for 12 V rail at full load)",
+  "10–75 V input (15 V min for 12 V rail at full load)",
   "6-pin Molex (5 V / I²C) matching PAB pinout",
   "4-pin Molex for 12 V payload",
   "Includes both Molex cables",
 ]
 glance = [
-  ["Input", "10 – 75 V"],
+  ["Input", "10–75 V"],
   ["Battery current", "100 A cont."],
   ["5.2 V rail", "6 A"],
   ["12 V rail", "6 A"],
@@ -41,7 +41,7 @@ resources = [
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Input voltage", "10 V – 75 V (15 V min @ 12 V / 6 A)"],
+  ["Input voltage", "10–75 V (15 V min @ 12 V / 6 A)"],
   ["Battery current", "100 A continuous (20 °C ambient)"],
   ["5.2 V output", "6 A continuous"],
   ["12 V output", "6 A continuous"],

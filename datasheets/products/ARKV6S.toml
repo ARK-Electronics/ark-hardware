@@ -37,7 +37,6 @@ glance = [
 compliance = [
   "Designed and manufactured in the USA",
   "NDAA compliant",
-  "FCC compliant",
   "FMUv6X open standard",
   "Pixhawk Autopilot Bus DS-010 standard",
 ]

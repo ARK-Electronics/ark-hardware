@@ -5,7 +5,7 @@ rev = "4.1"
 kicker = "FLIGHT CONTROLLER"
 subtitle = "Triple-IMU FMUv6X autopilot module on the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARKV6X"
-sources = "Compiled from the ARKV6X Production schematic Rev 4.1 (13 Dec 2023), the ARKV6X Production bill of materials, the ARKV6X production STEP model, and ARK Electronics published documentation."
+sources = "Compiled from the ARKV6X Production schematic Rev 4.1 (13 Dec 2023), the ARKV6X Production bill of materials, the ARKV6X production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets; the RTC backup supercapacitor sets both limits."
 photo = "arkv6x.jpg"
 photo_frame = true
 intro = [
@@ -28,8 +28,8 @@ glance = [
   ["MCU", "STM32H743IIK6"],
   ["IMUs", "3 (2 + 1 industrial)"],
   ["Baro / Mag", "BMP390 / BMM150"],
-  ["Supply", "4.5 – 5.5 V, 500 mA"],
-  ["Operating temp", "-40 to +85 °C"],
+  ["Supply", "4.5–5.5 V, 500 mA"],
+  ["Operating temp", "−10 to +60 °C"],
   ["Interface", "100 + 50 pin PAB"],
   ["Dimensions", "36 × 29 × 5 mm"],
   ["Weight", "5.0 g"],
@@ -38,7 +38,7 @@ glance = [
 compliance = [
   "Designed and manufactured in the USA",
   "NDAA compliant",
-  "Blue UAS Framework selected",
+  "Blue UAS Framework listed",
   "FMUv6X open standard",
   "Pixhawk Autopilot Bus DS-010 standard",
 ]
@@ -61,11 +61,11 @@ rows = [
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Supply voltage", "4.5 – 5.5 V (5 V nominal)"],
+  ["Supply voltage", "4.5–5.5 V (5 V nominal)"],
   ["Supply current", "500 mA max at 5 V"],
   ["— main system", "300 mA"],
   ["— sensor heater", "200 mA at 5 V (25 Ω, PWM)"],
-  ["Operating temperature", "-40 °C to +85 °C"],
+  ["Operating temperature", "−10 °C to +60 °C"],
 ]
 
 [[specs]]

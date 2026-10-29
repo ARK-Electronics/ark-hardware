@@ -5,7 +5,7 @@ rev = "4.2"
 kicker = "ELECTRONIC SPEED CONTROLLER"
 subtitle = "Connectorized NDAA-compliant 4-in-1 ESC running ARK32 firmware"
 doc_id = "ARK-DS-ARK-4IN1-ESC-CONS"
-sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Board current ratings are thermal limits; connector ratings are additional limits of the MR30 connectors."
+sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Board current ratings are thermal limits; connector ratings are additional limits of the MR30 connectors. Temperature ratings per component data sheets; the MR30 connectors set −20 °C."
 out = "ARK_4IN1_ESC/datasheet/ARK_4IN1_ESC_CONS_Datasheet.pdf"
 photo = "ark_4in1_esc_cons.jpg"
 photo_frame = true
@@ -32,24 +32,24 @@ glance = [
   ["Weight", "24.0 g"],
   ["Hardware rev", "Rev 4.2"],
 ]
-compliance = ["Designed and manufactured in the USA", "NDAA compliant", "DIU Blue Framework listed"]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant", "Blue UAS Framework listed"]
 resources = [
   ["STORE", "arkelectron.com/product/ark-4in1-esc-cons/"],
-  ["DOCS", "docs.arkelectron.com/.../ark-4in1-esc"],
+  ["DOCS", "docs.arkelectron.com/products/electronic-speed-controller/ark-4in1-esc"],
   ["CAD", "github.com/ARK-Electronics/ark-hardware"],
 ]
 
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Input voltage", "6 V – 65 V (3–8S)"],
+  ["Input voltage", "6–65 V (3–8S)"],
   ["Board continuous", "50 A per motor"],
   ["Board burst", "75 A per motor"],
   ["Connector continuous", "30 A per motor (MR30)"],
   ["Connector burst", "40 A per motor"],
   ["Current sense", "100 A/V"],
   ["Firmware", "ARK32 (supports AM32)"],
-  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Operating temperature", "−20 °C to +85 °C"],
 ]
 
 [[specs]]

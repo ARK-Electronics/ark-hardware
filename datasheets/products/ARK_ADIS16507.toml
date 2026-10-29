@@ -5,7 +5,7 @@ rev = "1"
 kicker = "PRECISION IMU CARRIER"
 subtitle = "Precision 6-DoF MEMS IMU carrier based on the ADIS16507-3"
 doc_id = "ARK-DS-ARK-ADIS16507"
-sources = "Compiled from the ARK ADIS16507 Carrier Production schematic Rev 1, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. IMU dynamic ranges per ADIS16507-3BMLZ; IMU environmental ratings per the Analog Devices ADIS16507 data sheet Rev. A."
+sources = "Compiled from the ARK ADIS16507 Carrier Production schematic Rev 1, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. IMU dynamic ranges per ADIS16507-3BMLZ; IMU environmental ratings per the Analog Devices ADIS16507 data sheet Rev. A. Board temperature rating per component data sheets; the JST-GH connector sets −25 °C."
 photo = "ark_adis16507.jpg"
 intro = [
   "The USA-built ARK ADIS16507 is a compact carrier for the Analog Devices ADIS16507-3 precision MEMS IMU. It provides a factory-calibrated triaxial gyroscope (±2000 °/s) and triaxial accelerometer (±40 g) over SPI, with onboard 3.3 V regulation from a 5 V supply.",
@@ -49,7 +49,7 @@ rows = [
 [[specs]]
 group = "ENVIRONMENTAL"
 rows = [
-  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Operating temperature", "−25 °C to +85 °C"],
   ["IMU operating temperature", "−40 °C to +105 °C"],
   ["IMU storage temperature", "−65 °C to +150 °C"],
   ["IMU mechanical shock", "2000 g, 0.5 ms ½ sine, any axis, unpowered"],

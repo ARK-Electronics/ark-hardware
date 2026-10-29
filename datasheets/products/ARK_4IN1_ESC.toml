@@ -5,7 +5,7 @@ rev = "4.2"
 kicker = "ELECTRONIC SPEED CONTROLLER"
 subtitle = "NDAA-compliant 4-in-1 ESC running ARK32 firmware"
 doc_id = "ARK-DS-ARK-4IN1-ESC"
-sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Current ratings are board thermal limits."
+sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Current ratings are board thermal limits. Temperature ratings per component data sheets; the JST-SH connectors set −25 °C."
 photo = "ark_4in1_esc.jpg"
 photo_frame = true
 intro = [
@@ -31,22 +31,22 @@ glance = [
   ["Weight", "14.5 g"],
   ["Hardware rev", "Rev 4.2"],
 ]
-compliance = ["Designed and manufactured in the USA", "NDAA compliant", "DIU Blue Framework listed"]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant", "Blue UAS Framework listed"]
 resources = [
   ["STORE", "arkelectron.com/product/ark-4in1-esc/"],
-  ["DOCS", "docs.arkelectron.com/.../ark-4in1-esc"],
+  ["DOCS", "docs.arkelectron.com/products/electronic-speed-controller/ark-4in1-esc"],
   ["CAD", "github.com/ARK-Electronics/ark-hardware"],
 ]
 
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Input voltage", "6 V – 65 V (3–8S)"],
+  ["Input voltage", "6–65 V (3–8S)"],
   ["Continuous current", "50 A per motor"],
   ["Burst current", "75 A per motor"],
   ["Current sense", "100 A/V"],
   ["Firmware", "ARK32 (supports AM32)"],
-  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Operating temperature", "−25 °C to +85 °C"],
 ]
 
 [[specs]]

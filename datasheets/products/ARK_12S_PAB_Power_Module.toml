@@ -5,7 +5,7 @@ rev = "3.1"
 kicker = "POWER MODULE"
 subtitle = "5.2 V / 6 A regulated supply and digital power monitor for the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARK-12S-PAB-Power-Module"
-sources = "Compiled from the ARK 12S PAB Power Module Production schematic Rev 3.1 (24 Apr 2026), the Production bill of materials, the production STEP model, and ARK Electronics published documentation. ARK Electronics products are designed and manufactured in the USA."
+sources = "Compiled from the ARK 12S PAB Power Module Production schematic Rev 3.1 (24 Apr 2026), the Production bill of materials, the production STEP model, and ARK Electronics published documentation."
 photo = "ark_12s_pab_power_module.jpg"
 photo_frame = true
 intro = [
@@ -16,13 +16,13 @@ features = [
   "100 A continuous battery current path (parallel for higher)",
   "TI LM70880 synchronous buck — 5.2 V / 6 A regulated output",
   "TI INA238 digital power monitor with 0.1 mΩ shunt (I²C)",
-  "10 V – 75 V input range (12S capable)",
+  "10–75 V input range (12S capable)",
   "6-pin Molex CLIK-Mate output matching PAB pinout",
   "Solder-pad battery input and output",
   "Includes 6-pin Molex cable",
 ]
 glance = [
-  ["Input", "10 – 75 V"],
+  ["Input", "10–75 V"],
   ["Battery current", "100 A cont."],
   ["Output", "5.2 V / 6 A"],
   ["Monitor", "INA238 0.1 mΩ"],
@@ -41,7 +41,7 @@ resources = [
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Input voltage", "10 V – 75 V"],
+  ["Input voltage", "10–75 V"],
   ["Battery current", "100 A continuous (20 °C ambient)"],
   ["Regulated output", "5.2 V @ 6 A continuous"],
   ["Power monitor", "INA238, 0.1 mΩ shunt, I²C (default 0x45)"],

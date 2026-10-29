@@ -8,12 +8,14 @@
 Antennas/
 └── <brand>/        # shared reference antenna STLs (beitian, maxtena, …)
 
+datasheets/         # datasheet generator, its data and the datasheet standard
+
 <Product>/
 ├── model/          # STEP model and 3D PDF of the PCBA
 ├── case/           # STEP/STL files of the case (if the product has one)
 ├── schematic/      # schematic PDFs (where published)
 ├── bom/            # bill of materials (where published)
-├── datasheet/      # datasheet PDF (where published)
+├── datasheet/      # datasheet PDF (where published), built from datasheets/
 ├── antenna/        # symlinks into Antennas/ for antennas used by this product
 ├── printed_parts/  # printable parts (ARK RIG5 / RIG7 only)
 └── LICENSE         # license carried over from the product's former repo, if it had one

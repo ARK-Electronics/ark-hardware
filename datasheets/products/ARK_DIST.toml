@@ -1,0 +1,150 @@
+title = "ARK DIST"
+version = "1.0"
+date = "2026-10-29"
+rev = "1.0"
+kicker = "TIME-OF-FLIGHT DISTANCE SENSOR"
+subtitle = "DroneCAN and MAVLink laser distance sensor in short-, mid- and long-range variants"
+doc_id = "ARK-DS-ARK-DIST"
+sources = "Compiled from ARK Electronics published documentation and ARK flight measurements. Laser and optical characteristics per Broadcom."
+out = "ARK_DIST/datasheet/ARK_DIST_Datasheet.pdf"
+photo = "ark_dist.jpg"
+intro = [
+  "The USA-built ARK DIST pairs a Broadcom AFBR-S50 time-of-flight sensor with an STM32F412VG. The SR, MR and LR variants share one board and case and differ only in the sensor module.",
+]
+features = [
+  "Broadcom AFBR-S50 time-of-flight sensor, 850 nm Class 1 laser",
+  "Max reported distance: SR 30 m, MR 50 m, LR 100 m",
+  "DroneCAN and MAVLink\u00a02 output",
+  "2× CAN and UART on Pixhawk-standard JST-GH, debug on JST-SH",
+  "PX4 and ArduPilot; ROS 2 via ros2_dronecan",
+]
+glance = [
+  ["Sensor", "Broadcom AFBR-S50"],
+  ["Variants", "SR / MR / LR"],
+  ["Max reported distance", "30 / 50 / 100 m"],
+  ["Update rate", "20 / 15 / 10 Hz"],
+  ["Supply", "5 V"],
+  ["Dimensions", "20 × 28 × 14 mm"],
+  ["Weight", "4 g"],
+  ["Hardware rev", "Rev 1.0"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant", "IEC 60825-1 Class 1 laser product"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-dist-sr/"],
+  ["", "arkelectron.com/product/ark-dist-mr/"],
+  ["", "arkelectron.com/product/ark-dist-lr/"],
+  ["DOCS", "docs.arkelectron.com/products/sensor/ark-dist"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "SENSOR"
+rows = [
+  ["Time-of-flight module", "Broadcom AFBR-S50, see Variants"],
+  ["Laser", "850 nm, IEC 60825-1 Class 1 (eye-safe)"],
+  ["Transmitter beam", "2° × 2°, 3.5 cm spot at 1 m"],
+  ["Receiver (SR, MR)", "32 pixels, 12.4° × 6.2° field of view"],
+]
+
+[[specs]]
+group = "INTERFACES"
+rows = [
+  ["CAN", "2× 4-pin JST-GH, DroneCAN"],
+  ["UART", "6-pin JST-GH with RTS/CTS, MAVLink\u00a02"],
+  ["Debug", "6-pin JST-SH, SWD and console"],
+]
+
+[[specs]]
+group = "PROCESSOR"
+rows = [
+  ["MCU", "STM32F412VG"],
+]
+
+[[specs]]
+group = "ELECTRICAL & MECHANICAL"
+rows = [
+  ["Supply voltage", "5 V"],
+  ["Supply current", "78–86 mA"],
+  ["Dimensions", "20 × 28 × 14 mm"],
+  ["Weight", "4 g"],
+]
+
+[[sections]]
+kind = "compare"
+title = "VARIANTS"
+cols = ["ARK DIST SR", "ARK DIST MR", "ARK DIST LR"]
+rows = [
+  ["Time-of-flight module", "AFBR-S50LV85D", "AFBR-S50LX85D", "AFBR-S50EX85D"],
+  ["Update rate", "20 Hz", "15 Hz", "10 Hz"],
+  ["Max reported distance", "30 m", "50 m", "100 m"],
+  ["Min reported distance", "0 m", "0.1 m", "0.6 m"],
+]
+
+[[sections]]
+kind = "range"
+title = "RANGE"
+corner = "SURFACE"
+cols = ["BRIGHT SUN", "DUSK"]
+rows = ["Asphalt", "Grass"]
+note = "Reliable range: the farthest distance with ≥50 % of readings valid and within 5 m of the reference, at default settings. Bright sun: sun 49–61° above the horizon; a lower sun gives more range. Dusk: sun below 6°. * Limited by the maximum reported distance; the sensor was still measuring at the flight ceiling (SR 38 m, MR 54 m). Wet surfaces reduce range; open water (~2 % reflectivity) gives only short, intermittent returns."
+
+[[sections.blocks]]
+name = "ARK DIST SR"
+grid = [
+  ["18 m", "30 m"],
+  ["18 m", "30 m*"],
+]
+
+[[sections.blocks]]
+name = "ARK DIST MR"
+grid = [
+  ["18 m", "40 m"],
+  ["18 m", "50 m*"],
+]
+
+[[sections.blocks]]
+name = "ARK DIST LR"
+grid = [
+  ["18 m", "40 m"],
+  ["40 m", "82 m"],
+]
+
+[[sections]]
+kind = "pinouts"
+title = "CONNECTOR PINOUTS"
+per_row = 3
+head = ["PIN", "SIGNAL", "VOLTAGE"]
+
+[[sections.connectors]]
+title = "CAN CONNECTOR (×2)"
+rows = [
+  ["1", "5V", "5.0 V"],
+  ["2", "CAN_P", "5.0 V"],
+  ["3", "CAN_N", "5.0 V"],
+  ["4", "GND", "GND"],
+]
+note = "Connector: 4-pin JST-GH, Pixhawk standard. Chain additional nodes from the second CAN connector."
+
+[[sections.connectors]]
+title = "UART CONNECTOR"
+rows = [
+  ["1", "5V_UART", "5.0 V"],
+  ["2", "USART3_RX", "3.3 V"],
+  ["3", "USART3_TX", "3.3 V"],
+  ["4", "USART3_RTS", "3.3 V"],
+  ["5", "USART3_CTS", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+note = "Connector: 6-pin JST-GH, Pixhawk standard."
+
+[[sections.connectors]]
+title = "DEBUG CONNECTOR"
+rows = [
+  ["1", "3.3V", "3.3 V"],
+  ["2", "USART2_TX", "3.3 V"],
+  ["3", "USART2_RX", "3.3 V"],
+  ["4", "FMU_SWDIO", "3.3 V"],
+  ["5", "FMU_SWCLK", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+note = "Connector: 6-pin JST-SH, Pixhawk standard."

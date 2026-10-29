@@ -1,0 +1,194 @@
+title = "ARK Pixhawk Payload Bus Breakout"
+version = "1.0"
+date = "2026-10-29"
+rev = "1.0"
+kicker = "PAYLOAD BUS BREAKOUT"
+subtitle = "Pixhawk Payload Bus to Pixhawk-standard JST-GH, with a protected 5 V peripheral rail"
+doc_id = "ARK-DS-ARK-PIXHAWK-PAYLOAD-BUS-BREAKOUT"
+sources = "Compiled from the ARK Pixhawk Payload Bus Breakout Rev 1.0 schematic, the Rev 1.0 bill of materials, and the Rev 1.0 manufacturing documentation. Signal names are as given in the schematic."
+photo = "ark_pixhawk_payload_bus_breakout.jpg"
+photo_frame = true
+intro = [
+  "The USA-built ARK Pixhawk Payload Bus Breakout fans the 30-pin Payload Bus out to individually keyed Pixhawk-standard JST-GH connectors. UART4/I2C3, CAN, Ethernet, USB, and GPIO each get their own connector, so a payload can be wired to an ARK carrier without a custom harness.",
+  "A 5 V supply enters on a 6-pin Molex Pico-Clasp using the Pixhawk power-module pinout. An onboard TI BQ24315 protection switch derives the VDD_5V_PERIPH rail with a 1.5 A current limit, overvoltage protection, and a fault flag, and is gated by the autopilot over VDD_5V_PERIPH_nEN.",
+]
+features = [
+  "30-pin, 0.5 mm pitch Payload Bus FFC connector",
+  "UART4 and I2C3 on 6-pin JST-GH",
+  "CAN on 4-pin JST-GH",
+  "Ethernet on 4-pin JST-GH",
+  "USB on 4-pin JST-GH",
+  "GPIO, FMU PWM, and capture on 7-pin JST-GH",
+  "1.5 A protected 5 V peripheral rail (TI BQ24315)",
+  "Overvoltage and overcurrent protection with fault flag",
+  "Test points for VDD_5V_PERIPH, FAULT, and VDD_5V_HIGHPOWER_nEN",
+  "Includes 30-pin, 0.5 mm pitch, 150 mm FFC cable",
+]
+glance = [
+  ["Payload bus", "30-pin FFC"],
+  ["Interfaces", "UART, I2C, CAN, Ethernet, USB, GPIO"],
+  ["Peripheral rail", "5 V @ 1.5 A"],
+  ["Supply", "5 V"],
+  ["Dimensions", "34.25 × 18.5 × 5.81 mm"],
+  ["Weight", "3.5 g"],
+  ["Hardware rev", "Rev 1.0"],
+]
+compliance = ["Designed and manufactured in the USA"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-pixhawk-payload-bus-breakout/"],
+  ["DOCS", "docs.arkelectron.com/products/accessories/ark-pixhawk-payload-bus-breakout"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Supply voltage", "5 V (J3)"],
+  ["Peripheral rail", "VDD_5V_PERIPH, 1.5 A current limit"],
+  ["Rail enable", "VDD_5V_PERIPH_nEN (active low)"],
+  ["Protection", "Overvoltage, overcurrent, fault flag"],
+  ["Signal logic level", "3.3 V"],
+  ["Operating temperature", "−25 °C to +85 °C"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "34.25 × 18.50 × 5.81 mm"],
+  ["Weight", "3.5 g"],
+  ["PCB", "2-layer FR-4, 1.61 mm, ENIG"],
+]
+
+[[sections]]
+kind = "pinouts"
+title = "PAYLOAD BUS CONNECTOR"
+per_row = 2
+head = ["PIN", "SIGNAL", "LEVEL"]
+note = "Pin 28 (VDD_5V_HIGHPOWER_nEN) is brought out to test point TP1 only and is not otherwise connected on this board. Pin 29 (VDD_5V_PERIPH_nEN) drives the enable input of the onboard protection switch through a 47 kΩ series resistor; pulling it low enables the VDD_5V_PERIPH rail."
+
+[[sections.connectors]]
+title = "J4 — 30-pin, 0.5 mm pitch FFC (Amphenol F33M1B7F121030E200)"
+rows = [
+  ["1", "GND", "GND"],
+  ["2", "UART4_TX_EXT", "3.3V"],
+  ["3", "UART4_RX_EXT", "3.3V"],
+  ["4", "GND", "GND"],
+  ["5", "I2C3_SDA_EXT", "3.3V"],
+  ["6", "I2C3_SCL_EXT", "3.3V"],
+  ["7", "GND", "GND"],
+  ["8", "CAN_P", "5V"],
+  ["9", "CAN_N", "5V"],
+  ["10", "GND", "GND"],
+  ["11", "FMU_CH7_EXT", "3.3V"],
+  ["12", "GPIO12_EXT", "3.3V"],
+  ["13", "FMU_CH8_EXT", "3.3V"],
+  ["14", "GND", "GND"],
+  ["15", "FMU_CAP_EXT", "3.3V"],
+  ["16", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PINS 17–30"
+rows = [
+  ["17", "PYLD_ETH_TX_P", "Diff."],
+  ["18", "PYLD_ETH_TX_N", "Diff."],
+  ["19", "GND", "GND"],
+  ["20", "PYLD_ETH_RX_P", "Diff."],
+  ["21", "PYLD_ETH_RX_N", "Diff."],
+  ["22", "GND", "GND"],
+  ["23", "GPIO01", "3.3V"],
+  ["24", "VBUS", "5V"],
+  ["25", "USB_N", "3.3V"],
+  ["26", "USB_P", "3.3V"],
+  ["27", "GND", "GND"],
+  ["28", "VDD_5V_HIGHPOWER_nEN", "3.3V"],
+  ["29", "VDD_5V_PERIPH_nEN", "3.3V"],
+  ["30", "GND", "GND"],
+  ["G1–\u2060G6", "GND", "GND"],
+]
+
+[[sections]]
+kind = "figure"
+title = "BLOCK DIAGRAM"
+src = "ark_pixhawk_payload_bus_breakout_block.svg"
+width = 532.5
+note = "J5 and J6 carry no supply rail. VBUS on J6 is passed through directly from Payload Bus pin 24."
+
+[[sections]]
+kind = "pinouts"
+title = "BREAKOUT CONNECTORS"
+new_page = true
+per_row = 2
+head = ["PIN", "SIGNAL", "LEVEL"]
+
+[[sections.connectors]]
+title = "J3 — 5 V input, 6-pin Pico-Clasp"
+rows = [
+  ["1", "5V", "5V"],
+  ["2", "5V", "5V"],
+  ["3", "I2C3_SCL_EXT", "3.3V"],
+  ["4", "I2C3_SDA_EXT", "3.3V"],
+  ["5", "GND", "GND"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "J5 — Ethernet, 4-pin JST-GH"
+rows = [
+  ["1", "PYLD_ETH_RX_N", "Diff."],
+  ["2", "PYLD_ETH_RX_P", "Diff."],
+  ["3", "PYLD_ETH_TX_N", "Diff."],
+  ["4", "PYLD_ETH_TX_P", "Diff."],
+]
+
+[[sections.connectors]]
+title = "J1 — UART4 / I2C3, 6-pin JST-GH"
+rows = [
+  ["1", "VDD_5V_PERIPH", "5V"],
+  ["2", "UART4_TX_EXT", "3.3V"],
+  ["3", "UART4_RX_EXT", "3.3V"],
+  ["4", "I2C3_SCL_EXT", "3.3V"],
+  ["5", "I2C3_SDA_EXT", "3.3V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "J6 — USB, 4-pin JST-GH"
+rows = [
+  ["1", "VBUS", "5V"],
+  ["2", "USB_N", "3.3V"],
+  ["3", "USB_P", "3.3V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "J2 — CAN, 4-pin JST-GH"
+rows = [
+  ["1", "VDD_5V_PERIPH", "5V"],
+  ["2", "CAN_P", "5V"],
+  ["3", "CAN_N", "5V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "J7 — GPIO, 7-pin JST-GH"
+rows = [
+  ["1", "VDD_5V_PERIPH", "5V"],
+  ["2", "FMU_CH7_EXT", "3.3V"],
+  ["3", "FMU_CH8_EXT", "3.3V"],
+  ["4", "FMU_CAP_EXT", "3.3V"],
+  ["5", "GPIO01", "3.3V"],
+  ["6", "GPIO12_EXT", "3.3V"],
+  ["7", "GND", "GND"],
+]
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "VDD_5V_PERIPH is shared by J1, J2, and J7 and is limited to 1.5 A in total.",
+  "VBUS on J6 is passed through from Payload Bus pin 24 and is not switched or protected on this board.",
+  "J5 carries the Ethernet pairs only; the connector shell is intentionally left unconnected.",
+  "Test points: TP1 = VDD_5V_HIGHPOWER_nEN, TP2 = VDD_5V_PERIPH, TP3 = FAULT (open drain).",
+  "Operating temperature is limited by the JST-GH connectors; all other components are rated wider.",
+]

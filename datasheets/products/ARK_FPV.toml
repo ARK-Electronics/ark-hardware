@@ -1,0 +1,244 @@
+title = "ARK FPV"
+version = "1.0"
+date = "2026-10-29"
+rev = "4.2"
+kicker = "FLIGHT CONTROLLER"
+subtitle = "STM32H743 flight controller for 30.5 mm stacks, powered directly from 3S–12S"
+doc_id = "ARK-DS-ARK-FPV"
+sources = "Compiled from the ARK FPV Production schematic Rev 4.2 (4 Mar 2026), the ARK FPV STEP model, the PX4 and ArduPilot board definitions, and ARK Electronics published documentation. Temperature ratings per component data sheets (JST connectors and microSD socket −25 °C; MCU, barometer and magnetometer +85 °C)."
+photo = "ark_fpv.jpg"
+intro = [
+  "The USA-built ARK FPV puts an STM32H743 processor, IMU, barometer, magnetometer and 1 W sensor heater on a 30.5 mm stack board. It runs directly from a 3S–12S battery, with a 5 V 2 A regulator shared by the board and peripherals and a switched 12 V 2 A rail for video transmitters and payloads.",
+  "It supports PX4, ArduPilot and Betaflight. PX4 ships by default.",
+]
+features = [
+  "STM32H743IIK6, 480 MHz, 2 MB flash, 1 MB RAM",
+  "TDK InvenSense IIM-42653 industrial IMU; ST LSM6DSV32X on the ARK FPV 32X",
+  "Bosch BMP390 barometer and ST IIS2MDC magnetometer",
+  "Direct 3S–12S battery input (5.5–54 V)",
+  "5 V 2 A and 12 V 2 A regulators; 12 V switched by the flight controller",
+  "9 PWM outputs, DShot and bidirectional DShot capable",
+  "1 W sensor heater under closed-loop control",
+  "microSD logging on a 4-bit SDMMC bus",
+]
+glance = [
+  ["MCU", "STM32H743IIK6"],
+  ["IMU", "IIM-42653 / LSM6DSV32X"],
+  ["Baro / Mag", "BMP390 / IIS2MDC"],
+  ["Input", "3S–12S, 5.5–54 V"],
+  ["Regulators", "5 V 2 A, 12 V 2 A"],
+  ["Operating temp", "−25 to +85 °C"],
+  ["Dimensions", "36 × 36 × 8 mm"],
+  ["Weight", "7.5 g"],
+  ["Hardware rev", "Rev 4.2"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant", "Blue UAS Framework listed (ARK FPV)"]
+resources = [
+  ["STORE", "arkelectron.com/product-category/flight-controllers/fpv/"],
+  ["DOCS", "docs.arkelectron.com/products/flight-controller/ark-fpv"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "PROCESSOR & MEMORY"
+rows = [
+  ["MCU", "ST STM32H743IIK6, 480 MHz"],
+  ["Flash / RAM", "2 MB / 1 MB"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Battery input", "5.5–54 V (3S–12S)"],
+  ["Input clamp", "54 V standoff, 60–66.3 V breakdown"],
+  ["5 V regulator", "2 A, including the board's own draw"],
+  ["12 V regulator", "2 A, switched; follows VBAT below 12 V"],
+  ["Board consumption", "500 mA at 5 V, including 200 mA heater"],
+  ["PWM outputs", "3.3 V logic, 220 Ω series, signal only"],
+  ["Voltage monitoring", "Battery, 5 V, 12 V, 3.3 V sensors"],
+]
+
+[[specs]]
+group = "ENVIRONMENTAL & MECHANICAL"
+rows = [
+  ["Operating temperature", "−25 °C to +85 °C"],
+  ["Storage temperature", "−25 °C to +85 °C"],
+  ["Dimensions", "36 × 36 × 8 mm"],
+  ["Weight", "7.5 g with microSD card"],
+  ["Mounting", "4 × Ø3.8 mm on 30.5 × 30.5 mm"],
+  ["Included", "microSD card, 4 vibration dampers"],
+]
+
+[[sections]]
+kind = "compare"
+title = "VARIANTS"
+cols = ["ARK FPV", "ARK FPV 32X"]
+rows = [
+  ["SKU", "ARK-FPV", "ARK-FPV-32X"],
+  ["IMU", "TDK InvenSense IIM-42653", "ST LSM6DSV32X"],
+  ["Hardware revision ID", "ARKFPV000", "ARKFPV001"],
+]
+note = "Same board, connectors and pinout; both IMUs reach ±32 g and ±4000 °/s. Blue UAS Framework listing covers the ARK FPV only."
+
+[[sections]]
+kind = "table"
+title = "SENSOR BUS MAP"
+head = ["DEVICE", "INTERFACE", "ADDRESS / SELECT", "FUNCTION"]
+rows = [
+  ["IIM-42653 or LSM6DSV32X", "SPI1", "nCS1, DRDY1", "6-axis accelerometer / gyroscope"],
+  ["BMP390", "I2C2", "0x76", "Barometric pressure"],
+  ["IIS2MDC", "I2C4", "0x1E", "3-axis magnetometer"],
+  ["GPS connector", "I2C1", "External", "Compass on a GPS module"],
+  ["SPI connector", "SPI6", "nCS1, DRDY1, nRESET", "OSD or external IMU"],
+]
+
+[[sections]]
+kind = "table"
+title = "SERIAL PORT MAPPING"
+head = ["UART", "CONNECTOR", "PX4", "ARDUPILOT"]
+rows = [
+  ["USART1", "GPS", "GPS1, /dev/ttyS0", "SERIAL3"],
+  ["USART2", "VTX (RX only)", "TELEM3, /dev/ttyS1", "SERIAL4"],
+  ["USART3", "DEBUG", "Console, /dev/ttyS2", "—"],
+  ["UART4", "ESC (RX only)", "TELEM4, /dev/ttyS3", "SERIAL5"],
+  ["UART5", "VTX", "TELEM2, /dev/ttyS4", "SERIAL2"],
+  ["USART6", "RC", "RC, /dev/ttyS5", "SERIAL6"],
+  ["UART7", "TELEM (RTS/CTS)", "TELEM1, /dev/ttyS6", "SERIAL1"],
+]
+
+[[sections]]
+kind = "table"
+title = "FIRMWARE"
+cls = "mono"
+head = ["FIRMWARE", "BUILD TARGET", "NOTES"]
+rows = [
+  ["PX4", "ark_fpv_default", "Multicopter. Ships installed"],
+  ["PX4", "ark_fpv_fw, ark_fpv_vtol", "Fixed-wing, VTOL"],
+  ["ArduPilot", "ARK_FPV", "—"],
+  ["Betaflight", "ARK_FPV", "—"],
+]
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "PWM outputs are 3.3 V logic straight from the MCU's timers through 220 Ω series resistors, so each sources at most ~15 mA, even into a short. The PWM connectors carry no servo power.",
+  "PX4 runs DShot and bidirectional DShot on outputs 1–8; output 9 is PWM only. ArduPilot runs DShot on all 9 and bidirectional DShot on outputs 1–4.",
+  "The ESC connector's pin order matches the ARK 4IN1 ESC, which ships with the cable. CURRENT_IN reaches the ADC through 220 Ω with no divider, so the current scale is the ESC's own.",
+  "The flight controller switches the 12 V rail (pit switch); with the battery below 12 V it follows the battery. USB-C alone powers the board and its 5 V outputs; the 12 V rail needs the battery.",
+  "CAN1 is terminated on the board (120 Ω).",
+]
+
+[[sections]]
+kind = "pinouts"
+title = "CONNECTOR PINOUTS"
+new_page = true
+per_row = 3
+head = ["PIN", "SIGNAL", "VOLTAGE"]
+
+[[sections.connectors]]
+title = "ESC · 8-PIN JST-GH"
+rows = [
+  ["1", "VBAT_IN", "5.5–\u206054 V"],
+  ["2", "CURRENT_IN", "0–3.3 V"],
+  ["3", "UART4_RX", "3.3 V"],
+  ["4", "PWM1", "3.3 V"],
+  ["5", "PWM2", "3.3 V"],
+  ["6", "PWM3", "3.3 V"],
+  ["7", "PWM4", "3.3 V"],
+  ["8", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "SPI (OSD OR IMU) · 8-PIN JST-SH"
+rows = [
+  ["1", "5V_OUT", "5 V"],
+  ["2", "SPI6_SCK", "3.3 V"],
+  ["3", "SPI6_MISO", "3.3 V"],
+  ["4", "SPI6_MOSI", "3.3 V"],
+  ["5", "SPI6_nCS1", "3.3 V"],
+  ["6", "SPI6_DRDY1", "3.3 V"],
+  ["7", "SPI6_nRESET", "3.3 V"],
+  ["8", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PWM EXTRA · 6-PIN JST-SH"
+rows = [
+  ["1", "PWM5", "3.3 V"],
+  ["2", "PWM6", "3.3 V"],
+  ["3", "PWM7", "3.3 V"],
+  ["4", "PWM8", "3.3 V"],
+  ["5", "PWM9", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "GPS · 6-PIN JST-GH"
+rows = [
+  ["1", "5V_OUT", "5 V"],
+  ["2", "USART1_TX", "3.3 V"],
+  ["3", "USART1_RX", "3.3 V"],
+  ["4", "I2C1_SCL", "3.3 V"],
+  ["5", "I2C1_SDA", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "TELEM · 6-PIN JST-GH"
+rows = [
+  ["1", "5V_OUT", "5 V"],
+  ["2", "UART7_TX", "3.3 V"],
+  ["3", "UART7_RX", "3.3 V"],
+  ["4", "UART7_CTS", "3.3 V"],
+  ["5", "UART7_RTS", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "VTX · 6-PIN JST-GH"
+rows = [
+  ["1", "12V_OUT", "12 V"],
+  ["2", "GND", "GND"],
+  ["3", "UART5_TX", "3.3 V"],
+  ["4", "UART5_RX", "3.3 V"],
+  ["5", "USART2_RX", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "DEBUG · 6-PIN JST-SH"
+rows = [
+  ["1", "3V3_OUT", "3.3 V"],
+  ["2", "USART3_TX", "3.3 V"],
+  ["3", "USART3_RX", "3.3 V"],
+  ["4", "SWDIO", "3.3 V"],
+  ["5", "SWCLK", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "RC · 4-PIN JST-GH"
+rows = [
+  ["1", "5V_OUT", "5 V"],
+  ["2", "USART6_RX", "3.3 V"],
+  ["3", "USART6_TX", "3.3 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "CAN · 4-PIN JST-GH"
+rows = [
+  ["1", "5V_OUT", "5 V"],
+  ["2", "CAN1_P", "5 V"],
+  ["3", "CAN1_N", "5 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "POWER AUX · 3-PIN JST-GH"
+rows = [
+  ["1", "12V_OUT", "12 V"],
+  ["2", "GND", "GND"],
+  ["3", "VBAT", "5.5–\u206054 V"],
+]

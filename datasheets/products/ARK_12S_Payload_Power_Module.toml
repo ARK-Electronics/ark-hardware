@@ -1,0 +1,101 @@
+title = "ARK 12S Payload Power Module"
+version = "1.0"
+date = "2026-10-29"
+rev = "1.1"
+kicker = "POWER MODULE"
+subtitle = "Dual 5.2 V / 6 A + 12 V / 6 A regulated supply and digital power monitor for the Pixhawk Autopilot Bus"
+doc_id = "ARK-DS-ARK-12S-Payload-Power-Module"
+sources = "Compiled from the ARK 12S Payload Power Module Production schematic Rev 1.1 (24 Apr 2026), the Production bill of materials, the manufacturing documentation, and ARK Electronics published documentation. ARK Electronics products are designed and manufactured in the USA."
+photo = "ark_12s_payload_power_module.jpg"
+photo_frame = true
+intro = [
+  "The USA-built ARK 12S Payload Power Module provides dual regulated outputs and high-accuracy digital battery monitoring for Pixhawk Autopilot Bus carriers. A 100 A continuous battery path is monitored by a TI INA238 while two independent synchronous bucks deliver 5.2 V / 6 A for avionics and 12 V / 6 A for payloads.",
+  "The 6-pin Molex output matches the ARK PAB Carrier power pinout; the additional 4-pin Molex supplies the 12 V payload rail. Parallel modules increase continuous battery current beyond 100 A.",
+]
+features = [
+  "100 A continuous battery current path (parallel for higher)",
+  "Dual TI LM70880 bucks — 5.2 V / 6 A + 12 V / 6 A",
+  "TI INA238 digital power monitor with 0.1 mΩ shunt (I²C)",
+  "10 V – 75 V input (15 V min for 12 V rail at full load)",
+  "6-pin Molex (5 V / I²C) matching PAB pinout",
+  "4-pin Molex for 12 V payload",
+  "Includes both Molex cables",
+]
+glance = [
+  ["Input", "10 – 75 V"],
+  ["Battery current", "100 A cont."],
+  ["5.2 V rail", "6 A"],
+  ["12 V rail", "6 A"],
+  ["Monitor", "INA238 0.1 mΩ"],
+  ["Dimensions", "37 × 35 × 13 mm"],
+  ["Weight", "20.5 g"],
+  ["Hardware rev", "Rev 1.1"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-12s-payload-power-module/"],
+  ["DOCS", "docs.arkelectron.com/products/power/ark-12s-payload-power-module"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Input voltage", "10 V – 75 V (15 V min @ 12 V / 6 A)"],
+  ["Battery current", "100 A continuous (20 °C ambient)"],
+  ["5.2 V output", "6 A continuous"],
+  ["12 V output", "6 A continuous"],
+  ["Power monitor", "INA238, 0.1 mΩ shunt, I²C (default 0x45)"],
+  ["Operating temperature", "−40 °C to +85 °C"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "37 × 35 × 13 mm"],
+  ["Weight", "20.5 g"],
+]
+
+[[sections]]
+kind = "table"
+title = "5 V / I²C CONNECTOR PINOUT"
+head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
+rows = [
+  ["1", "VBRICK", "5.2 V", "Regulated avionics output"],
+  ["2", "VBRICK", "5.2 V", "Regulated avionics output"],
+  ["3", "SCL", "3.3 V", "I²C clock to INA238"],
+  ["4", "SDA", "3.3 V", "I²C data to INA238"],
+  ["5", "GND", "GND", ""],
+  ["6", "GND", "GND", ""],
+]
+note = "Connector: Molex 5024940670 6-position CLIK-Mate. Matches ARK PAB Carrier power pinout."
+
+[[sections]]
+kind = "table"
+title = "12 V PAYLOAD CONNECTOR PINOUT"
+head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
+rows = [
+  ["1", "12 V", "12.0 V", "Regulated payload output"],
+  ["2", "12 V", "12.0 V", "Regulated payload output"],
+  ["3", "GND", "GND", ""],
+  ["4", "GND", "GND", ""],
+]
+note = "Connector: Molex 5024940470 4-position CLIK-Mate."
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "Active cooling is recommended when operating at high battery current or high 5 V / 12 V regulator loads.",
+  "For continuous battery current above 100 A, operate multiple modules in parallel.",
+  "Battery input and output are solder pads for high-current connections.",
+]
+
+[[sections]]
+kind = "table"
+title = "ALTERNATIVES"
+head = ["PRODUCT", "KEY DIFFERENCE", "WHEN TO CHOOSE"]
+rows = [
+  ["ARK 12S PAB Power Module", "5.2 V only (no 12 V rail)", "Avionics power only, smaller size / lower weight"],
+  ["ARK PAB Power Module", "Lower voltage / 60 A path", "6S systems"],
+]

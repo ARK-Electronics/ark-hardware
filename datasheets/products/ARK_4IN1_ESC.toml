@@ -1,0 +1,104 @@
+title = "ARK 4IN1 ESC"
+version = "1.0"
+date = "2026-10-29"
+rev = "4.2"
+kicker = "ELECTRONIC SPEED CONTROLLER"
+subtitle = "NDAA-compliant 4-in-1 ESC running ARK32 firmware"
+doc_id = "ARK-DS-ARK-4IN1-ESC"
+sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Current ratings are board thermal limits."
+photo = "ark_4in1_esc.jpg"
+photo_frame = true
+intro = [
+  "The USA-built ARK 4IN1 ESC is a high-performance 4-channel electronic speed controller for brushless motors. Four independent STM32F051 MCUs drive a 3-phase power stage delivering 50 A continuous / 75 A burst per motor under ARK32 firmware (supports AM32).",
+  "An onboard 0.2 mΩ shunt and current-sense amplifier provide 100 A/V sensing. Configure KV and pole count for each motor before first use.",
+]
+features = [
+  "50 A continuous / 75 A burst per motor",
+  "3–8S LiPo (6 V min, 65 V abs max)",
+  "4× independent STM32F051 channels",
+  "Onboard current sensor (100 A/V)",
+  "ARK32 firmware (supports AM32)",
+  "DShot 300/600, bidirectional DShot, KISS telemetry, PWM",
+  "30.5 mm mounting pattern",
+]
+glance = [
+  ["Voltage", "3–8S (6–65 V)"],
+  ["Current / motor", "50 A cont / 75 A burst"],
+  ["Firmware", "ARK32 (AM32)"],
+  ["MCU", "4× STM32F051"],
+  ["Sense", "100 A/V"],
+  ["Dimensions", "43 × 40.5 × 7.6 mm"],
+  ["Weight", "14.5 g"],
+  ["Hardware rev", "Rev 4.2"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant", "DIU Blue Framework listed"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-4in1-esc/"],
+  ["DOCS", "docs.arkelectron.com/.../ark-4in1-esc"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Input voltage", "6 V – 65 V (3–8S)"],
+  ["Continuous current", "50 A per motor"],
+  ["Burst current", "75 A per motor"],
+  ["Current sense", "100 A/V"],
+  ["Firmware", "ARK32 (supports AM32)"],
+  ["Operating temperature", "−40 °C to +85 °C"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "43.0 × 40.5 × 7.6 mm"],
+  ["Weight", "14.5 g"],
+  ["Mounting", "30.5 mm pattern"],
+]
+
+[[sections]]
+kind = "table"
+title = "FLIGHT CONTROLLER CONNECTOR"
+cls = "pins"
+head = ["PIN", "SIGNAL", "NOTES"]
+rows = [
+  ["1", "VBAT", "Battery voltage"],
+  ["2", "CURR", "Current sense output"],
+  ["3", "TELEM", "Serial telemetry"],
+  ["4", "MOTOR 1", "DShot / PWM"],
+  ["5", "MOTOR 2", "DShot / PWM"],
+  ["6", "MOTOR 3", "DShot / PWM"],
+  ["7", "MOTOR 4", "DShot / PWM"],
+  ["8", "GND", ""],
+]
+note = "Connector: 8-pin JST-SH. Matches standard FC ESC pinout."
+
+[[sections]]
+kind = "table"
+title = "DEBUG CONNECTOR"
+cls = "pins"
+head = ["PIN", "SIGNAL", "NOTES"]
+rows = [
+  ["1", "3.3 V", ""],
+  ["2–9", "SWDIO / SWDCLK 1–4", "Per-motor SWD"],
+  ["10", "GND", ""],
+]
+note = "Connector: 10-pin JST-SH."
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "Before first use, configure KV and pole count for each motor.",
+  "DShot is the recommended input protocol. PWM requires calibration.",
+  "Motor and battery connections are solder pads.",
+]
+
+[[sections]]
+kind = "table"
+title = "VARIANT"
+head = ["PRODUCT", "KEY DIFFERENCE"]
+rows = [
+  ["ARK 4IN1 ESC CONS", "Connectorized (MR30 motors, battery cables); 30 A cont / 40 A burst limited by connectors; larger size / weight"],
+]

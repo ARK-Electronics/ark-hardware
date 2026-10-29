@@ -1,0 +1,93 @@
+title = "ARK ADIS16507"
+version = "1.0"
+date = "2026-10-29"
+rev = "1"
+kicker = "PRECISION IMU CARRIER"
+subtitle = "Precision 6-DoF MEMS IMU carrier based on the ADIS16507-3"
+doc_id = "ARK-DS-ARK-ADIS16507"
+sources = "Compiled from the ARK ADIS16507 Carrier Production schematic Rev 1, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. IMU dynamic ranges per ADIS16507-3BMLZ; IMU environmental ratings per the Analog Devices ADIS16507 data sheet Rev. A."
+photo = "ark_adis16507.jpg"
+intro = [
+  "The USA-built ARK ADIS16507 is a compact carrier for the Analog Devices ADIS16507-3 precision MEMS IMU. It provides a factory-calibrated triaxial gyroscope (±2000 °/s) and triaxial accelerometer (±40 g) over SPI, with onboard 3.3 V regulation from a 5 V supply.",
+  "The 11-pin JST-GH connector matches the ARK PAB SPI pinout for direct use with ARK flight controllers and carriers.",
+]
+features = [
+  "ADIS16507-3 precision MEMS IMU",
+  "Gyro: ±2000 °/s",
+  "Accel: ±40 g (±392 m/s²)",
+  "Factory calibrated sensitivity, bias, and alignment",
+  "SPI interface with data-ready",
+  "Onboard 3.3 V LDO from 5 V input",
+  "11-pin JST-GH matching ARK PAB SPI pinout",
+  "Includes cable",
+]
+glance = [
+  ["IMU", "ADIS16507-3"],
+  ["Gyro", "±2000 °/s"],
+  ["Accel", "±40 g"],
+  ["Interface", "SPI"],
+  ["Supply", "5 V"],
+  ["Dimensions", "22.5 × 25 × 7.1 mm"],
+  ["Weight", "4 g"],
+  ["Hardware rev", "Rev 1"],
+]
+compliance = ["Designed and manufactured in the USA"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-adis16507/"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Supply voltage", "5 V"],
+  ["Supply current", "~41 mA average"],
+  ["IMU supply", "3.3 V (onboard LDO)"],
+  ["Interface", "SPI"],
+]
+
+[[specs]]
+group = "ENVIRONMENTAL"
+rows = [
+  ["Operating temperature", "−40 °C to +85 °C"],
+  ["IMU operating temperature", "−40 °C to +105 °C"],
+  ["IMU storage temperature", "−65 °C to +150 °C"],
+  ["IMU mechanical shock", "2000 g, 0.5 ms ½ sine, any axis, unpowered"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "22.5 × 25.0 × 7.1 mm"],
+  ["Weight", "4 g"],
+]
+
+[[sections]]
+kind = "table"
+title = "CONNECTOR PINOUT"
+cls = "pins"
+head = ["PIN", "SIGNAL", "NOTES"]
+rows = [
+  ["1", "VDD_5V", "5 V supply"],
+  ["2", "SPI_SCK", ""],
+  ["3", "SPI_MISO", ""],
+  ["4", "SPI_MOSI", ""],
+  ["5", "SPI_nCS", ""],
+  ["6", "NC", ""],
+  ["7", "SPI_nSYNC", ""],
+  ["8", "SPI_DRDY", "Data ready"],
+  ["9", "NC", ""],
+  ["10", "SPI_nRESET", "Reset, 10 kΩ pull-up to 3.3 V"],
+  ["11", "GND", ""],
+]
+note = "Connector: 11-pin JST-GH (SM11B-GHS-TB). Matches the ARK PAB SPI pinout (nCS2 / DRDY2 unused). Signals are 3.3 V."
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "Factory calibrated over −40 °C to +85 °C. Extended exposure outside −40 °C to +105 °C can degrade calibration accuracy.",
+  "IMU environmental ratings are the ADIS16507 absolute maximum ratings. No vibration survival limit is specified.",
+  "SPI-compatible data communications with programmable operation and control.",
+  "Includes 11-pin JST-GH cable.",
+]

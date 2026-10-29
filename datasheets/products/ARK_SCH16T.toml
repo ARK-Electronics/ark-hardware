@@ -1,0 +1,92 @@
+title = "ARK SCH16T"
+version = "1.0"
+date = "2026-10-29"
+rev = "1"
+kicker = "PRECISION IMU CARRIER"
+subtitle = "Precision 6-DoF MEMS IMU carrier based on the Murata SCH16T-K01"
+doc_id = "ARK-DS-ARK-SCH16T"
+sources = "Compiled from ARK Electronics published documentation. IMU ranges, performance, and environmental ratings per the Murata SCH16T-K01 data sheet (Doc. No. 11624 Rev. 6)."
+photo = "ark_sch16t.jpg"
+photo_frame = true
+intro = [
+  "The USA-built ARK SCH16T is a compact carrier for the Murata SCH16T-K01 6-DoF MEMS IMU. It provides a triaxial gyroscope (±300 °/s) and triaxial accelerometer (±8 g) over SPI, with onboard 3.3 V regulation from a 5 V supply.",
+  "The 11-pin JST-GH connector matches the ARK PAB SPI pinout for direct use with ARK flight controllers and carriers.",
+]
+features = [
+  "Murata SCH16T-K01 6-DoF MEMS IMU",
+  "Gyro: ±300 °/s, 0.3 °/h bias instability (typ.)",
+  "Accel: ±8 g (±80 m/s²), ±26 g dynamic range",
+  "20-bit output data",
+  "SafeSPI v2.0 interface with data-ready and sync",
+  "Onboard 3.3 V regulation from 5 V input",
+  "11-pin JST-GH matching ARK PAB SPI pinout",
+  "Includes cable",
+]
+glance = [
+  ["IMU", "SCH16T-K01"],
+  ["Gyro", "±300 °/s"],
+  ["Accel", "±8 g"],
+  ["Interface", "SPI"],
+  ["Supply", "5 V"],
+  ["Dimensions", "22.5 × 25 × 5.9 mm"],
+  ["Weight", "2.5 g"],
+  ["Hardware rev", "Rev 1"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-sch16t/"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Supply voltage", "5 V"],
+  ["Supply current", "~46 mA average"],
+  ["IMU supply", "3.3 V (onboard regulator)"],
+  ["Interface", "SPI"],
+]
+
+[[specs]]
+group = "ENVIRONMENTAL"
+rows = [
+  ["IMU operating temperature", "−40 °C to +110 °C"],
+  ["IMU storage temperature", "−50 °C to +150 °C (24 h max)"],
+  ["IMU mechanical shock", "3000 g, 0.5 ms, any axis (AEC-Q100)"],
+  ["IMU drop", "1.2 m onto concrete (AEC-Q100)"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "22.5 × 25.0 × 5.9 mm"],
+  ["Weight", "2.5 g"],
+]
+
+[[sections]]
+kind = "table"
+title = "CONNECTOR PINOUT"
+cls = "pins"
+head = ["PIN", "SIGNAL", "NOTES"]
+rows = [
+  ["1", "VDD_5V", "5 V supply"],
+  ["2", "SPI_SCK", ""],
+  ["3", "SPI_MISO", ""],
+  ["4", "SPI_MOSI", ""],
+  ["5", "SPI_nCS", ""],
+  ["6", "NC", ""],
+  ["7", "SPI_nSYNC", ""],
+  ["8", "SPI_DRDY", "Data ready"],
+  ["9", "NC", ""],
+  ["10", "SPI_nRESET", "Reset, 10 kΩ pull-up to 3.3 V"],
+  ["11", "GND", ""],
+]
+note = "Connector: 11-pin JST-GH (SM11B-GHS-TB). Matches the ARK PAB SPI pinout (nCS2 / DRDY2 unused). Signals are 3.3 V."
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "IMU environmental ratings are the SCH16T-K01 absolute maximum ratings. No vibration survival limit is specified.",
+  "Includes 11-pin JST-GH cable.",
+]

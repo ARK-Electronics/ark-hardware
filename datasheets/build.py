@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build ARK product datasheets from products/<KEY>.toml.
 
-Usage: uv run --no-project --with weasyprint==70.0 python datasheets/build.py [--out DIR] [--flat] [KEY ...]
+Usage: uv run --no-project --python 3.12 --with weasyprint==70.0 python datasheets/build.py [--out DIR [--flat]] [KEY ...]
 
 With no KEY, builds every product. Writes each PDF to the product's `out` path under the repo root,
 or under DIR with --out. --flat writes DIR/<file name> instead, for review copies.
@@ -29,7 +29,7 @@ def esc(s):
 
 
 def rows(pairs):
-    return "".join(f"<tr><td>{esc(a)}</td><td>{esc(b)}</td></tr>" for a, b in pairs)
+    return "".join(f"<tr><td>{esc(a)}</td>{td(b)}</tr>" for a, b in pairs)
 
 
 def li(items):
@@ -167,6 +167,8 @@ def main():
         i = args.index("--out")
         out = pathlib.Path(args[i + 1])
         del args[i:i + 2]
+    elif flat:
+        sys.exit("--flat needs --out DIR, or it writes the PDFs into the repo root")
     for key in args or sorted(f.stem for f in PRODUCTS.glob("*.toml")):
         p = load(key)
         rel = pathlib.Path(p["out"])

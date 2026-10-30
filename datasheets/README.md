@@ -28,7 +28,7 @@ No KEY builds every product. `--out DIR --flat` writes review copies to DIR inst
 - **Sources:** every value comes from a source named in `sources`: schematic and its revision, BOM, STEP model, PX4 or ArduPilot board definition, component data sheets, ARK measurements, ARK docs.
 - **Firmware:** support that changes from release to release belongs in the docs, not here.
 - **Sizes:** intro 2–3 sentences. Key features: 8 one-line bullets at most. Specifications: about 12–16 rows in 2–3 groups. At a glance: 10 rows at most.
-- **Variants:** SKUs that share a board share a datasheet. A `compare` section lists what differs between them.
+- **Variants:** SKUs that share a board share a datasheet. A `compare` section lists what differs between them. The ARK SCH16T and SCH16T-K10 keep separate sheets, which the store and docs already link.
 - **Temperature:** give operating and storage ranges. If they come from component data sheets rather than a test, say so in `sources`.
 - **Compliance:** only claims we can back: made in the USA, NDAA compliant, Blue UAS Framework listed (when listed), and open standards the product implements (e.g. Pixhawk Autopilot Bus). No FCC claim.
 - **Unmeasured values:** start them with `TBD`; they render marked.

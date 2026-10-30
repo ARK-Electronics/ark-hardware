@@ -5,12 +5,12 @@ rev = "4.2"
 kicker = "ELECTRONIC SPEED CONTROLLER"
 subtitle = "Connectorized NDAA-compliant 4-in-1 ESC running ARK32 firmware"
 doc_id = "ARK-DS-ARK-4IN1-ESC-CONS"
-sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Board current ratings are thermal limits; connector ratings are additional limits of the MR30 connectors. Temperature ratings per component data sheets; the MR30 connectors set −20 °C."
+sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2 (28 May 2026), the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Board current ratings are thermal limits; connector ratings are additional limits of the MR30 connectors. Temperature ratings per component data sheets; the MR30 connectors set −20 °C."
 out = "ARK_4IN1_ESC/datasheet/ARK_4IN1_ESC_CONS_Datasheet.pdf"
 photo = "ark_4in1_esc_cons.jpg"
 photo_frame = true
 intro = [
-  "The USA-built ARK 4IN1 ESC CONS is the connectorized variant of the ARK 4IN1 ESC. Four independent STM32F051 MCUs drive a 3-phase power stage under ARK32 firmware (supports AM32). Built-in motor and battery connectors eliminate soldering.",
+  "The USA-built ARK 4IN1 ESC CONS is the connectorized variant of the ARK 4IN1 ESC. Four independent STM32F051 MCUs with TI DRV8328 gate drivers drive four 3-phase power stages under ARK32 firmware (supports AM32). Built-in motor and battery connectors eliminate soldering.",
   "Board capability remains 50 A continuous / 75 A burst per motor; MR30 motor connectors limit practical continuous current to 30 A / 40 A burst. Includes 10 AWG power cables with M2.5 ring terminals.",
 ]
 features = [
@@ -20,10 +20,10 @@ features = [
   "4× independent STM32F051 channels",
   "Onboard current sensor (100 A/V)",
   "ARK32 firmware (supports AM32)",
-  "No soldering required — MR30 motors + battery cables included",
+  "No soldering: MR30 motor connectors, battery leads included",
 ]
 glance = [
-  ["Voltage", "3–8S (6–65 V)"],
+  ["Voltage", "3–8S LiPo"],
   ["Board current", "50 A / 75 A"],
   ["Connector limit", "30 A / 40 A"],
   ["Firmware", "ARK32 (AM32)"],
@@ -42,14 +42,18 @@ resources = [
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Input voltage", "6–65 V (3–8S)"],
+  ["Input voltage", "3–8S LiPo, 6 V minimum"],
+  ["Absolute maximum", "65 V"],
   ["Board continuous", "50 A per motor"],
   ["Board burst", "75 A per motor"],
+  ["Board total", "About 170 A continuous"],
   ["Connector continuous", "30 A per motor (MR30)"],
   ["Connector burst", "40 A per motor"],
   ["Current sense", "100 A/V"],
   ["Firmware", "ARK32 (supports AM32)"],
+  ["Bulk capacitance", "450 µF"],
   ["Operating temperature", "−20 °C to +85 °C"],
+  ["Storage temperature", "−20 °C to +85 °C"],
 ]
 
 [[specs]]
@@ -96,6 +100,8 @@ items = [
   "Before first use, configure KV and pole count for each motor.",
   "DShot is the recommended input protocol. PWM requires calibration.",
   "Motor connections: 4× MR30. Battery: M2.5 threaded standoffs + included 150 mm 10 AWG cables with ring terminals.",
+  "Board current ratings are thermal limits with airflow and have no fixed duration. All four channels share one current-sense shunt, which limits the board to about 170 A.",
+  "The 450 µF of onboard bulk capacitance covers 3S–6S with short battery leads. At 8S, add an external bulk capacitor across the battery input to keep transients below the 65 V absolute maximum.",
 ]
 
 [[sections]]

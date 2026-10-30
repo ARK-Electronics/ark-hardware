@@ -5,7 +5,7 @@ rev = "1"
 kicker = "PRECISION IMU CARRIER"
 subtitle = "Precision 6-DoF MEMS IMU carrier based on the Murata SCH16T-K01"
 doc_id = "ARK-DS-ARK-SCH16T"
-sources = "Compiled from ARK Electronics published documentation. IMU ranges, performance, and environmental ratings per the Murata SCH16T-K01 data sheet (Doc. No. 11624 Rev. 6)."
+sources = "Compiled from ARK Electronics published documentation. IMU ranges, performance, and environmental ratings per the Murata SCH16T-K01 data sheet (Doc. No. 11624 Rev. 6). Board temperature rating per component data sheets; the JST-GH connector sets −25 °C."
 photo = "ark_sch16t.jpg"
 photo_frame = true
 intro = [
@@ -35,6 +35,7 @@ glance = [
 compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
 resources = [
   ["STORE", "arkelectron.com/product/ark-sch16t/"],
+  ["DOCS", "docs.arkelectron.com/products/imu/ark-sch16t"],
   ["CAD", "github.com/ARK-Electronics/ark-hardware"],
 ]
 
@@ -50,6 +51,8 @@ rows = [
 [[specs]]
 group = "ENVIRONMENTAL"
 rows = [
+  ["Operating temperature", "−25 °C to +85 °C"],
+  ["Storage temperature", "−25 °C to +85 °C"],
   ["IMU operating temperature", "−40 °C to +110 °C"],
   ["IMU storage temperature", "−50 °C to +150 °C (24 h max)"],
   ["IMU mechanical shock", "3000 g, 0.5 ms, any axis (AEC-Q100)"],

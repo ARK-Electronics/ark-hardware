@@ -19,9 +19,7 @@ features = [
   "Ethernet on 4-pin JST-GH",
   "USB on 4-pin JST-GH",
   "GPIO, FMU PWM, and capture on 7-pin JST-GH",
-  "1.5 A protected 5 V peripheral rail (TI BQ24315)",
-  "Overvoltage and overcurrent protection with fault flag",
-  "Test points for VDD_5V_PERIPH, FAULT, and VDD_5V_HIGHPOWER_nEN",
+  "1.5 A protected 5 V peripheral rail (TI BQ24315): overvoltage, overcurrent, fault flag",
   "Includes 30-pin, 0.5 mm pitch, 150 mm FFC cable",
 ]
 glance = [
@@ -49,6 +47,7 @@ rows = [
   ["Protection", "Overvoltage, overcurrent, fault flag"],
   ["Signal logic level", "3.3 V"],
   ["Operating temperature", "−25 °C to +85 °C"],
+  ["Storage temperature", "−25 °C to +85 °C"],
 ]
 
 [[specs]]
@@ -70,20 +69,20 @@ note = "Pin 28 (VDD_5V_HIGHPOWER_nEN) is brought out to test point TP1 only and 
 title = "J4 — 30-pin, 0.5 mm pitch FFC (Amphenol F33M1B7F121030E200)"
 rows = [
   ["1", "GND", "GND"],
-  ["2", "UART4_TX_EXT", "3.3V"],
-  ["3", "UART4_RX_EXT", "3.3V"],
+  ["2", "UART4_TX_EXT", "3.3 V"],
+  ["3", "UART4_RX_EXT", "3.3 V"],
   ["4", "GND", "GND"],
-  ["5", "I2C3_SDA_EXT", "3.3V"],
-  ["6", "I2C3_SCL_EXT", "3.3V"],
+  ["5", "I2C3_SDA_EXT", "3.3 V"],
+  ["6", "I2C3_SCL_EXT", "3.3 V"],
   ["7", "GND", "GND"],
-  ["8", "CAN_P", "5V"],
-  ["9", "CAN_N", "5V"],
+  ["8", "CAN_P", "5 V"],
+  ["9", "CAN_N", "5 V"],
   ["10", "GND", "GND"],
-  ["11", "FMU_CH7_EXT", "3.3V"],
-  ["12", "GPIO12_EXT", "3.3V"],
-  ["13", "FMU_CH8_EXT", "3.3V"],
+  ["11", "FMU_CH7_EXT", "3.3 V"],
+  ["12", "GPIO12_EXT", "3.3 V"],
+  ["13", "FMU_CH8_EXT", "3.3 V"],
   ["14", "GND", "GND"],
-  ["15", "FMU_CAP_EXT", "3.3V"],
+  ["15", "FMU_CAP_EXT", "3.3 V"],
   ["16", "GND", "GND"],
 ]
 
@@ -96,13 +95,13 @@ rows = [
   ["20", "PYLD_ETH_RX_P", "Diff."],
   ["21", "PYLD_ETH_RX_N", "Diff."],
   ["22", "GND", "GND"],
-  ["23", "GPIO01", "3.3V"],
-  ["24", "VBUS", "5V"],
-  ["25", "USB_N", "3.3V"],
-  ["26", "USB_P", "3.3V"],
+  ["23", "GPIO01", "3.3 V"],
+  ["24", "VBUS", "5 V"],
+  ["25", "USB_N", "3.3 V"],
+  ["26", "USB_P", "3.3 V"],
   ["27", "GND", "GND"],
-  ["28", "VDD_5V_HIGHPOWER_nEN", "3.3V"],
-  ["29", "VDD_5V_PERIPH_nEN", "3.3V"],
+  ["28", "VDD_5V_HIGHPOWER_nEN", "3.3 V"],
+  ["29", "VDD_5V_PERIPH_nEN", "3.3 V"],
   ["30", "GND", "GND"],
   ["G1–\u2060G6", "GND", "GND"],
 ]
@@ -112,7 +111,7 @@ kind = "figure"
 title = "BLOCK DIAGRAM"
 src = "ark_pixhawk_payload_bus_breakout_block.svg"
 width = 532.5
-note = "J5 and J6 carry no supply rail. VBUS on J6 is passed through directly from Payload Bus pin 24."
+note = "J5 carries no supply rail. VBUS on J6 is the host's 5 V, passed straight through from Payload Bus pin 24, not VDD_5V_PERIPH."
 
 [[sections]]
 kind = "pinouts"
@@ -124,10 +123,10 @@ head = ["PIN", "SIGNAL", "LEVEL"]
 [[sections.connectors]]
 title = "J3 — 5 V input, 6-pin Pico-Clasp"
 rows = [
-  ["1", "5V", "5V"],
-  ["2", "5V", "5V"],
-  ["3", "I2C3_SCL_EXT", "3.3V"],
-  ["4", "I2C3_SDA_EXT", "3.3V"],
+  ["1", "5V", "5 V"],
+  ["2", "5V", "5 V"],
+  ["3", "I2C3_SCL_EXT", "3.3 V"],
+  ["4", "I2C3_SDA_EXT", "3.3 V"],
   ["5", "GND", "GND"],
   ["6", "GND", "GND"],
 ]
@@ -144,41 +143,41 @@ rows = [
 [[sections.connectors]]
 title = "J1 — UART4 / I2C3, 6-pin JST-GH"
 rows = [
-  ["1", "VDD_5V_PERIPH", "5V"],
-  ["2", "UART4_TX_EXT", "3.3V"],
-  ["3", "UART4_RX_EXT", "3.3V"],
-  ["4", "I2C3_SCL_EXT", "3.3V"],
-  ["5", "I2C3_SDA_EXT", "3.3V"],
+  ["1", "VDD_5V_PERIPH", "5 V"],
+  ["2", "UART4_TX_EXT", "3.3 V"],
+  ["3", "UART4_RX_EXT", "3.3 V"],
+  ["4", "I2C3_SCL_EXT", "3.3 V"],
+  ["5", "I2C3_SDA_EXT", "3.3 V"],
   ["6", "GND", "GND"],
 ]
 
 [[sections.connectors]]
 title = "J6 — USB, 4-pin JST-GH"
 rows = [
-  ["1", "VBUS", "5V"],
-  ["2", "USB_N", "3.3V"],
-  ["3", "USB_P", "3.3V"],
+  ["1", "VBUS", "5 V"],
+  ["2", "USB_N", "3.3 V"],
+  ["3", "USB_P", "3.3 V"],
   ["4", "GND", "GND"],
 ]
 
 [[sections.connectors]]
 title = "J2 — CAN, 4-pin JST-GH"
 rows = [
-  ["1", "VDD_5V_PERIPH", "5V"],
-  ["2", "CAN_P", "5V"],
-  ["3", "CAN_N", "5V"],
+  ["1", "VDD_5V_PERIPH", "5 V"],
+  ["2", "CAN_P", "5 V"],
+  ["3", "CAN_N", "5 V"],
   ["4", "GND", "GND"],
 ]
 
 [[sections.connectors]]
 title = "J7 — GPIO, 7-pin JST-GH"
 rows = [
-  ["1", "VDD_5V_PERIPH", "5V"],
-  ["2", "FMU_CH7_EXT", "3.3V"],
-  ["3", "FMU_CH8_EXT", "3.3V"],
-  ["4", "FMU_CAP_EXT", "3.3V"],
-  ["5", "GPIO01", "3.3V"],
-  ["6", "GPIO12_EXT", "3.3V"],
+  ["1", "VDD_5V_PERIPH", "5 V"],
+  ["2", "FMU_CH7_EXT", "3.3 V"],
+  ["3", "FMU_CH8_EXT", "3.3 V"],
+  ["4", "FMU_CAP_EXT", "3.3 V"],
+  ["5", "GPIO01", "3.3 V"],
+  ["6", "GPIO12_EXT", "3.3 V"],
   ["7", "GND", "GND"],
 ]
 

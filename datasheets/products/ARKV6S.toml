@@ -64,6 +64,7 @@ rows = [
   ["— main system", "300 mA"],
   ["— sensor heater", "200 mA"],
   ["Operating temperature", "−10 °C to +60 °C"],
+  ["Storage temperature", "−10 °C to +60 °C"],
 ]
 
 [[specs]]
@@ -79,7 +80,7 @@ kind = "table"
 title = "PIXHAWK AUTOPILOT BUS INTERFACE"
 head = ["PAB CONNECTOR", "HIROSE PART", "SIGNALS CARRIED"]
 rows = [
-  ["PAB X1 (J2)", "DF40C-100DP-0.4V, 100 pos", "8 × PWM · CAN1 / CAN2 · 8 × UART (see serial map) · I2C1–I2C3 · USB with VBUS sense · PPM and RC input · SWD · safety switch, buzzer, armed · 3 × power-input sense · ADC · 5 V input"],
+  ["PAB X1 (J2)", "DF40C-100DP-0.4V, 100 pos", "8 × PWM (DShot on 1–6) · CAN1 / CAN2 · 8 × UART (see serial map) · I2C1–I2C3 · USB with VBUS sense · PPM and RC input · SWD · safety switch, buzzer, armed · 3 × power-input sense · ADC · 5 V input"],
   ["PAB X2 (J3)", "DF40C-50DP-0.4V, 50 pos", "Ethernet RMII with power enable · external SPI6 (2 × CS, reset, 2 × DRDY) · SPIX_SYNC · 17 reserved pins"],
 ]
 
@@ -101,7 +102,7 @@ rows = [
   ["ARK Pixhawk Autopilot Bus Carrier", "JST-GH", "Full Pixhawk-standard breakout, 100 Mbps Ethernet, dual power"],
   ["ARK Jetson PAB Carrier", "JST-GH", "NVIDIA Jetson Orin compute on Pixhawk-standard ports"],
   ["ARK Jetson PAB V3", "Pico-Clasp", "Jetson Orin compute, triple power inputs, Ethernet switch"],
-  ["ARK VOXL2 RTK PAB Carrier", "Molex", "ModalAI VOXL2 compute; Blue UAS Framework listed"],
+  ["ARK VOXL2 RTK PAB Carrier", "Pico-Clasp", "ModalAI VOXL2 compute; Blue UAS Framework listed"],
 ]
 
 [[sections]]
@@ -140,4 +141,5 @@ items = [
   "PX4 Autopilot — ships by default; ArduPilot supported",
   "Board-to-board pinout follows the DS-010 Pixhawk Autopilot Bus Standard",
   "Carrier required. All I/O is presented on the two PAB board-to-board connectors; wiring connectors are provided by the carrier board.",
+  "Includes a microSD card.",
 ]

@@ -5,12 +5,12 @@ rev = "4.2"
 kicker = "ELECTRONIC SPEED CONTROLLER"
 subtitle = "NDAA-compliant 4-in-1 ESC running ARK32 firmware"
 doc_id = "ARK-DS-ARK-4IN1-ESC"
-sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Current ratings are board thermal limits. Temperature ratings per component data sheets; the JST-SH connectors set −25 °C."
+sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2 (28 May 2026), the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Current ratings are board thermal limits. Temperature ratings per component data sheets; the JST-SH connectors set −25 °C."
 photo = "ark_4in1_esc.jpg"
 photo_frame = true
 intro = [
-  "The USA-built ARK 4IN1 ESC is a high-performance 4-channel electronic speed controller for brushless motors. Four independent STM32F051 MCUs drive a 3-phase power stage delivering 50 A continuous / 75 A burst per motor under ARK32 firmware (supports AM32).",
-  "An onboard 0.2 mΩ shunt and current-sense amplifier provide 100 A/V sensing. Configure KV and pole count for each motor before first use.",
+  "The USA-built ARK 4IN1 ESC is a high-performance 4-channel electronic speed controller for brushless motors. Four independent STM32F051 MCUs with TI DRV8328 gate drivers drive four 3-phase power stages, delivering 50 A continuous / 75 A burst per motor under ARK32 firmware (supports AM32).",
+  "A 0.2 mΩ shunt shared by all four channels senses total battery current at 100 A/V and limits the board to about 170 A continuous. Configure KV and pole count for each motor before first use.",
 ]
 features = [
   "50 A continuous / 75 A burst per motor",
@@ -22,7 +22,7 @@ features = [
   "30.5 mm mounting pattern",
 ]
 glance = [
-  ["Voltage", "3–8S (6–65 V)"],
+  ["Voltage", "3–8S LiPo"],
   ["Current / motor", "50 A cont / 75 A burst"],
   ["Firmware", "ARK32 (AM32)"],
   ["MCU", "4× STM32F051"],
@@ -41,12 +41,17 @@ resources = [
 [[specs]]
 group = "ELECTRICAL"
 rows = [
-  ["Input voltage", "6–65 V (3–8S)"],
-  ["Continuous current", "50 A per motor"],
+  ["Input voltage", "3–8S LiPo, 6 V minimum"],
+  ["Absolute maximum", "65 V"],
+  ["Continuous current", "50 A per motor, with airflow"],
   ["Burst current", "75 A per motor"],
+  ["Little airflow (hover)", "25–30 A per motor"],
+  ["Board total", "About 170 A continuous"],
+  ["Bulk capacitance", "450 µF"],
   ["Current sense", "100 A/V"],
   ["Firmware", "ARK32 (supports AM32)"],
   ["Operating temperature", "−25 °C to +85 °C"],
+  ["Storage temperature", "−25 °C to +85 °C"],
 ]
 
 [[specs]]
@@ -72,7 +77,7 @@ rows = [
   ["7", "MOTOR 4", "DShot / PWM"],
   ["8", "GND", ""],
 ]
-note = "Connector: 8-pin JST-SH. Matches standard FC ESC pinout."
+note = "Connector: 8-pin JST-SH. Matches the ARK FPV ESC connector through the included cable."
 
 [[sections]]
 kind = "table"
@@ -93,6 +98,9 @@ items = [
   "Before first use, configure KV and pole count for each motor.",
   "DShot is the recommended input protocol. PWM requires calibration.",
   "Motor and battery connections are solder pads.",
+  "Current ratings are board thermal limits with airflow and have no fixed duration. All four channels share one current-sense shunt, which limits the board to about 170 A, or about 43 A per motor with all four loaded.",
+  "The 450 µF of onboard bulk capacitance covers 3S–6S with short battery leads. At 8S, add an external bulk capacitor across the battery input to keep transients below the 65 V absolute maximum.",
+  "Includes 4 vibration dampers and the ARK FPV cable.",
 ]
 
 [[sections]]

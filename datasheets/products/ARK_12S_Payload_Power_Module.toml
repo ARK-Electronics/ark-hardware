@@ -46,7 +46,8 @@ rows = [
   ["5.2 V output", "6 A continuous"],
   ["12 V output", "6 A continuous"],
   ["Power monitor", "INA238, 0.1 mΩ shunt, I²C (default 0x45)"],
-  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Operating temperature", "TBD"],
+  ["Storage temperature", "TBD"],
 ]
 
 [[specs]]
@@ -61,8 +62,8 @@ kind = "table"
 title = "5 V / I²C CONNECTOR PINOUT"
 head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
 rows = [
-  ["1", "VBRICK", "5.2 V", "Regulated avionics output"],
-  ["2", "VBRICK", "5.2 V", "Regulated avionics output"],
+  ["1", "VBRICK", "5.2 V", "Regulated avionics output, 3 A per pin"],
+  ["2", "VBRICK", "5.2 V", "Regulated avionics output, 3 A per pin"],
   ["3", "SCL", "3.3 V", "I²C clock to INA238"],
   ["4", "SDA", "3.3 V", "I²C data to INA238"],
   ["5", "GND", "GND", ""],
@@ -75,8 +76,8 @@ kind = "table"
 title = "12 V PAYLOAD CONNECTOR PINOUT"
 head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
 rows = [
-  ["1", "12 V", "12.0 V", "Regulated payload output"],
-  ["2", "12 V", "12.0 V", "Regulated payload output"],
+  ["1", "12 V", "12.0 V", "Regulated payload output, 3 A per pin"],
+  ["2", "12 V", "12.0 V", "Regulated payload output, 3 A per pin"],
   ["3", "GND", "GND", ""],
   ["4", "GND", "GND", ""],
 ]
@@ -86,6 +87,8 @@ note = "Connector: Molex 5024940470 4-position CLIK-Mate."
 kind = "notes"
 title = "NOTES"
 items = [
+  "The power monitor measures only current flowing from the battery input pads to the battery output pads. Wire the ESCs and every other battery load to the output pads.",
+  "Each output has its own short-circuit and thermal protection and recovers on its own. The power monitor runs from the 5.2 V output, so a 5.2 V fault also stops battery monitoring.",
   "Active cooling is recommended when operating at high battery current or high 5 V / 12 V regulator loads.",
   "For continuous battery current above 100 A, operate multiple modules in parallel.",
   "Battery input and output are solder pads for high-current connections.",

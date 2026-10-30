@@ -5,7 +5,7 @@ rev = "3.1"
 kicker = "POWER MODULE"
 subtitle = "5.2 V / 6 A regulated supply and digital power monitor for the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARK-12S-PAB-Power-Module"
-sources = "Compiled from the ARK 12S PAB Power Module Production schematic Rev 3.1 (24 Apr 2026), the Production bill of materials, the production STEP model, and ARK Electronics published documentation."
+sources = "Compiled from the ARK 12S PAB Power Module Production schematic Rev 3.1 (24 Apr 2026), the Production bill of materials, the production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets."
 photo = "ark_12s_pab_power_module.jpg"
 photo_frame = true
 intro = [
@@ -19,7 +19,7 @@ features = [
   "10–75 V input range (12S capable)",
   "6-pin Molex CLIK-Mate output matching PAB pinout",
   "Solder-pad battery input and output",
-  "Includes 6-pin Molex cable",
+  "Includes 6-pin Molex cable, 12S capacitor and TVS diode",
 ]
 glance = [
   ["Input", "10–75 V"],
@@ -46,6 +46,7 @@ rows = [
   ["Regulated output", "5.2 V @ 6 A continuous"],
   ["Power monitor", "INA238, 0.1 mΩ shunt, I²C (default 0x45)"],
   ["Operating temperature", "−40 °C to +85 °C"],
+  ["Storage temperature", "−40 °C to +85 °C"],
 ]
 
 [[specs]]
@@ -60,8 +61,8 @@ kind = "table"
 title = "OUTPUT CONNECTOR PINOUT"
 head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
 rows = [
-  ["1", "VBRICK", "5.2 V", "Regulated output"],
-  ["2", "VBRICK", "5.2 V", "Regulated output"],
+  ["1", "VBRICK", "5.2 V", "Regulated output, 3 A per pin"],
+  ["2", "VBRICK", "5.2 V", "Regulated output, 3 A per pin"],
   ["3", "SCL", "3.3 V", "I²C clock to INA238"],
   ["4", "SDA", "3.3 V", "I²C data to INA238"],
   ["5", "GND", "GND", ""],
@@ -73,6 +74,7 @@ note = "Connector: Molex 5024940670 6-position CLIK-Mate. Matches ARK PAB Carrie
 kind = "notes"
 title = "NOTES"
 items = [
+  "The power monitor measures only current flowing from the battery input pads to the battery output pads. Wire the ESCs and every other battery load to the output pads.",
   "Active cooling is recommended when operating at high battery current or high 5 V regulator load.",
   "For continuous battery current above 100 A, operate multiple modules in parallel.",
   "When using 12S batteries, solder the included capacitor and TVS diode to the battery-output pads (observe polarity).",

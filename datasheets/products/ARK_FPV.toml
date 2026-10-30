@@ -1,5 +1,5 @@
 title = "ARK FPV"
-version = "1.0"
+version = "1.1"
 date = "2026-10-29"
 rev = "4.2"
 kicker = "FLIGHT CONTROLLER"
@@ -112,11 +112,11 @@ title = "FIRMWARE"
 cls = "mono"
 head = ["FIRMWARE", "BUILD TARGET", "NOTES"]
 rows = [
-  ["PX4", "ark_fpv_default", "Multicopter. Ships installed"],
-  ["PX4", "ark_fpv_fw, ark_fpv_vtol", "Fixed-wing, VTOL"],
+  ["PX4", "ark_fpv_default", "Ships installed"],
   ["ArduPilot", "ARK_FPV", "—"],
   ["Betaflight", "ARK_FPV", "—"],
 ]
+note = "The firmware releases that support the ARK FPV 32X's LSM6DSV32X are listed in the docs."
 
 [[sections]]
 kind = "notes"

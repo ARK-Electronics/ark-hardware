@@ -28,7 +28,7 @@ glance = [
   ["Weight", "4 g"],
   ["Hardware rev", "Rev 1.0"],
 ]
-compliance = ["Designed and manufactured in the USA", "NDAA compliant", "IEC 60825-1 Class 1 laser product"]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
 resources = [
   ["STORE", "arkelectron.com/product/ark-dist-sr/"],
   ["", "arkelectron.com/product/ark-dist-mr/"],

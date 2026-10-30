@@ -5,7 +5,7 @@ rev = "4.2"
 kicker = "FLIGHT CONTROLLER"
 subtitle = "STM32H743 flight controller for 30.5 mm stacks, powered directly from 3S–12S"
 doc_id = "ARK-DS-ARK-FPV"
-sources = "Compiled from the ARK FPV Production schematic Rev 4.2 (4 Mar 2026), the ARK FPV STEP model, the PX4 and ArduPilot board definitions, and ARK Electronics published documentation. Temperature ratings per component data sheets (JST connectors and microSD socket −25 °C; MCU, barometer and magnetometer +85 °C)."
+sources = "Compiled from the ARK FPV Production schematic Rev 4.2 (4 Mar 2026), the ARK FPV STEP model, the PX4 and ArduPilot board definitions, and ARK Electronics published documentation. Temperature ratings per component data sheets."
 photo = "ark_fpv.jpg"
 intro = [
   "The USA-built ARK FPV puts an STM32H743 processor, IMU, barometer, magnetometer and 1 W sensor heater on a 30.5 mm stack board. It runs directly from a 3S–12S battery, with a 5 V 2 A regulator shared by the board and peripherals and a switched 12 V 2 A rail for video transmitters and payloads.",
@@ -116,16 +116,15 @@ rows = [
   ["ArduPilot", "ARK_FPV", "—"],
   ["Betaflight", "ARK_FPV", "—"],
 ]
-note = "The firmware releases that support the ARK FPV 32X's LSM6DSV32X are listed in the docs."
+note = "ARK FPV 32X firmware support: see the docs."
 
 [[sections]]
 kind = "notes"
 title = "NOTES"
 items = [
-  "PWM outputs are 3.3 V logic straight from the MCU's timers through 220 Ω series resistors, so each sources at most ~15 mA, even into a short. The PWM connectors carry no servo power.",
   "PX4 runs DShot and bidirectional DShot on outputs 1–8; output 9 is PWM only. ArduPilot runs DShot on all 9 and bidirectional DShot on outputs 1–4.",
-  "The ESC connector's pin order matches the ARK 4IN1 ESC, which ships with the cable. CURRENT_IN reaches the ADC through 220 Ω with no divider, so the current scale is the ESC's own.",
-  "The flight controller switches the 12 V rail (pit switch); with the battery below 12 V it follows the battery. USB-C alone powers the board and its 5 V outputs; the 12 V rail needs the battery.",
+  "The ESC connector matches the ARK 4IN1 ESC, which ships with the cable. CURRENT_IN has no divider, so the current scale is the ESC's.",
+  "USB-C alone powers the board and its 5 V outputs, but not the 12 V rail.",
   "CAN1 is terminated on the board (120 Ω).",
 ]
 

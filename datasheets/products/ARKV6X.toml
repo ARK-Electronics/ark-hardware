@@ -5,12 +5,12 @@ rev = "4.1 / 5.1"
 kicker = "FLIGHT CONTROLLER"
 subtitle = "Triple-IMU FMUv6X autopilot module on the Pixhawk Autopilot Bus"
 doc_id = "ARK-DS-ARKV6X"
-sources = "Compiled from the ARKV6X Production schematics Rev 4.1 (13 Dec 2023) and Rev 5.1 Extended Range (19 Jul 2024), the ARKV6X Production bill of materials, the ARKV6X production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets; the RTC backup supercapacitor sets both limits."
+sources = "Compiled from the ARKV6X Production schematics Rev 4.1 (13 Dec 2023) and Rev 5.1 Extended Range (19 Jul 2024), the ARKV6X Production bill of materials, the ARKV6X production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets."
 photo = "arkv6x.jpg"
 photo_frame = true
 intro = [
-  "The USA-built ARKV6X flight controller is based on the FMUv6X and Pixhawk Autopilot Bus (PAB) open source standards. An STM32H743 processor reads three time-synchronised IMUs, each on its own SPI bus and its own switched 3.3 V rail, making data averaging, voting and filtering possible rather than leaving the estimator with a single point of failure.",
-  "Conforming to the PAB form factor, it drops into any PAB-compatible carrier — the ARK PAB Carrier, ARK Jetson PAB Carrier or ARK Jetson PAB V3 — so one autopilot module moves between airframes and compute payloads.",
+  "The USA-built ARKV6X flight controller is based on the FMUv6X and Pixhawk Autopilot Bus (PAB) open source standards. An STM32H743 processor reads three time-synchronised IMUs, each on its own SPI bus and switched 3.3 V rail, for redundant inertial sensing.",
+  "It fits any Pixhawk Autopilot Bus carrier, including the ARK PAB Carrier, ARK Jetson PAB Carrier and ARK Jetson PAB V3.",
 ]
 features = [
   "Three synchronised IMUs, each independently powered",
@@ -19,7 +19,7 @@ features = [
   "Bosch BMP390 barometer and BMM150 magnetometer on internal I2C4",
   "Four independently switched 3.3 V sensor rails — one per sensor domain",
   "Cypress FM25V02A 256 kbit FRAM for non-volatile parameter storage",
-  "1 W (25 Ω) sensor heater under PWM closed-loop control",
+  "1 W sensor heater under closed-loop control",
   "Supercapacitor-backed real-time clock",
   "microSD logging on a 4-bit SDMMC interface",
 ]
@@ -47,7 +47,6 @@ resources = [
   ["", "arkelectron.com/product/arkv6x-iim-42653/"],
   ["DOCS", "docs.arkelectron.com/products/flight-controller/arkv6x"],
   ["CAD", "github.com/ARK-Electronics/ark-hardware"],
-  ["BUNDLE", "ARKV6X Bundle — with ARK PAB Carrier"],
 ]
 
 [[specs]]
@@ -65,7 +64,7 @@ rows = [
   ["Supply voltage", "4.8 V minimum, 5.5 V absolute maximum"],
   ["Supply current", "500 mA max at 5 V"],
   ["— main system", "300 mA"],
-  ["— sensor heater", "200 mA at 5 V (25 Ω, PWM)"],
+  ["— sensor heater", "200 mA"],
   ["Operating temperature", "−10 °C to +60 °C"],
   ["Storage temperature", "−10 °C to +60 °C"],
 ]
@@ -126,15 +125,6 @@ rows = [
 ]
 
 [[sections]]
-kind = "table"
-title = "ALTERNATIVES IN THE ARK AUTOPILOT LINE"
-head = ["AUTOPILOT", "INERTIAL SENSING", "POWER INPUT", "WHEN TO CHOOSE IT"]
-rows = [
-  ["ARKV6S", "1 industrial IMU", "5 V via carrier", "Cost-optimised, no IMU redundancy"],
-  ["ARK FPV", "1 industrial IMU", "3–12S direct", "Standalone 30.5 mm build, 12 V payload rail"],
-]
-
-[[sections]]
 kind = "columns"
 title = "SERIAL REFERENCE & FIRMWARE SUPPORT"
 
@@ -158,7 +148,6 @@ kind = "notes"
 title = "FIRMWARE & SOFTWARE SUPPORT"
 items = [
   "PX4 Autopilot — ships by default; ArduPilot supported",
-  "Board-to-board pinout follows the DS-010 Pixhawk Autopilot Bus Standard",
-  "Carrier required. All I/O is presented on the two PAB board-to-board connectors; wiring connectors are provided by the carrier board.",
+  "Requires a PAB carrier: all I/O is on the two board-to-board connectors.",
   "Includes a microSD card.",
 ]

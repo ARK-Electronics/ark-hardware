@@ -5,7 +5,7 @@ rev = "1.0"
 kicker = "PRECISION IMU CARRIER"
 subtitle = "Precision 6-DoF MEMS IMU carrier based on the Murata SCH16T-K10"
 doc_id = "ARK-DS-ARK-SCH16T-K10"
-sources = "Compiled from ARK Electronics published documentation. IMU ranges, performance, and environmental ratings per the Murata SCH16T-K10 short data sheet (March 2025). Board temperature rating per component data sheets; the JST-GH connector sets −25 °C."
+sources = "Compiled from ARK Electronics published documentation. IMU ranges, performance, and environmental ratings per the Murata SCH16T-K10 short data sheet (March 2025). Board temperature ratings per component data sheets."
 out = "ARK_SCH16T/datasheet/ARK_SCH16T_K10_Datasheet.pdf"
 photo = "ark_sch16t_k10.jpg"
 photo_frame = true
@@ -16,7 +16,7 @@ intro = [
 features = [
   "Murata SCH16T-K10 6-DoF MEMS IMU",
   "Gyro: ±2000 °/s, 2 °/h bias instability (typ.)",
-  "Accel: ±16 g (±160 m/s²), ±26 g dynamic range",
+  "Accel: ±16 g, plus a ±26 g redundant channel",
   "20-bit output data",
   "SafeSPI v2.0 interface with data-ready and sync",
   "Onboard 3.3 V regulation from 5 V input",
@@ -44,7 +44,7 @@ resources = [
 group = "ELECTRICAL"
 rows = [
   ["Supply voltage", "5 V"],
-  ["Supply current", "~46 mA average"],
+  ["Supply current", "46 mA average"],
   ["IMU supply", "3.3 V (onboard regulator)"],
   ["Interface", "SPI"],
 ]
@@ -91,6 +91,5 @@ note = "Connector: 11-pin JST-GH (SM11B-GHS-TB). Matches the ARK PAB SPI pinout 
 kind = "notes"
 title = "NOTES"
 items = [
-  "IMU environmental ratings are the SCH16T-K10 absolute maximum ratings. No vibration survival limit is specified.",
-  "Includes 11-pin JST-GH cable.",
+  "IMU environmental ratings are the SCH16T-K10 absolute maximum ratings.",
 ]

@@ -5,13 +5,13 @@ rev = "4.2"
 kicker = "ELECTRONIC SPEED CONTROLLER"
 subtitle = "Connectorized NDAA-compliant 4-in-1 ESC running ARK32 firmware"
 doc_id = "ARK-DS-ARK-4IN1-ESC-CONS"
-sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2 (28 May 2026), the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Board current ratings are thermal limits; connector ratings are additional limits of the MR30 connectors. Temperature ratings per component data sheets; the MR30 connectors set −20 °C."
+sources = "Compiled from the ARK 4IN1 ESC Production schematic Rev 4.2 (28 May 2026), the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. Temperature ratings per component data sheets."
 out = "ARK_4IN1_ESC/datasheet/ARK_4IN1_ESC_CONS_Datasheet.pdf"
 photo = "ark_4in1_esc_cons.jpg"
 photo_frame = true
 intro = [
-  "The USA-built ARK 4IN1 ESC CONS is the connectorized variant of the ARK 4IN1 ESC. Four independent STM32F051 MCUs with TI DRV8328 gate drivers drive four 3-phase power stages under ARK32 firmware (supports AM32). Built-in motor and battery connectors eliminate soldering.",
-  "Board capability remains 50 A continuous / 75 A burst per motor; MR30 motor connectors limit practical continuous current to 30 A / 40 A burst. Includes 10 AWG power cables with M2.5 ring terminals.",
+  "The USA-built ARK 4IN1 ESC CONS is the ARK 4IN1 ESC with MR30 motor connectors and bolt-on battery leads, so it installs without soldering. One STM32F051 MCU and TI DRV8328 gate driver per motor run ARK32, ARK's open-source AM32 fork.",
+  "The board is rated 50 A continuous and 75 A burst per motor; the MR30 connectors limit that to 30 A continuous and 40 A burst.",
 ]
 features = [
   "Board: 50 A continuous / 75 A burst per motor",
@@ -19,7 +19,7 @@ features = [
   "3–8S LiPo (6 V min, 65 V abs max)",
   "4× independent STM32F051 channels",
   "Onboard current sensor (100 A/V)",
-  "ARK32 firmware (supports AM32)",
+  "ARK32 firmware, stock AM32 compatible",
   "No soldering: MR30 motor connectors, battery leads included",
 ]
 glance = [
@@ -50,7 +50,6 @@ rows = [
   ["Connector continuous", "30 A per motor (MR30)"],
   ["Connector burst", "40 A per motor"],
   ["Current sense", "100 A/V"],
-  ["Firmware", "ARK32 (supports AM32)"],
   ["Bulk capacitance", "450 µF"],
   ["Operating temperature", "−20 °C to +85 °C"],
   ["Storage temperature", "−20 °C to +85 °C"],
@@ -100,8 +99,8 @@ items = [
   "Before first use, configure KV and pole count for each motor.",
   "DShot is the recommended input protocol. PWM requires calibration.",
   "Motor connections: 4× MR30. Battery: M2.5 threaded standoffs + included 150 mm 10 AWG cables with ring terminals.",
-  "Board current ratings are thermal limits with airflow and have no fixed duration. All four channels share one current-sense shunt, which limits the board to about 170 A.",
-  "The 450 µF of onboard bulk capacitance covers 3S–6S with short battery leads. At 8S, add an external bulk capacitor across the battery input to keep transients below the 65 V absolute maximum.",
+  "Board current ratings are thermal limits with airflow; burst duration depends on cooling.",
+  "The 450 µF onboard bulk capacitance suits 3S–6S with short battery leads. At 8S, add an external bulk capacitor across the battery input.",
 ]
 
 [[sections]]
@@ -109,5 +108,5 @@ kind = "table"
 title = "VARIANT"
 head = ["PRODUCT", "KEY DIFFERENCE"]
 rows = [
-  ["ARK 4IN1 ESC", "Solder-pad motors/battery; smaller 43 × 40.5 × 7.6 mm, 14.5 g; full 50 A / 75 A board rating"],
+  ["ARK 4IN1 ESC", "Solder-pad motor and battery connections; full 50 A / 75 A board rating; 43 × 40.5 × 7.6 mm, 14.5 g"],
 ]

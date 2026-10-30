@@ -9,8 +9,8 @@ sources = "Compiled from the ARK 12S PAB Power Module Production schematic Rev 3
 photo = "ark_12s_pab_power_module.jpg"
 photo_frame = true
 intro = [
-  "The USA-built ARK 12S PAB Power Module delivers regulated 5.2 V power and high-accuracy digital battery monitoring to any Pixhawk Autopilot Bus carrier. A high-current battery path rated 100 A continuous passes through a 0.1 mΩ shunt monitored by a TI INA238, while a synchronous buck regulator provides 6 A of clean 5.2 V for the avionics.",
-  "The 6-pin Molex CLIK-Mate output matches the ARK PAB Carrier power pinout exactly, so the module drops in without adapters. Parallel modules increase continuous battery current beyond 100 A.",
+  "The USA-built ARK 12S PAB Power Module powers a Pixhawk Autopilot Bus carrier and monitors its battery. A TI INA238 measures a 100 A continuous battery path through a 0.1 mΩ shunt, and a synchronous buck supplies 5.2 V at 6 A for the avionics.",
+  "Its 6-pin Molex CLIK-Mate output matches the ARK PAB Carrier power pinout.",
 ]
 features = [
   "100 A continuous battery current path (parallel for higher)",
@@ -44,7 +44,7 @@ rows = [
   ["Input voltage", "10–75 V"],
   ["Battery current", "100 A continuous (20 °C ambient)"],
   ["Regulated output", "5.2 V @ 6 A continuous"],
-  ["Power monitor", "INA238, 0.1 mΩ shunt, I²C (default 0x45)"],
+  ["Power monitor", "INA238, 0.1 mΩ shunt, I²C address 0x45"],
   ["Operating temperature", "−40 °C to +85 °C"],
   ["Storage temperature", "−40 °C to +85 °C"],
 ]
@@ -74,18 +74,8 @@ note = "Connector: Molex 5024940670 6-position CLIK-Mate. Matches ARK PAB Carrie
 kind = "notes"
 title = "NOTES"
 items = [
-  "The power monitor measures only current flowing from the battery input pads to the battery output pads. Wire the ESCs and every other battery load to the output pads.",
+  "The power monitor measures only current flowing from the battery input pads to the battery output pads, so wire every battery load to the output pads.",
   "Active cooling is recommended when operating at high battery current or high 5 V regulator load.",
   "For continuous battery current above 100 A, operate multiple modules in parallel.",
   "When using 12S batteries, solder the included capacitor and TVS diode to the battery-output pads (observe polarity).",
-  "Battery input and output are solder pads for high-current connections.",
-]
-
-[[sections]]
-kind = "table"
-title = "ALTERNATIVES"
-head = ["PRODUCT", "KEY DIFFERENCE", "WHEN TO CHOOSE"]
-rows = [
-  ["ARK PAB Power Module", "Lower voltage / 60 A path", "6S systems, lower current"],
-  ["ARK 12S Payload Power Module", "Adds 12 V / 6 A payload rail", "Need both avionics 5 V and payload 12 V"],
 ]

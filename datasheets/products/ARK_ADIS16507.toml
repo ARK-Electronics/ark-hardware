@@ -5,7 +5,7 @@ rev = "1"
 kicker = "PRECISION IMU CARRIER"
 subtitle = "Precision 6-DoF MEMS IMU carrier based on the ADIS16507-2 or ADIS16507-3"
 doc_id = "ARK-DS-ARK-ADIS16507"
-sources = "Compiled from the ARK ADIS16507 Carrier Production schematic Rev 1, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. IMU dynamic ranges per ADIS16507-2BMLZ and ADIS16507-3BMLZ; IMU environmental ratings per the Analog Devices ADIS16507 data sheet Rev. A. Board temperature rating per component data sheets; the JST-GH connector sets −25 °C."
+sources = "Compiled from the ARK ADIS16507 Carrier Production schematic Rev 1, the Production bill of materials, manufacturing documentation, and ARK Electronics published documentation. IMU specifications per the Analog Devices ADIS16507 data sheet Rev. A. Board temperature ratings per component data sheets."
 photo = "ark_adis16507.jpg"
 intro = [
   "The USA-built ARK ADIS16507 is a compact carrier for the Analog Devices ADIS16507 precision MEMS IMU, sold with the ADIS16507-2 or ADIS16507-3. It provides a factory-calibrated triaxial gyroscope (±500 °/s or ±2000 °/s) and triaxial accelerometer (±40 g) over SPI, with onboard 3.3 V regulation from a 5 V supply.",
@@ -14,7 +14,7 @@ intro = [
 features = [
   "ADIS16507-2 or ADIS16507-3 precision MEMS IMU",
   "Gyro: ±500 °/s (-2) or ±2000 °/s (-3)",
-  "Accel: ±40 g (±392 m/s²)",
+  "Accel: ±40 g",
   "Factory calibrated sensitivity, bias, and alignment",
   "SPI interface with data-ready",
   "Onboard 3.3 V LDO from 5 V input",
@@ -43,7 +43,7 @@ resources = [
 group = "ELECTRICAL"
 rows = [
   ["Supply voltage", "5 V"],
-  ["Supply current", "~41 mA average"],
+  ["Supply current", "41 mA average"],
   ["IMU supply", "3.3 V (onboard LDO)"],
   ["Interface", "SPI"],
 ]
@@ -73,8 +73,9 @@ rows = [
   ["SKU", "ARK-ADIS16507-2", "ARK-ADIS16507-3"],
   ["Gyro range", "±500 °/s", "±2000 °/s"],
   ["Gyro in-run bias stability", "2.7 °/h", "7.5 / 8.1 / 4.9 °/h (X / Y / Z)"],
+  ["Accel in-run bias stability", "12.7 / 12.7 / 13.7 µg", "12.7 / 12.7 / 13.7 µg"],
 ]
-note = "Same board, connector and pinout. Both: accelerometer ±40 g, in-run bias stability 12.7 µg (X, Y) and 13.7 µg (Z). Bias stability is the ADIS16507 data sheet typical."
+note = "Same board, connector and pinout. Bias stability is the ADIS16507 data sheet typical."
 
 [[sections]]
 kind = "table"
@@ -101,7 +102,5 @@ kind = "notes"
 title = "NOTES"
 items = [
   "Factory calibrated over −40 °C to +85 °C. Extended exposure outside −40 °C to +105 °C can degrade calibration accuracy.",
-  "IMU environmental ratings are the ADIS16507 absolute maximum ratings. No vibration survival limit is specified.",
-  "SPI-compatible data communications with programmable operation and control.",
-  "Includes 11-pin JST-GH cable.",
+  "IMU environmental ratings are the ADIS16507 absolute maximum ratings.",
 ]

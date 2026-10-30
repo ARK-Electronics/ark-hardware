@@ -9,8 +9,8 @@ sources = "Compiled from the ARK 12S Payload Power Module Production schematic R
 photo = "ark_12s_payload_power_module.jpg"
 photo_frame = true
 intro = [
-  "The USA-built ARK 12S Payload Power Module provides dual regulated outputs and high-accuracy digital battery monitoring for Pixhawk Autopilot Bus carriers. A 100 A continuous battery path is monitored by a TI INA238 while two independent synchronous bucks deliver 5.2 V / 6 A for avionics and 12 V / 6 A for payloads.",
-  "The 6-pin Molex output matches the ARK PAB Carrier power pinout; the additional 4-pin Molex supplies the 12 V payload rail. Parallel modules increase continuous battery current beyond 100 A.",
+  "The USA-built ARK 12S Payload Power Module powers a Pixhawk Autopilot Bus carrier and its payload and monitors the battery. A TI INA238 measures a 100 A continuous battery path, and two synchronous bucks supply 5.2 V at 6 A for the avionics and 12 V at 6 A for payloads.",
+  "Its 6-pin Molex CLIK-Mate output matches the ARK PAB Carrier power pinout; a 4-pin CLIK-Mate carries the 12 V rail.",
 ]
 features = [
   "100 A continuous battery current path (parallel for higher)",
@@ -45,7 +45,7 @@ rows = [
   ["Battery current", "100 A continuous (20 °C ambient)"],
   ["5.2 V output", "6 A continuous"],
   ["12 V output", "6 A continuous"],
-  ["Power monitor", "INA238, 0.1 mΩ shunt, I²C (default 0x45)"],
+  ["Power monitor", "INA238, 0.1 mΩ shunt, I²C address 0x45"],
   ["Operating temperature", "−40 °C to +85 °C"],
   ["Storage temperature", "−40 °C to +85 °C"],
 ]
@@ -87,18 +87,8 @@ note = "Connector: Molex 5024940470 4-position CLIK-Mate."
 kind = "notes"
 title = "NOTES"
 items = [
-  "The power monitor measures only current flowing from the battery input pads to the battery output pads. Wire the ESCs and every other battery load to the output pads.",
-  "Each output has its own short-circuit and thermal protection and recovers on its own. The power monitor runs from the 5.2 V output, so a 5.2 V fault also stops battery monitoring.",
+  "The power monitor measures only current flowing from the battery input pads to the battery output pads, so wire every battery load to the output pads.",
+  "Each output has its own auto-recovering short-circuit and thermal protection. A 5.2 V fault also stops battery monitoring.",
   "Active cooling is recommended when operating at high battery current or high 5 V / 12 V regulator loads.",
   "For continuous battery current above 100 A, operate multiple modules in parallel.",
-  "Battery input and output are solder pads for high-current connections.",
-]
-
-[[sections]]
-kind = "table"
-title = "ALTERNATIVES"
-head = ["PRODUCT", "KEY DIFFERENCE", "WHEN TO CHOOSE"]
-rows = [
-  ["ARK 12S PAB Power Module", "5.2 V only (no 12 V rail)", "Avionics power only, smaller size / lower weight"],
-  ["ARK PAB Power Module", "Lower voltage / 60 A path", "6S systems"],
 ]

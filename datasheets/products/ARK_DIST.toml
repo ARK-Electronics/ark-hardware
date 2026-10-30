@@ -5,7 +5,7 @@ rev = "1.0"
 kicker = "TIME-OF-FLIGHT DISTANCE SENSOR"
 subtitle = "DroneCAN and MAVLink laser distance sensor in short-, mid- and long-range variants"
 doc_id = "ARK-DS-ARK-DIST"
-sources = "Compiled from the ARK DIST Production schematic Rev 1.0 (25 Jun 2025), ARK Electronics published documentation and ARK flight measurements. Laser and optical characteristics per Broadcom. Temperature ratings per component data sheets; the time-of-flight module sets the operating range."
+sources = "Compiled from the ARK DIST Production schematic Rev 1.0 (25 Jun 2025), ARK Electronics published documentation and ARK flight measurements. Laser and optical characteristics per Broadcom. Temperature ratings per component data sheets."
 out = "ARK_DIST/datasheet/ARK_DIST_Datasheet.pdf"
 photo = "ark_dist.jpg"
 intro = [
@@ -65,8 +65,8 @@ rows = [
 [[specs]]
 group = "ENVIRONMENTAL & MECHANICAL"
 rows = [
-  ["Operating temperature", "−20 °C to +70 °C (SR, MR)"],
-  ["Storage temperature", "−25 °C to +85 °C (SR, MR)"],
+  ["Operating temperature", "−20 °C to +70 °C"],
+  ["Storage temperature", "−25 °C to +85 °C"],
   ["Dimensions", "20 × 28 × 14 mm"],
   ["Weight", "4 g"],
 ]
@@ -80,8 +80,6 @@ rows = [
   ["Update rate", "20 Hz", "15 Hz", "10 Hz"],
   ["Max reported distance", "30 m", "50 m", "100 m"],
   ["Min reported distance", "0 m", "0.1 m", "0.6 m"],
-  ["Operating temperature", "−20 °C to +70 °C", "−20 °C to +70 °C", "TBD"],
-  ["Storage temperature", "−25 °C to +85 °C", "−25 °C to +85 °C", "TBD"],
 ]
 
 [[sections]]

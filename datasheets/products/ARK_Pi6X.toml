@@ -135,7 +135,6 @@ rows = [
   ["PX4", "ark_pi6x_default", "Ships installed"],
   ["ArduPilot", "ARK_PI6X", "—"],
 ]
-note = "Flow sensor support: see the docs."
 
 [[sections]]
 kind = "notes"
@@ -145,6 +144,7 @@ items = [
   "The compute module's USB reaches the flight controller, USB-C and both USB JST-GH ports through a full-speed (12 Mbps) hub. A cable in the programming micro USB switches the compute module to that port and disconnects the hub until reboot.",
   "With a Compute Module 5, only CAM1 works and the Pi UART numbering shifts by one; USB 3.0 isn't wired.",
   "CAN1 is terminated on the board (120 Ω).",
+  "ArduPilot has no drivers for the Pi6X Flow's PAW3902 flow sensor or AFBR-S50LV85D distance sensor.",
   "Temperature ratings are for the carrier. The Raspberry Pi CM4 and CM5 are rated −20 °C to +85 °C.",
 ]
 

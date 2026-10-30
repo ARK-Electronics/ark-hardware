@@ -1,0 +1,104 @@
+# Copy to products/<KEY>.toml, KEY being the product's directory in this repo. See README.md for the content rules.
+
+title = "ARK EXAMPLE"                # product name as sold
+version = "1.0"                      # this datasheet's version; bump on every published change
+date = "2026-01-31"                  # issue date of this version
+rev = "1.0"                          # schematic revision of the shipping board
+kicker = "FLIGHT CONTROLLER"         # product category, caps
+subtitle = "One line: what it is, the one fact that sets it apart"
+doc_id = "ARK-DS-ARK-EXAMPLE"
+sources = "Compiled from the ARK Example Production schematic Rev 1.0 (31 Jan 2026), the ARK Example STEP model, and ARK Electronics published documentation."
+# out = "ARK_EXAMPLE/datasheet/ARK_EXAMPLE_LR_Datasheet.pdf"   # only when the default <KEY>/datasheet/<KEY>_Datasheet.pdf won't do
+photo = "ark_example.jpg"            # in photos/
+# photo_frame = true                 # thin border, for a photo on white
+intro = [
+  "Two or three sentences: what the product is, what it connects to, how it is powered.",
+]
+features = [
+  "One line per feature, eight at most",
+  "– A sub-point of the feature above",
+]
+glance = [
+  ["MCU", "STM32H743IIK6"],
+  ["Supply", "5 V"],
+  ["Hardware rev", "Rev 1.0"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-example/"],
+  ["DOCS", "docs.arkelectron.com/products/category/ark-example"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Supply voltage", "5 V"],
+  ["Supply current", "TBD"],         # a value starting with TBD renders marked, so a draft can't pass for a release
+]
+
+[[specs]]
+group = "ENVIRONMENTAL & MECHANICAL"
+rows = [
+  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Dimensions", "20 × 28 × 14 mm"],
+  ["Weight", "4 g"],
+]
+
+# Page 2 on: sections in order. Every kind takes an optional `note` (a line under it) and `new_page = true`.
+
+[[sections]]
+kind = "compare"                     # what differs between SKUs that share this datasheet
+title = "VARIANTS"
+cols = ["ARK EXAMPLE", "ARK EXAMPLE LR"]
+rows = [
+  ["SKU", "ARK-EXAMPLE", "ARK-EXAMPLE-LR"],
+]
+
+[[sections]]
+kind = "table"                       # any table; cls = "pins" for a full-width pin table, "mono" for a monospace 2nd column
+title = "SENSOR BUS MAP"
+head = ["DEVICE", "INTERFACE", "ADDRESS", "FUNCTION"]
+rows = [
+  ["BMP390", "I2C2", "0x76", "Barometric pressure"],
+]
+
+[[sections]]
+kind = "pinouts"                     # connector tables, per_row across
+title = "CONNECTOR PINOUTS"
+new_page = true
+per_row = 3
+head = ["PIN", "SIGNAL", "VOLTAGE"]
+
+[[sections.connectors]]
+title = "CAN · 4-PIN JST-GH"
+rows = [
+  ["1", "5V_OUT", "5 V"],
+  ["2", "CAN_P", "5 V"],
+  ["3", "CAN_N", "5 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections]]
+kind = "range"                       # a measured grid per variant; see products/ARK_DIST.toml
+title = "RANGE"
+corner = "SURFACE"
+rows = ["Asphalt"]
+cols = ["BRIGHT SUN", "DUSK"]
+
+[[sections.blocks]]
+name = "ARK EXAMPLE"
+grid = [["18 m", "30 m"]]
+
+[[sections]]
+kind = "figure"                      # an SVG or image from photos/, width in points (538 is full width)
+title = "BLOCK DIAGRAM"
+src = "ark_example_block.svg"
+width = 538
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "Facts a designer needs that don't fit a table: limits, what a pin does not do, what ships in the box.",
+]

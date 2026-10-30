@@ -1,0 +1,94 @@
+title = "ARK 12S Payload Power Module"
+version = "1.0"
+date = "2026-10-29"
+rev = "1.2"
+kicker = "POWER MODULE"
+subtitle = "Dual 5.2 V / 6 A + 12 V / 6 A regulated supply and digital power monitor for the Pixhawk Autopilot Bus"
+doc_id = "ARK-DS-ARK-12S-Payload-Power-Module"
+sources = "Compiled from the ARK 12S Payload Power Module Production schematic Rev 1.2 (25 Aug 2026), the Production bill of materials, the manufacturing documentation, and ARK Electronics published documentation. Temperature ratings per component data sheets."
+photo = "ark_12s_payload_power_module.jpg"
+photo_frame = true
+intro = [
+  "The USA-built ARK 12S Payload Power Module powers a Pixhawk Autopilot Bus carrier and its payload and monitors the battery. A TI INA238 measures a 100 A continuous battery path, and two synchronous bucks supply 5.2 V at 6 A for the avionics and 12 V at 6 A for payloads.",
+  "Its 6-pin Molex CLIK-Mate output matches the ARK PAB Carrier power pinout; a 4-pin CLIK-Mate carries the 12 V rail.",
+]
+features = [
+  "100 A continuous battery current path (parallel for higher)",
+  "Dual TI LM70880 bucks — 5.2 V / 6 A + 12 V / 6 A",
+  "TI INA238 digital power monitor with 0.1 mΩ shunt (I²C)",
+  "10–75 V input (15 V min for 12 V rail at full load)",
+  "6-pin Molex (5 V / I²C) matching PAB pinout",
+  "4-pin Molex for 12 V payload",
+  "Includes both Molex cables",
+]
+glance = [
+  ["Input", "10–75 V"],
+  ["Battery current", "100 A cont."],
+  ["5.2 V rail", "6 A"],
+  ["12 V rail", "6 A"],
+  ["Monitor", "INA238 0.1 mΩ"],
+  ["Dimensions", "37 × 35 × 13 mm"],
+  ["Weight", "20.5 g"],
+  ["Hardware rev", "Rev 1.2"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-12s-payload-power-module/"],
+  ["DOCS", "docs.arkelectron.com/products/power/ark-12s-payload-power-module"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Input voltage", "10–75 V (15 V min @ 12 V / 6 A)"],
+  ["Battery current", "100 A continuous (20 °C ambient)"],
+  ["5.2 V output", "6 A continuous"],
+  ["12 V output", "6 A continuous"],
+  ["Power monitor", "INA238, 0.1 mΩ shunt, I²C address 0x45"],
+  ["Operating temperature", "−40 °C to +85 °C"],
+  ["Storage temperature", "−40 °C to +85 °C"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "37 × 35 × 13 mm"],
+  ["Weight", "20.5 g"],
+]
+
+[[sections]]
+kind = "table"
+title = "5 V / I²C CONNECTOR PINOUT"
+head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
+rows = [
+  ["1", "VBRICK", "5.2 V", "Regulated avionics output, 3 A per pin"],
+  ["2", "VBRICK", "5.2 V", "Regulated avionics output, 3 A per pin"],
+  ["3", "SCL", "3.3 V", "I²C clock to INA238"],
+  ["4", "SDA", "3.3 V", "I²C data to INA238"],
+  ["5", "GND", "GND", ""],
+  ["6", "GND", "GND", ""],
+]
+note = "Connector: Molex 5024940670 6-position CLIK-Mate. Matches ARK PAB Carrier power pinout."
+
+[[sections]]
+kind = "table"
+title = "12 V PAYLOAD CONNECTOR PINOUT"
+head = ["PIN", "SIGNAL", "VOLTAGE", "NOTES"]
+rows = [
+  ["1", "12 V", "12.0 V", "Regulated payload output, 3 A per pin"],
+  ["2", "12 V", "12.0 V", "Regulated payload output, 3 A per pin"],
+  ["3", "GND", "GND", ""],
+  ["4", "GND", "GND", ""],
+]
+note = "Connector: Molex 5024940470 4-position CLIK-Mate."
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "The power monitor measures only current flowing from the battery input pads to the battery output pads, so wire every battery load to the output pads.",
+  "Each output has its own auto-recovering short-circuit and thermal protection. A 5.2 V fault also stops battery monitoring.",
+  "Active cooling is recommended when operating at high battery current or high 5 V / 12 V regulator loads.",
+  "For continuous battery current above 100 A, operate multiple modules in parallel.",
+]

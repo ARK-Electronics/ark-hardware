@@ -1,0 +1,134 @@
+title = "ARKV6S"
+version = "1.0"
+date = "2026-10-29"
+rev = "1.0"
+kicker = "FLIGHT CONTROLLER"
+subtitle = "Single-IMU FMUv6X autopilot module on the Pixhawk Autopilot Bus"
+doc_id = "ARK-DS-ARKV6S"
+sources = "Compiled from the ARKV6S Production schematic Rev 1.0 (29 Jan 2026), the ARKV6S Production bill of materials, the ARKV6S production STEP model, and ARK Electronics published documentation. Temperature ratings per component data sheets."
+photo = "arkv6s.jpg"
+photo_frame = true
+intro = [
+  "The USA-built ARKV6S flight controller is a cost-optimised single-IMU variant of the ARKV6X, based on the FMUv6X and Pixhawk Autopilot Bus (PAB) open source standards. An STM32H743 processor reads one industrial-grade IMU, a barometer and a magnetometer.",
+  "It fits any Pixhawk Autopilot Bus carrier, including the ARK PAB Carrier, ARK Jetson PAB Carrier and ARK Jetson PAB V3.",
+]
+features = [
+  "Single industrial IMU with independent power domain",
+  "– 1 × TDK InvenSense IIM-42653 (SPI1)",
+  "Bosch BMP390 barometer and ST IIS2MDC magnetometer on internal I2C4",
+  "Cypress FM25V02A 256 kbit FRAM for non-volatile parameter storage",
+  "1 W sensor heater under closed-loop control",
+  "Supercapacitor-backed real-time clock",
+  "microSD logging on a 4-bit SDMMC interface",
+  "Pixhawk Autopilot Bus (PAB) form factor",
+]
+glance = [
+  ["Standard", "FMUv6X / PAB"],
+  ["MCU", "STM32H743IIK6"],
+  ["IMUs", "1 (industrial)"],
+  ["Baro / Mag", "BMP390 / IIS2MDC"],
+  ["Supply", "5 V, 500 mA max"],
+  ["Interface", "100 + 50 pin PAB"],
+  ["Dimensions", "36 × 29 × 5 mm"],
+  ["Weight", "5.0 g"],
+  ["Operating temp", "−10 to +60 °C"],
+  ["Hardware rev", "Rev 1.0"],
+]
+compliance = [
+  "Designed and manufactured in the USA",
+  "NDAA compliant",
+  "FMUv6X open standard",
+  "Pixhawk Autopilot Bus DS-010 standard",
+]
+resources = [
+  ["STORE", "arkelectron.com/product/arkv6s-flight-controller/"],
+  ["DOCS", "docs.arkelectron.com/products/flight-controller/arkv6s"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "PROCESSOR & MEMORY"
+rows = [
+  ["MCU", "ST STM32H743IIK6, 176-UFBGA"],
+  ["Flash / RAM", "2 MB / 1 MB"],
+  ["FRAM", "FM25V02A, 256 kbit, 40 MHz SPI"],
+  ["Removable storage", "microSD, SDMMC 4-bit, push-push"],
+  ["Oscillators", "16.000 MHz + 32.768 kHz ±20 ppm"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Supply voltage", "5 V"],
+  ["Supply current", "500 mA max"],
+  ["— main system", "300 mA"],
+  ["— sensor heater", "200 mA"],
+  ["Operating temperature", "−10 °C to +60 °C"],
+  ["Storage temperature", "−10 °C to +60 °C"],
+]
+
+[[specs]]
+group = "MECHANICAL"
+rows = [
+  ["Dimensions", "36 × 29 × 5 mm"],
+  ["Weight", "5.0 g"],
+  ["Mounting", "4 × Ø2.3 mm on 31.4 × 24.4 mm"],
+]
+
+[[sections]]
+kind = "table"
+title = "PIXHAWK AUTOPILOT BUS INTERFACE"
+head = ["PAB CONNECTOR", "HIROSE PART", "SIGNALS CARRIED"]
+rows = [
+  ["PAB X1 (J2)", "DF40C-100DP-0.4V, 100 pos", "8 × PWM (DShot on 1–6) · CAN1 / CAN2 · 8 × UART (see serial map) · I2C1–I2C3 · USB with VBUS sense · PPM and RC input · SWD · safety switch, buzzer, armed · 3 × power-input sense · ADC · 5 V input"],
+  ["PAB X2 (J3)", "DF40C-50DP-0.4V, 50 pos", "Ethernet RMII with power enable · external SPI6 (2 × CS, reset, 2 × DRDY) · SPIX_SYNC · 17 reserved pins"],
+]
+
+[[sections]]
+kind = "table"
+title = "SENSOR BUS MAP"
+head = ["DEVICE", "INTERFACE", "ADDRESS / SELECT", "FUNCTION"]
+rows = [
+  ["IIM-42653 (U9)", "SPI1", "nCS1", "Industrial 6-axis accel / gyro"],
+  ["BMP390 (U11)", "I2C4", "0x76", "Barometric pressure"],
+  ["IIS2MDC (U5)", "I2C4", "0x1E", "3-axis magnetometer"],
+]
+
+[[sections]]
+kind = "table"
+title = "CARRIER BOARD OPTIONS"
+head = ["ARK CARRIER BOARD", "AVIONICS I/O", "ADDS"]
+rows = [
+  ["ARK Pixhawk Autopilot Bus Carrier", "JST-GH", "Full Pixhawk-standard breakout, 100 Mbps Ethernet, dual power"],
+  ["ARK Jetson PAB Carrier", "JST-GH", "NVIDIA Jetson Orin compute on Pixhawk-standard ports"],
+  ["ARK Jetson PAB V3", "Pico-Clasp", "Jetson Orin compute, triple power inputs, Ethernet switch"],
+  ["ARK VOXL2 RTK PAB Carrier", "Pico-Clasp", "ModalAI VOXL2 compute; Blue UAS Framework listed"],
+]
+
+[[sections]]
+kind = "columns"
+title = "SERIAL REFERENCE & FIRMWARE SUPPORT"
+
+[[sections.parts]]
+kind = "table"
+title = "SERIAL PORT MAPPING"
+head = ["UART", "DEVICE", "PORT"]
+rows = [
+  ["USART1", "/dev/ttyS0", "GPS"],
+  ["USART2", "/dev/ttyS1", "TELEM3"],
+  ["USART3", "/dev/ttyS2", "Debug Console"],
+  ["UART4", "/dev/ttyS3", "UART4 & I2C"],
+  ["UART5", "/dev/ttyS4", "TELEM2"],
+  ["USART6", "/dev/ttyS5", "PX4IO/RC"],
+  ["UART7", "/dev/ttyS6", "TELEM1"],
+  ["UART8", "/dev/ttyS7", "GPS2"],
+]
+
+[[sections.parts]]
+kind = "notes"
+title = "FIRMWARE & SOFTWARE SUPPORT"
+items = [
+  "PX4 Autopilot — ships by default; ArduPilot supported",
+  "Requires a PAB carrier: all I/O is on the two board-to-board connectors.",
+  "Includes a microSD card.",
+]

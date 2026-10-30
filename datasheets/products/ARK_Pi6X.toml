@@ -1,0 +1,318 @@
+title = "ARK Pi6X"
+version = "1.0"
+date = "2026-10-30"
+rev = "2.0"
+kicker = "FLIGHT CONTROLLER"
+subtitle = "Raspberry Pi compute module carrier with an STM32H743 flight controller and 2S–6S power input"
+doc_id = "ARK-DS-ARK-PI6X"
+sources = "Compiled from the ARK Compute Module FC Production schematic Rev 2.0 (11 Apr 2024), the ARK Pi6X Flow Rev 2.0 STEP model, the PX4 and ArduPilot board definitions, the MIC2026A-76A data sheet (DS20006608A), and ARK Electronics published documentation. Temperature ratings per component data sheets."
+photo = "ark_pi6x.jpg"
+intro = [
+  "The USA-built ARK Pi6X puts a Raspberry Pi Compute Module carrier, an STM32H743 flight controller and a 2S–6S battery input with current monitoring on one board, with 30.5 × 30.5 mm mounting for a 4-in-1 ESC. The Pi runs ARK-OS and reaches the flight controller over USB and a dedicated UART.",
+  "The ARK Pi6X Flow is the same board with an optical flow sensor and a distance sensor fitted. PX4 ships by default; ArduPilot is supported.",
+]
+features = [
+  "STM32H743IIK6, 480 MHz, 2 MB flash, 1 MB RAM",
+  "Dual heated TDK InvenSense ICM-42688-P IMUs on separate SPI buses",
+  "Bosch BMP390 barometer and ST IIS2MDC magnetometer",
+  "Raspberry Pi Compute Module 4; Compute Module 5 with reduced I/O",
+  "2S–6S battery input, TI INA226 voltage and current monitor",
+  "8 PWM outputs, DShot on outputs 1–6",
+  "Pi Ethernet, micro HDMI, two MIPI CSI cameras, USB-C host",
+  "Pi6X Flow: PixArt PAW3902 flow and Broadcom AFBR-S50LV85D distance",
+]
+glance = [
+  ["MCU", "STM32H743IIK6"],
+  ["Compute", "Raspberry Pi CM4 / CM5"],
+  ["IMUs", "2 × ICM-42688-P"],
+  ["Baro / Mag", "BMP390 / IIS2MDC"],
+  ["Input", "2S–6S, 5.5–25.2 V"],
+  ["Operating temp", "−10 to +60 °C"],
+  ["Flow operating", "0 to +60 °C"],
+  ["Dimensions", "91.5 × 56 mm"],
+  ["Weight", "41 g"],
+  ["Hardware rev", "Rev 2.0"],
+]
+compliance = ["Designed and manufactured in the USA", "NDAA compliant", "Blue UAS Framework listed (ARK Pi6X)"]
+resources = [
+  ["STORE", "arkelectron.com/product/ark-pi6x/"],
+  ["", "arkelectron.com/product/ark-pi6x-flow/"],
+  ["DOCS", "docs.arkelectron.com/products/flight-controller/ark-pi6x-flow"],
+  ["CAD", "github.com/ARK-Electronics/ark-hardware"],
+]
+
+[[specs]]
+group = "PROCESSOR & COMPUTE"
+rows = [
+  ["MCU", "ST STM32H743IIK6, 480 MHz"],
+  ["Flash / RAM", "2 MB / 1 MB"],
+  ["Compute module", "Raspberry Pi CM4; CM4 Lite boots from microSD"],
+  ["Flight controller link", "USB through the hub, and UART5 to the Pi"],
+]
+
+[[specs]]
+group = "ELECTRICAL"
+rows = [
+  ["Battery input", "5.5–25.2 V (2S–6S)"],
+  ["Input clamp", "26 V standoff, 28.9 V breakdown"],
+  ["Current sensing", "INA226, 0.5 mΩ shunt"],
+  ["5 V on CAN, GPS, TELEM1", "500 mA, shared with the CAN transceiver"],
+  ["PWM outputs", "3.3 V logic, 220 Ω series, signal only"],
+]
+
+[[specs]]
+group = "ENVIRONMENTAL & MECHANICAL"
+rows = [
+  ["Operating temperature", "−10 °C to +60 °C; Pi6X Flow 0 °C to +60 °C"],
+  ["Storage temperature", "−10 °C to +60 °C"],
+  ["Dimensions", "91.5 × 56 mm, without compute module and ESC"],
+  ["Weight", "41 g without compute module, Pi microSD card and ESC; 53 g with CM4 and Pi microSD card"],
+  ["ESC mounting", "4-in-1 ESC on 30.5 × 30.5 mm"],
+]
+
+[[sections]]
+kind = "compare"
+title = "VARIANTS"
+cols = ["ARK Pi6X", "ARK Pi6X Flow"]
+rows = [
+  ["Optical flow", "—", "PixArt PAW3902, SPI3"],
+  ["Distance sensor", "—", "Broadcom AFBR-S50LV85D, SPI6"],
+  ["Operating temperature", "−10 °C to +60 °C", "0 °C to +60 °C"],
+]
+note = "Same board, connectors and pinout; the ARK Pi6X leaves both sensors unfitted."
+
+[[sections]]
+kind = "table"
+title = "POWER RAILS"
+head = ["RAIL", "LIMIT", "CONNECTORS"]
+rows = [
+  ["VDD_5V_HIPOWER", "500 mA, shared with the CAN transceiver", "CAN, GPS, TELEM1"],
+  ["VDD_5V_SBUS_RC", "250 mA fuse", "RC"],
+  ["5.0V", "2 A fuse", "Pi LED Strip"],
+  ["5.0V", "500 mA fuse each", "Pi I2C1, Pi UART3, Pi GPIO, Pi Fan"],
+  ["USB VBUS", "500 mA each", "USB-C, Pi USB (hub ports 2 and 4)"],
+  ["HDMI 5 V", "250 mA fuse", "Micro HDMI"],
+  ["3.3V_RPI", "600 mA, the compute module's 3.3 V output, shared", "CAM0, CAM1, Pi Console"],
+]
+note = "VDD_5V_HIPOWER and the USB ports are MIC2026A current-limited switch channels, guaranteed to 500 mA; above that they may limit anywhere in 0.5–1.25 A. Every 5 V rail and the compute module draw from the board's 5 V regulator."
+
+[[sections]]
+kind = "table"
+title = "SENSOR BUS MAP"
+head = ["DEVICE", "INTERFACE", "ADDRESS / SELECT", "FUNCTION"]
+rows = [
+  ["ICM-42688-P", "SPI1", "nCS, DRDY", "6-axis accelerometer / gyroscope"],
+  ["ICM-42688-P", "SPI2", "nCS, DRDY", "6-axis accelerometer / gyroscope"],
+  ["BMP390", "I2C4", "0x76", "Barometric pressure"],
+  ["IIS2MDC", "I2C4", "0x1E", "3-axis magnetometer"],
+  ["INA226", "I2C3", "0x41", "Battery voltage and current"],
+  ["PAW3902 (Flow)", "SPI3", "nCS, DRDY", "Optical flow"],
+  ["AFBR-S50LV85D (Flow)", "SPI6", "nCS, IRQ", "Time-of-flight distance"],
+  ["GPS connector", "I2C1", "External", "Compass on a GPS module"],
+]
+
+[[sections]]
+kind = "table"
+title = "SERIAL PORT MAPPING"
+head = ["UART", "CONNECTOR", "PX4", "ARDUPILOT"]
+rows = [
+  ["USART1", "GPS", "GPS1, /dev/ttyS0", "SERIAL3"],
+  ["USART3", "FC DEBUG", "Console, /dev/ttyS1", "—"],
+  ["UART4", "PWM + UART4", "TELEM4, /dev/ttyS2", "SERIAL4"],
+  ["UART5", "None, wired to the Pi", "TELEM2, /dev/ttyS3", "SERIAL2"],
+  ["USART6", "RC", "RC, /dev/ttyS4", "SERIAL5"],
+  ["UART7", "TELEM1 (RTS/CTS)", "TELEM1, /dev/ttyS5", "SERIAL1"],
+]
+note = "UART5 reaches the Pi's UART4 (/dev/ttyAMA4) on a CM4 and UART3 (/dev/ttyAMA3) on a CM5."
+
+[[sections]]
+kind = "table"
+title = "FIRMWARE"
+new_page = true
+cls = "mono"
+head = ["FIRMWARE", "BUILD TARGET", "NOTES"]
+rows = [
+  ["PX4", "ark_pi6x_default", "Ships installed"],
+  ["ArduPilot", "ARK_PI6X", "—"],
+]
+note = "Flow sensor support: see the docs."
+
+[[sections]]
+kind = "notes"
+title = "NOTES"
+items = [
+  "DShot runs on outputs 1–6. Outputs 7–8 are on TIM12, which has no DMA, so they run PWM and OneShot only.",
+  "The compute module's USB reaches the flight controller, USB-C and both USB JST-GH ports through a full-speed (12 Mbps) hub. A cable in the programming micro USB switches the compute module to that port and disconnects the hub until reboot.",
+  "With a Compute Module 5, only CAM1 works and the Pi UART numbering shifts by one; USB 3.0 isn't wired.",
+  "CAN1 is terminated on the board (120 Ω).",
+  "Temperature ratings are for the carrier. The Raspberry Pi CM4 and CM5 are rated −20 °C to +85 °C.",
+]
+
+[[sections]]
+kind = "pinouts"
+title = "CONNECTOR PINOUTS"
+new_page = true
+per_row = 3
+head = ["PIN", "SIGNAL", "VOLTAGE"]
+
+[[sections.connectors]]
+title = "PWM + UART4 · 11-PIN JST-GH"
+rows = [
+  ["1", "FMU_CH1", "3.3 V"],
+  ["2", "FMU_CH2", "3.3 V"],
+  ["3", "FMU_CH3", "3.3 V"],
+  ["4", "FMU_CH4", "3.3 V"],
+  ["5", "FMU_CH5", "3.3 V"],
+  ["6", "FMU_CH6", "3.3 V"],
+  ["7", "FMU_CH7", "3.3 V"],
+  ["8", "FMU_CH8", "3.3 V"],
+  ["9", "UART4_TX", "3.3 V"],
+  ["10", "UART4_RX", "3.3 V"],
+  ["11", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "FC DEBUG · 10-PIN JST-SH"
+rows = [
+  ["1", "3V3_FMU", "3.3 V"],
+  ["2", "USART3_TX", "3.3 V"],
+  ["3", "USART3_RX", "3.3 V"],
+  ["4", "FMU_SWDIO", "3.3 V"],
+  ["5", "FMU_SWCLK", "3.3 V"],
+  ["6", "SPI6_SCK", "3.3 V"],
+  ["7", "NFC_GPIO", "3.3 V"],
+  ["8", "PD15", "3.3 V"],
+  ["9", "FMU_NRST", "3.3 V"],
+  ["10", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "GPS · 6-PIN JST-GH"
+rows = [
+  ["1", "VDD_5V_HIPOWER", "5 V"],
+  ["2", "USART1_TX", "3.3 V"],
+  ["3", "USART1_RX", "3.3 V"],
+  ["4", "I2C1_SCL", "3.3 V"],
+  ["5", "I2C1_SDA", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "TELEM1 · 6-PIN JST-GH"
+rows = [
+  ["1", "VDD_5V_HIPOWER", "5 V"],
+  ["2", "UART7_TX", "3.3 V"],
+  ["3", "UART7_RX", "3.3 V"],
+  ["4", "UART7_CTS", "3.3 V"],
+  ["5", "UART7_RTS", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "CAN · 4-PIN JST-GH"
+rows = [
+  ["1", "VDD_5V_HIPOWER", "5 V"],
+  ["2", "CAN1_P", "5 V"],
+  ["3", "CAN1_N", "5 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "RC · 4-PIN JST-GH"
+rows = [
+  ["1", "VDD_5V_SBUS_RC", "5 V"],
+  ["2", "USART6_RX", "3.3 V"],
+  ["3", "USART6_TX", "3.3 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI UART3 · 6-PIN JST-GH"
+rows = [
+  ["1", "5.0V", "5 V"],
+  ["2", "UART3_TX", "3.3 V"],
+  ["3", "UART3_RX", "3.3 V"],
+  ["4", "UART3_CTS", "3.3 V"],
+  ["5", "UART3_RTS", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI GPIO · 6-PIN JST-GH"
+rows = [
+  ["1", "5.0V", "5 V"],
+  ["2", "GPIO21", "3.3 V"],
+  ["3", "GPIO22", "3.3 V"],
+  ["4", "GPIO23", "3.3 V"],
+  ["5", "GPIO24", "3.3 V"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI CONSOLE · 6-PIN JST-SH"
+rows = [
+  ["1", "3.3V_RPI", "3.3 V"],
+  ["2", "CONSOLE_TXD0", "3.3 V"],
+  ["3", "CONSOLE_RXD0", "3.3 V"],
+  ["4", "NC", "—"],
+  ["5", "NC", "—"],
+  ["6", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI LED STRIP · 8-PIN JST-GH"
+rows = [
+  ["1", "5.0V", "5 V"],
+  ["2", "5.0V", "5 V"],
+  ["3", "GPIO12", "3.3 V"],
+  ["4", "GPIO16", "3.3 V"],
+  ["5", "GPIO17", "3.3 V"],
+  ["6", "GPIO20", "3.3 V"],
+  ["7", "GND", "GND"],
+  ["8", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI I2C1 · 4-PIN JST-GH"
+rows = [
+  ["1", "5.0V", "5 V"],
+  ["2", "I2C1_SCL", "3.3 V"],
+  ["3", "I2C1_SDA", "3.3 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI ETH · 4-PIN JST-GH"
+rows = [
+  ["1", "ETH_RD_N", "—"],
+  ["2", "ETH_RD_P", "—"],
+  ["3", "ETH_TD_N", "—"],
+  ["4", "ETH_TD_P", "—"],
+]
+
+[[sections.connectors]]
+title = "PI FAN · 4-PIN MOLEX KK 254"
+rows = [
+  ["1", "GND", "GND"],
+  ["2", "5.0V", "5 V"],
+  ["3", "FAN_TACH_CON", "5 V"],
+  ["4", "FAN_PWM_Q*", "5 V"],
+]
+
+[[sections.connectors]]
+title = "PI USB (HUB PORT 2) · 4-PIN JST-GH"
+rows = [
+  ["1", "VBUS2_FLT", "5 V"],
+  ["2", "USB2_N", "3.3 V"],
+  ["3", "USB2_P", "3.3 V"],
+  ["4", "GND", "GND"],
+]
+
+[[sections.connectors]]
+title = "PI USB (HUB PORT 4) · 4-PIN JST-GH"
+rows = [
+  ["1", "VBUS4_FLT", "5 V"],
+  ["2", "USB4_N", "3.3 V"],
+  ["3", "USB4_P", "3.3 V"],
+  ["4", "GND", "GND"],
+]

@@ -13,6 +13,8 @@ datasheets/         # datasheet generator, its data and the datasheet standard
 <Product>/
 ├── model/          # STEP model and 3D PDF of the PCBA
 ├── case/           # STEP/STL files of the case (if the product has one)
+├── case_rev<N>/    # in place of case/ once a case has been revised: case_rev1 is the original
+│                   #   case, case_rev2 the standard case (M2/M2.5 × 12 hardware, light pipes)
 ├── schematic/      # schematic PDFs (where published)
 ├── bom/            # bill of materials (where published)
 ├── datasheet/      # datasheet PDF (where published), built from datasheets/

@@ -19,8 +19,8 @@ ARK_4IN1_ESC	ARK_4IN1_ESC/ARK_4_IN_1_ESC_Rev_3.1_PDF3D.PDF	ARK_4IN1_ESC/model/AR
 ARK_ADIS16507	ARK_ADIS16507_REV_1_3D_Model.step	ARK_ADIS16507/model/ARK_ADIS16507_REV_1_3D_Model.step
 ARK_ADIS16507	Bottom Case.stl	ARK_ADIS16507/case/Bottom_Case.stl
 ARK_ADIS16507	Top Case.stl	ARK_ADIS16507/case/Top_Case.stl
-ARK_CANNODE	Case/Bottom Case 0.1.stl	ARK_CANnode/case/Bottom_Case_0.1.stl
-ARK_CANNODE	Case/Top Case 0.2.stl	ARK_CANnode/case/Top_Case_0.2.stl
+ARK_CANNODE	Case/Bottom Case 0.1.stl	ARK_CANnode/case_rev1/Bottom_Case_0.1.stl
+ARK_CANNODE	Case/Top Case 0.2.stl	ARK_CANnode/case_rev1/Top_Case_0.2.stl
 ARK_CANNODE	Hardware/Rev 1/ARK CANNODE Rev 1 3D Model.step	ARK_CANnode/model/ARK_CANNODE_Rev_1_3D_Model.step
 ARK_CANNODE	LICENSE	ARK_CANnode/LICENSE
 ARK_CANNODE	Hardware/Rev 1/ARK CANNODE Rev 1 BOM.xlsx	ARK_CANnode/bom/ARK_CANNODE_Rev_1_BOM.xlsx
@@ -49,14 +49,14 @@ ARK_FPV	ARK_FPV_Rev_1.0.PDF	ARK_FPV/model/ARK_FPV_Rev_1.0_PDF3D.pdf
 ARK_G5_RTK_GPS	3D Model/ARK_G5_RTK_GPS_Rev_1.0.step	ARK_G5_RTK_GPS/model/ARK_G5_RTK_GPS_Rev_1.0.step
 ARK_G5_RTK_GPS	3D Printed Case/ARK_G5_RTK_GPS_Bottom_Case.stl	ARK_G5_RTK_GPS/case/ARK_G5_RTK_GPS_Bottom_Case.stl
 ARK_G5_RTK_GPS	3D Printed Case/ARK_G5_RTK_GPS_Top_Case.stl	ARK_G5_RTK_GPS/case/ARK_G5_RTK_GPS_Top_Case.stl
-ARK_GPS	Case/Bottom Case Rev 1.1.stl	ARK_GPS/case/Bottom_Case_Rev_1.1.stl
-ARK_GPS	Case/Top Case Rev 1.stl	ARK_GPS/case/Top_Case_Rev_1.stl
+ARK_GPS	Case/Bottom Case Rev 1.1.stl	ARK_GPS/case_rev1/Bottom_Case_Rev_1.1.stl
+ARK_GPS	Case/Top Case Rev 1.stl	ARK_GPS/case_rev1/Top_Case_Rev_1.stl
 ARK_GPS	Hardware/Rev 3/ARK GPS Rev 3 3D Model.step	ARK_GPS/model/ARK_GPS_Rev_3_3D_Model.step
 ARK_GPS	LICENSE	ARK_GPS/LICENSE
 ARK_GPS	Hardware/Rev 1/ARK GPS Rev 1 BOM.xlsx	ARK_GPS/bom/ARK_GPS_Rev_1_BOM.xlsx
 ARK_GPS	Hardware/Rev 2/ARK GPS Rev 2 BOM.xlsx	ARK_GPS/bom/ARK_GPS_Rev_2_BOM.xlsx
 ARK_GPS	Hardware/Rev 3/ARK GPS Rev 3 BOM.xlsx	ARK_GPS/bom/ARK_GPS_Rev_3_BOM.xlsx
-ARK_GPS	Case/Bottom Case Rev 1.stl	ARK_GPS/case/Bottom_Case_Rev_1.stl
+ARK_GPS	Case/Bottom Case Rev 1.stl	ARK_GPS/case_rev1/Bottom_Case_Rev_1.stl
 ARK_GPS	Hardware/Rev 1/ARK GPS Rev 1 3D Model.step	ARK_GPS/model/ARK_GPS_Rev_1_3D_Model.step
 ARK_GPS	Hardware/Rev 2/ARK GPS Rev 2 3D Model.step	ARK_GPS/model/ARK_GPS_Rev_2_3D_Model.step
 ARK_GPS	Hardware/Rev 1/ARK GPS Rev 1 Schematic.PDF	ARK_GPS/schematic/ARK_GPS_Rev_1_Schematic.pdf
@@ -72,8 +72,8 @@ ark_jetson_hardware	3D Model/ARK_PAB_Jetson_Carrier_Rev_2.step	ARK_Jetson_PAB_Ca
 ARK_Jetson_PAB_V3	ARK_PAB_Jetson_Carrier_V3.step	ARK_Jetson_PAB_V3/model/ARK_PAB_Jetson_Carrier_V3.step
 ARK_M.2_LTE	ARK_M.2_LTE_REV_1.0.step	ARK_M.2_LTE/model/ARK_M.2_LTE_REV_1.0.step
 ARK_MAG	ARK_MAG_Rev_1_0.step	ARK_MAG/model/ARK_MAG_Rev_1_0.step
-ARK_MAG	Bottom Case.stl	ARK_MAG/case/Bottom_Case.stl
-ARK_MAG	Top Case.stl	ARK_MAG/case/Top_Case.stl
+ARK_MAG	Bottom Case.stl	ARK_MAG/case_rev1/Bottom_Case.stl
+ARK_MAG	Top Case.stl	ARK_MAG/case_rev1/Top_Case.stl
 ARK_Microhard_DDL_Carrier	ARK Microhard DDL Carrier Rev 2.0.step	ARK_Microhard_DDL_Carrier/model/ARK_Microhard_DDL_Carrier_Rev_2.0.step
 ARK_Microhard_DDL_Carrier	Bottom Case.stl	ARK_Microhard_DDL_Carrier/case/Bottom_Case.stl
 ARK_Microhard_DDL_Carrier	Microhard Case.step	ARK_Microhard_DDL_Carrier/case/Microhard_Case.step

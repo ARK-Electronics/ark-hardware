@@ -1,6 +1,6 @@
 # ARK Electronics Hardware
 
-3D models, cases, schematics, BOMs and datasheets for [ARK Electronics](https://arkelectron.com) products. This repo replaces the per-product hardware repos in the [ARK-Electronics](https://github.com/ARK-Electronics) GitHub org, which are deprecated; [manifest.tsv](manifest.tsv) records the repo and path each migrated file came from.
+3D models, cases, schematics, BOMs and datasheets for [ARK Electronics](https://arkelectron.com) products. This repo replaces the per-product hardware repos in the [ARK-Electronics](https://github.com/ARK-Electronics) GitHub org, which are deprecated. [manifest.tsv](manifest.tsv) records the repo and path each migrated file came from. Files added here directly get no row.
 
 ## Layout
 
@@ -78,6 +78,7 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 | [ARK_Secondary_Avionics_Breakout](ARK_Secondary_Avionics_Breakout) | [ARK Secondary Avionics Breakout](https://arkelectron.com/product/ark-secondary-avionics-breakout/) | [docs](https://docs.arkelectron.com/products/accessories/ark-secondary-avionics-adapter) |
 | [ARK_Pixhawk_Payload_Bus_Breakout](ARK_Pixhawk_Payload_Bus_Breakout) | [ARK Pixhawk Payload Bus Breakout](https://arkelectron.com/product/ark-pixhawk-payload-bus-breakout/) | [docs](https://docs.arkelectron.com/products/accessories/ark-pixhawk-payload-bus-breakout) |
 | [ARK_Servo_Expander](ARK_Servo_Expander) | [ARK Servo Expander](https://arkelectron.com/product/ark-servo-expander/) | [docs](https://docs.arkelectron.com/products/accessories/ark-servo-expander) |
+| [ARK_Hadron_Adapter](ARK_Hadron_Adapter) | [ARK Hadron Adapter](https://arkelectron.com/product/ark-hadron-adapter/) | [docs](https://docs.arkelectron.com/products/accessories/ark-hadron-adapter) |
 | [ARK_USB_Adapter](ARK_USB_Adapter) | [ARK USB Adapter](https://arkelectron.com/product/ark-usb-adapter/) | — |
 | [ARK_Pixhawk_Debug_Adapter](ARK_Pixhawk_Debug_Adapter) | [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/) | — |
 | [Servo_Adapter](Servo_Adapter) | [Servo Adapter](https://arkelectron.com/product/servo-adapter/) | — |

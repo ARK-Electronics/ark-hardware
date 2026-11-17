@@ -1,6 +1,6 @@
 # ARK Electronics Hardware
 
-3D models, cases, schematics, BOMs and datasheets for [ARK Electronics](https://arkelectron.com) products. This repo replaces the per-product hardware repos in the [ARK-Electronics](https://github.com/ARK-Electronics) GitHub org, which are deprecated; [manifest.tsv](manifest.tsv) records the repo and path each migrated file came from.
+3D models, cases, schematics, BOMs and datasheets for [ARK Electronics](https://arkelectron.com) products. This repo replaces the per-product hardware repos in the [ARK-Electronics](https://github.com/ARK-Electronics) GitHub org, which are deprecated. [manifest.tsv](manifest.tsv) records the repo and path each migrated file came from. Files added here directly get no row.
 
 ## Layout
 

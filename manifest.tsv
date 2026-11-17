@@ -1,8 +1,7 @@
 # source_repo	source_path	dest_path
+# Files migrated from the deprecated per-product repos. Files added here directly get no row.
 # Antennas (shared reference models; products symlink into these paths)
 ARK_G5_RTK_GPS	Antenna/BT-T076.stl	Antennas/beitian/BT-T076.stl
-ark-hardware	Antennas/beitian/BT-560.stl	Antennas/beitian/BT-560.stl
-ark-hardware	Antennas/maxtena/M7CHT-A-SMA.stl	Antennas/maxtena/M7CHT-A-SMA.stl
 ARK_12S_PAB_Power_Module	ARK_12S_PAB_Power_Module_Rev_3.0.step	ARK_12S_PAB_Power_Module/model/ARK_12S_PAB_Power_Module_Rev_3.0.step
 ARK_12S_PAB_Power_Module	ARK_12S_PAB_Power_Module_Rev_1.0.step	ARK_12S_PAB_Power_Module/model/ARK_12S_PAB_Power_Module_Rev_1.0.step
 ARK_12S_PAB_Power_Module	ARK_12S_PAB_Power_Module_Rev_1.0_PDF3D.PDF	ARK_12S_PAB_Power_Module/model/ARK_12S_PAB_Power_Module_Rev_1.0_PDF3D.pdf
@@ -93,7 +92,6 @@ ARK_PAB_Power_Module	ARK PAB Power Module Rev 3 without XT60.step	ARK_PAB_Power_
 ARK_PAB_Power_Module	case/Bottom power module case.stl	ARK_PAB_Power_Module/case/Bottom_Power_Module_Case.stl
 ARK_PAB_Power_Module	case/Top power module case.stl	ARK_PAB_Power_Module/case/Top_Power_Module_Case.stl
 ARK_PAB_Power_Module	ARK PAB Power Module Rev 2.step	ARK_PAB_Power_Module/model/ARK_PAB_Power_Module_Rev_2.step
-ark-hardware	ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl	ARK_Pixhawk_Debug_Adapter/case/STLink_V3_Mini_Holder.stl
 ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-2.0.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-2.0.step
 ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-2.0-with-Sensor-FOV.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-2.0-with-Sensor-FOV.step
 ARK-Pi6X	3D_Models/ARK-Pi6X-Flow-Rev-1.0.step	ARK_Pi6X/model/ARK-Pi6X-Flow-Rev-1.0.step
@@ -156,5 +154,3 @@ Servo_Adapter	Servo_Adapter.step	Servo_Adapter/model/Servo_Adapter.step
 USB3_Divorcer	USB3 Divorcer.step	USB3_Divorcer/model/USB3_Divorcer.step
 VOXL2_RTK_PAB_Carrier	VOXL2_RTK_PAB_CARRIER_Rev_2.step	ARK_VOXL2_RTK_PAB_Carrier/model/VOXL2_RTK_PAB_CARRIER_Rev_2.step
 VOXL2_RTK_PAB_Carrier	VOXL2_RTK_PAB_CARRIER_Rev_1.step	ARK_VOXL2_RTK_PAB_Carrier/model/VOXL2_RTK_PAB_CARRIER_Rev_1.step
-ark-hardware	ARK_Hadron_Adapter/model/ARK_Hadron_Adapter_Rev_1.1.step	ARK_Hadron_Adapter/model/ARK_Hadron_Adapter_Rev_1.1.step
-ark-hardware	ARK_Hadron_Adapter/model/ARK_Hadron_Adapter_Rev_1.1_PDF3D.pdf	ARK_Hadron_Adapter/model/ARK_Hadron_Adapter_Rev_1.1_PDF3D.pdf

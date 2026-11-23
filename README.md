@@ -78,6 +78,7 @@ To grab a single file without cloning, open it on GitHub and use **Download raw 
 | [ARK_Secondary_Avionics_Breakout](ARK_Secondary_Avionics_Breakout) | [ARK Secondary Avionics Breakout](https://arkelectron.com/product/ark-secondary-avionics-breakout/) | [docs](https://docs.arkelectron.com/products/accessories/ark-secondary-avionics-adapter) |
 | [ARK_Pixhawk_Payload_Bus_Breakout](ARK_Pixhawk_Payload_Bus_Breakout) | [ARK Pixhawk Payload Bus Breakout](https://arkelectron.com/product/ark-pixhawk-payload-bus-breakout/) | [docs](https://docs.arkelectron.com/products/accessories/ark-pixhawk-payload-bus-breakout) |
 | [ARK_Servo_Expander](ARK_Servo_Expander) | [ARK Servo Expander](https://arkelectron.com/product/ark-servo-expander/) | [docs](https://docs.arkelectron.com/products/accessories/ark-servo-expander) |
+| [ARK_OSD](ARK_OSD) | [ARK OSD](https://arkelectron.com/product/ark-osd/) | [docs](https://docs.arkelectron.com/products/accessories/ark-osd) |
 | [ARK_Hadron_Adapter](ARK_Hadron_Adapter) | [ARK Hadron Adapter](https://arkelectron.com/product/ark-hadron-adapter/) | [docs](https://docs.arkelectron.com/products/cameras/ark-hadron-adapter) |
 | [ARK_Boson_Adapter](ARK_Boson_Adapter) | — | — |
 | [ARK_USB_Adapter](ARK_USB_Adapter) | [ARK USB Adapter](https://arkelectron.com/product/ark-usb-adapter/) | — |
